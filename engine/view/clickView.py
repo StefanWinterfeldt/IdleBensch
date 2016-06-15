@@ -6,7 +6,7 @@ import globals.view as view
 import pygame
 
 def initialize ():
-    view.clickView = view.mainView.subsurface ((DC.RESOLUTION [0] - 1 - DC.CLICKVIEWSIZE [0], 0, DC.CLICKVIEWSIZE [0], DC.CLICKVIEWSIZE [1]))
+    view.clickView = view.mainView.subsurface ((0, 0, DC.CLICKVIEWSIZE [0], DC.CLICKVIEWSIZE [1]))
     draw.drawCentered (IGNG.generateIdleGameName (), view.clickView)
 
 def update ():
