@@ -1,1 +1,2 @@
+mainView = None
 screen = None
