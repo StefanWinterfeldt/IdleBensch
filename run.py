@@ -1,5 +1,5 @@
-import game.initialization as initialization
-import game.mainLoop as mainLoop
+import engine.initialization as initialization
+import engine.mainLoop as mainLoop
 
 initialization.initialize ()
 mainLoop.loop ()
