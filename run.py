@@ -1,9 +1,10 @@
+import constants.display as DC
 import pygame
 import sys
 
 pygame.init ()
 
-screen = pygame.display.set_mode ((640, 480))
+screen = pygame.display.set_mode (DC.RESOLUTION, pygame.FULLSCREEN|pygame.HWSURFACE)
 screen.fill ((0, 0, 0))
 
 while True:
