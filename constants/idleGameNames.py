@@ -32,6 +32,7 @@ PREFIXES = [
     'Plankton',
     'Plutonium',
     'Porn',
+    'Potato',
     'Prengelschneck',
     'Proton',
     'Rainbow',
@@ -52,6 +53,7 @@ PREFIXES = [
 NAMES = [
     'Banker',
     'Baron',
+    'broker',
     'Builder',
     'Capitalist',
     'Clicker',
