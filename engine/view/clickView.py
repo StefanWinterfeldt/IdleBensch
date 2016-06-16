@@ -7,6 +7,9 @@ import globals.view as view
 import pygame
 import random
 
+def handleClick (position):
+    randomize ()
+
 def initialize ():
     view.clickView = view.mainView.subsurface ((0, 0, DC.CLICKVIEWSIZE [0], DC.CLICKVIEWSIZE [1]))
     randomize()
