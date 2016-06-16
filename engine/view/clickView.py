@@ -1,13 +1,21 @@
 import constants.color as color
 import constants.display as DC
 import engine.service.idleGameNameGenerator as IGNG
+import engine.util.color as colorUtil
 import engine.util.draw as draw
 import globals.view as view
 import pygame
+import random
 
 def initialize ():
     view.clickView = view.mainView.subsurface ((0, 0, DC.CLICKVIEWSIZE [0], DC.CLICKVIEWSIZE [1]))
-    draw.drawCentered (IGNG.generateIdleGameName (), view.clickView)
+    randomize()
+
+def randomize ():
+    backgroundColor = random.choice (color.CLICKVIEWCOLORS)
+    view.clickView.fill (backgroundColor)
+    pygame.draw.rect (view.clickView, color.DARKGREEN, (0, 0, DC.CLICKVIEWSIZE [0] - 1, DC.CLICKVIEWSIZE [1] - 1), 2)
+    draw.drawCentered (IGNG.generateIdleGameName (colorUtil.invertColor(backgroundColor), backgroundColor), view.clickView)
 
 def update ():
-    pygame.draw.rect (view.clickView, color.DARKGREEN, (0, 0, DC.CLICKVIEWSIZE [0] - 1, DC.CLICKVIEWSIZE [1] - 1), 2)
+   pass
