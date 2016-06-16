@@ -28,10 +28,8 @@ def generateIdleGameName (textColor, backgroundColor):
     renderedPrefix = buildSingleTextLine (random.choice (IGN.PREFIXES), textColor, backgroundColor)
     renderedName = buildSingleTextLine (random.choice (IGN.NAMES), textColor, backgroundColor)
     renderedSuffix = buildSingleTextLine (random.choice (IGN.SUFFIXES), textColor, backgroundColor)
-    mode = random.randint (0, 2)
+    mode = random.randint (0, 1)
     if mode == 0:
-        return combineRenderedLines ([renderedName, renderedSuffix], backgroundColor)
-    elif mode == 1:
         return combineRenderedLines ([renderedPrefix, renderedName], backgroundColor)
     else:
         return combineRenderedLines ([renderedPrefix, renderedName, renderedSuffix], backgroundColor)
