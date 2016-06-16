@@ -1,11 +1,11 @@
 import constants.color as color
 import constants.display as DC
+import constants.gameLogic as GL
 import engine.service.idleGameNameGenerator as IGNG
 import engine.util.color as colorUtil
 import engine.util.draw as draw
 import globals.gameState as GS
 import globals.view as view
-import math
 import pygame
 import random
 
@@ -20,8 +20,10 @@ def drawCompletionCircle ():
 
 def handleClick (position):
     randomize ()
-    GS.episodeCompletionPercentage += 5
-    if GS.episodeCompletionPercentage > 100: GS.episodeCompletionPercentage = 0
+    GS.episodeCompletionPercentage += GL.BASEEPISODEPERCENTAGEPERCLICK
+    if GS.episodeCompletionPercentage > 100:
+        GS.episodeCompletionPercentage = 0
+        GS.episodes += 1
 
 def initialize ():
     global completionCirclePos
