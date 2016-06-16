@@ -1,11 +1,17 @@
 import constants.idleGameNames as IGN
+import constants.display as DC
 import engine.util.draw as draw
 import globals.gameState as gameState
 import pygame
 import random
 
 def buildSingleTextLine (text, textColor, backgroundColor):
-    return gameState.font.render (text, True, textColor, backgroundColor)
+    fontSize = DC.CLICKVIEWFONTSIZE
+    font = pygame.font.Font (gameState.fontName, fontSize)
+    while (font.size (text)[0] > DC.CLICKVIEWSIZE[0]) & (fontSize > 0):
+        fontSize -= 1
+        font = pygame.font.Font (gameState.fontName, fontSize)
+    return font.render (text, True, textColor, backgroundColor)
 
 def combineRenderedLines (lines, backgroundColor):
     combinedHeight = sum ([l.get_height () for l in lines])

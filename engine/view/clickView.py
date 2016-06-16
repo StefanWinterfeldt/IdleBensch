@@ -14,8 +14,8 @@ def initialize ():
 def randomize ():
     backgroundColor = random.choice (color.CLICKVIEWCOLORS)
     view.clickView.fill (backgroundColor)
-    pygame.draw.rect (view.clickView, color.DARKGREEN, (0, 0, DC.CLICKVIEWSIZE [0] - 1, DC.CLICKVIEWSIZE [1] - 1), 2)
     draw.drawCentered (IGNG.generateIdleGameName (colorUtil.invertColor(backgroundColor), backgroundColor), view.clickView)
+    pygame.draw.rect (view.clickView, color.DARKGREEN, (0, 0, DC.CLICKVIEWSIZE [0] - 1, DC.CLICKVIEWSIZE [1] - 1), 2)
 
 def update ():
    pass

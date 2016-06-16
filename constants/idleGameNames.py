@@ -1,3 +1,3 @@
 PREFIXES = ['prefix']
-NAMES = ['name']
+NAMES = ['veryveryveryveryveryveryveryveryveryveryverylongname']
 SUFFIXES = ['suffix']
