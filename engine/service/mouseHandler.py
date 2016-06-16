@@ -1,9 +1,9 @@
-import engine.view.clickView as clickView
+import engine.controller.clickViewController as clickViewController
 import globals.view as globalViews
 
 def dispatchToView (event):
     if globalViews.clickView.get_rect ().collidepoint (event.pos):
-        clickView.handleClick (event.pos)
+        clickViewController.handleClick (event.pos)
 
 def handleMouseEvent (event):
     dispatchToView (event)

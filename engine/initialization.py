@@ -1,5 +1,5 @@
 import constants.display as DC
-import engine.view.mainView as mainView
+import engine.controller.mainViewController as mainViewController
 import globals.gameState as gameState
 import globals.view as view
 import pygame
@@ -11,7 +11,7 @@ def initializeFont ():
 
 def initializeViews ():
     view.screen = pygame.display.set_mode (DC.RESOLUTION, pygame.FULLSCREEN | pygame.HWSURFACE)
-    mainView.initialize ()
+    mainViewController.initialize ()
 
 def initialize ():
     random.seed ()

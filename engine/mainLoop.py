@@ -1,13 +1,13 @@
 import constants.display as DC
 import engine.service.keyHandler as keyHandler
 import engine.service.mouseHandler as mouseHandler
-import engine.view.mainView as mainView
+import engine.controller.mainViewController as mainViewController
 import globals.gameState as gameState
 import pygame
 import sys
 
 def updateDisplay ():
-    mainView.update ()
+    mainViewController.update ()
     pygame.display.flip ()
 
 def handleEvents ():
