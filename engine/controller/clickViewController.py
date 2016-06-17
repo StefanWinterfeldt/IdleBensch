@@ -25,8 +25,8 @@ def handleClick (position):
     randomize ()
     GGS.episodeCompletionPercentage += GL.BASE_EPISODE_PERCENTAGE_PER_CLICK
     if GGS.episodeCompletionPercentage > 100:
-        GGS.episodeCompletionPercentage = 0
-        GGS.episodes += 1
+        GGS.episodes += (GGS.episodeCompletionPercentage / 100)
+        GGS.episodeCompletionPercentage %= 100
 
 def handleMotion (position):
     if GGS.currentMouseArea != areaCode:
