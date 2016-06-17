@@ -14,19 +14,21 @@ import random
 areaCode = 'CV'
 completionCircleFullRadius = None
 completionCirclePos = None
+episodeCompletionPercentage = 0
 hintText = 'Klicke hier um Folgen zu produzieren.'
 
 def drawCompletionCircle ():
     pygame.draw.circle (GV.clickView, CC.BLACK, completionCirclePos, completionCircleFullRadius)
-    currentRadius = int ((completionCircleFullRadius / 100.0) * GGS.episodeCompletionPercentage)
+    currentRadius = int ((completionCircleFullRadius / 100.0) * episodeCompletionPercentage)
     pygame.draw.circle (GV.clickView, CC.DARK_GREEN, completionCirclePos, currentRadius)
 
 def handleClick (position):
+    global episodeCompletionPercentage
     randomize ()
-    GGS.episodeCompletionPercentage += GL.BASE_EPISODE_PERCENTAGE_PER_CLICK
-    if GGS.episodeCompletionPercentage > 100:
-        GGS.episodes += (GGS.episodeCompletionPercentage / 100)
-        GGS.episodeCompletionPercentage %= 100
+    episodeCompletionPercentage += GL.BASE_EPISODE_PERCENTAGE_PER_CLICK
+    if episodeCompletionPercentage > 100:
+        GGS.episodes += (episodeCompletionPercentage / 100)
+        episodeCompletionPercentage %= 100
 
 def handleMotion (position):
     if GGS.currentMouseArea != areaCode:
