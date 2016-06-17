@@ -1,43 +1,50 @@
-import constants.color as color
-import constants.display as DC
+import constants.color as CC
+import constants.display as CD
 import constants.gameLogic as GL
-import engine.service.idleGameNameGenerator as IGNG
+import engine.controller.hintViewController as hintViewController
+import engine.service.idleGameNameGenerator as idleGameNameGenerator
 import engine.util.color as colorUtil
 import engine.util.draw as draw
-import globals.gameState as GS
-import globals.view as view
+import globals.gameState as GGS
+import globals.view as GV
 import pygame
 import random
 
-
+areaCode = 'CV'
 completionCircleFullRadius = None
 completionCirclePos = None
+hintText = 'Klicke hier um Folgen zu produzieren.'
 
 def drawCompletionCircle ():
-    pygame.draw.circle (view.clickView, color.BLACK, completionCirclePos, completionCircleFullRadius)
-    currentRadius = int ((completionCircleFullRadius / 100.0) * GS.episodeCompletionPercentage)
-    pygame.draw.circle (view.clickView, color.DARK_GREEN, completionCirclePos, currentRadius)
+    pygame.draw.circle (GV.clickView, CC.BLACK, completionCirclePos, completionCircleFullRadius)
+    currentRadius = int ((completionCircleFullRadius / 100.0) * GGS.episodeCompletionPercentage)
+    pygame.draw.circle (GV.clickView, CC.DARK_GREEN, completionCirclePos, currentRadius)
 
 def handleClick (position):
     randomize ()
-    GS.episodeCompletionPercentage += GL.BASE_EPISODE_PERCENTAGE_PER_CLICK
-    if GS.episodeCompletionPercentage > 100:
-        GS.episodeCompletionPercentage = 0
-        GS.episodes += 1
+    GGS.episodeCompletionPercentage += GL.BASE_EPISODE_PERCENTAGE_PER_CLICK
+    if GGS.episodeCompletionPercentage > 100:
+        GGS.episodeCompletionPercentage = 0
+        GGS.episodes += 1
+
+def handleMotion (position):
+    if GGS.currentMouseArea != areaCode:
+        GGS.currentMouseArea = areaCode
+        hintViewController.showText (hintText)
 
 def initialize ():
     global completionCirclePos
     global completionCircleFullRadius
-    view.clickView = view.mainView.subsurface ((0, 0, DC.CLICK_VIEW_SIZE [0], DC.CLICK_VIEW_SIZE [1]))
-    completionCirclePos = (DC.CLICK_VIEW_SIZE [0] / 2, DC.CLICK_VIEW_SIZE [1] / 5)
-    completionCircleFullRadius = DC.CLICK_VIEW_SIZE [0] / 8
+    GV.clickView = GV.mainView.subsurface ((0, 0, CD.CLICK_VIEW_SIZE [0], CD.CLICK_VIEW_SIZE [1]))
+    completionCirclePos = (CD.CLICK_VIEW_SIZE [0] / 2, CD.CLICK_VIEW_SIZE [1] / 5)
+    completionCircleFullRadius = CD.CLICK_VIEW_SIZE [0] / 8
     randomize ()
 
 def randomize ():
-    backgroundColor = random.choice (color.CLICK_VIEW_COLORS)
-    view.clickView.fill (backgroundColor)
-    draw.drawCentered (IGNG.generateIdleGameName (colorUtil.invertColor (backgroundColor), backgroundColor), view.clickView)
-    pygame.draw.rect (view.clickView, color.DARK_GREEN, (0, 0, DC.CLICK_VIEW_SIZE [0] - 1, DC.CLICK_VIEW_SIZE [1] - 1), 2)
+    backgroundColor = random.choice (CC.CLICK_VIEW_COLORS)
+    GV.clickView.fill (backgroundColor)
+    draw.drawCentered (idleGameNameGenerator.generateIdleGameName (colorUtil.invertColor (backgroundColor), backgroundColor), GV.clickView)
+    pygame.draw.rect (GV.clickView, CC.DARK_GREEN, (0, 0, CD.CLICK_VIEW_SIZE [0] - 1, CD.CLICK_VIEW_SIZE [1] - 1), 2)
 
 def update ():
     drawCompletionCircle ()
