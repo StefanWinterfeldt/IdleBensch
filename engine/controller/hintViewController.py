@@ -13,7 +13,7 @@ def clearText ():
     GV.hintView.fill (CC.BLACK)
     pygame.draw.rect (GV.hintView, CC.DARK_GREEN, (0, 0, CD.HINT_VIEW_SIZE [0] - 1, CD.HINT_VIEW_SIZE [1] - 1), 2)
 
-def handleMotion (position):
+def handleMotion (event):
     if GGS.currentMouseArea != areaCode:
         GGS.currentMouseArea = areaCode
         showText (hintText)

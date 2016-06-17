@@ -22,7 +22,7 @@ def drawCompletionCircle ():
     currentRadius = int ((completionCircleFullRadius / 100.0) * episodeCompletionPercentage)
     pygame.draw.circle (GV.clickView, CC.DARK_GREEN, completionCirclePos, currentRadius)
 
-def handleClick (position):
+def handleClick (event):
     global episodeCompletionPercentage
     randomize ()
     episodeCompletionPercentage += GL.BASE_EPISODE_PERCENTAGE_PER_CLICK
@@ -30,7 +30,7 @@ def handleClick (position):
         GGS.episodes += (episodeCompletionPercentage / 100)
         episodeCompletionPercentage %= 100
 
-def handleMotion (position):
+def handleMotion (event):
     if GGS.currentMouseArea != areaCode:
         GGS.currentMouseArea = areaCode
         hintViewController.showText (hintText)

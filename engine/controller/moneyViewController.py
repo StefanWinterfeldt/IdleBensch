@@ -1,9 +1,10 @@
 import constants.color as CC
 import constants.display as CD
+import engine.controller.hintViewController as hintViewController
 import engine.util.draw as drawUtil
+import engine.util.event as eventUtil
 import engine.util.text as textUtil
 import globals.gameState as GGS
-import globals.gameUtils as GGU
 import globals.view as GV
 import pygame
 
@@ -11,6 +12,8 @@ import pygame
 activeSections = []
 episodeSection = None
 episodeSectionAbsoluteRect = None
+episodeSectionAreaCode = 'MVES'
+episodeSectionHintText = 'Folgen produzieren Views und mit einer gewissen Chance auch Subscriber.'
 sectionSize = (360, 72)
 
 def drawEpisodeSection ():
@@ -20,6 +23,22 @@ def drawEpisodeSection ():
 def drawSections ():
     if episodeSection in activeSections:
         drawEpisodeSection ()
+
+def handleEmptySectionMotion ():
+    if GGS.currentMouseArea is not None:
+        GGS.currentMouseArea = None
+        hintViewController.clearText ()
+
+def handleEpisodeSectionMotion ():
+    if GGS.currentMouseArea != episodeSectionAreaCode:
+        GGS.currentMouseArea = episodeSectionAreaCode
+        hintViewController.showText (episodeSectionHintText)
+
+def handleMotion (event):
+    if eventUtil.eventHappenedInRect (event, episodeSectionAbsoluteRect):
+        handleEpisodeSectionMotion ()
+    else:
+        handleEmptySectionMotion ()
 
 def initialize ():
     GV.moneyViewAbsoluteRect = pygame.Rect ((0, CD.CLICK_VIEW_SIZE [1] - 1, CD.MONEY_VIEW_SIZE [0], CD.MONEY_VIEW_SIZE [1]))
