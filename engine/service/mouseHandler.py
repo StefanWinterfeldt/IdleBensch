@@ -1,18 +1,27 @@
 import engine.controller.clickViewController as clickViewController
 import engine.controller.hintViewController as hintViewController
 import globals.gameState as GGS
-import globals.view as globalViews
+import globals.view as GV
 import pygame
 
 def dispatchClickToView (event):
-    if globalViews.clickView.get_rect ().collidepoint (event.pos): clickViewController.handleClick (event.pos)
+    if eventHappenedInRect (event, GV.clickViewAbsoluteRect): clickViewController.handleClick (event.pos)
 
 def dispatchMotionToView (event):
-    if globalViews.clickView.get_rect ().collidepoint (event.pos): clickViewController.handleMotion (event.pos)
+    if eventHappenedInRect (event, GV.clickViewAbsoluteRect):
+        clickViewController.handleMotion (event.pos)
+    elif eventHappenedInRect (event, GV.hintViewAbsoluteRect):
+        hintViewController.handleMotion (event.pos)
     else:
-        GGS.currentMouseArea = None
-        hintViewController.clearText ()
+        if GGS.currentMouseArea is not None:
+            GGS.currentMouseArea = None
+            hintViewController.clearText ()
+
+def eventHappenedInRect (event, rect):
+    return rect.collidepoint (event.pos)
 
 def handleMouseEvent (event):
-    if event.type == pygame.MOUSEBUTTONDOWN: dispatchClickToView (event)
-    elif event.type == pygame.MOUSEMOTION: dispatchMotionToView (event)
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        dispatchClickToView (event)
+    elif event.type == pygame.MOUSEMOTION:
+        dispatchMotionToView (event)

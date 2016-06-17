@@ -10,6 +10,7 @@ import globals.view as GV
 import pygame
 import random
 
+
 areaCode = 'CV'
 completionCircleFullRadius = None
 completionCirclePos = None
@@ -35,7 +36,8 @@ def handleMotion (position):
 def initialize ():
     global completionCirclePos
     global completionCircleFullRadius
-    GV.clickView = GV.mainView.subsurface ((0, 0, CD.CLICK_VIEW_SIZE [0], CD.CLICK_VIEW_SIZE [1]))
+    GV.clickViewAbsoluteRect = pygame.Rect ((0, 0, CD.CLICK_VIEW_SIZE [0], CD.CLICK_VIEW_SIZE [1]))
+    GV.clickView = GV.mainView.subsurface (GV.clickViewAbsoluteRect)
     completionCirclePos = (CD.CLICK_VIEW_SIZE [0] / 2, CD.CLICK_VIEW_SIZE [1] / 5)
     completionCircleFullRadius = CD.CLICK_VIEW_SIZE [0] / 8
     randomize ()
