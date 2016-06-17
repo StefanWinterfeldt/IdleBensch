@@ -1,21 +1,21 @@
 import constants.display as DC
 import engine.controller.mainViewController as mainViewController
-import globals.gameState as gameState
-import globals.view as view
+import globals.gameUtils as GGU
+import globals.view as GV
 import pygame
 import random
 
 def initializeFont ():
-    gameState.fontName = pygame.font.get_default_font ()
-    gameState.font = pygame.font.Font (gameState.fontName, DC.FONT_SIZE)
+    GGU.fontName = pygame.font.get_default_font ()
+    GGU.font = pygame.font.Font (GGU.fontName, DC.FONT_SIZE)
 
 def initializeViews ():
-    view.screen = pygame.display.set_mode (DC.RESOLUTION, pygame.FULLSCREEN | pygame.HWSURFACE)
+    GV.screen = pygame.display.set_mode (DC.RESOLUTION, pygame.FULLSCREEN | pygame.HWSURFACE)
     mainViewController.initialize ()
 
 def initialize ():
     random.seed ()
     pygame.init ()
-    gameState.clock = pygame.time.Clock ()
+    GGU.clock = pygame.time.Clock ()
     initializeFont ()
     initializeViews ()
