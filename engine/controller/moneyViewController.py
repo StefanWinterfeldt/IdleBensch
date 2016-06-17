@@ -14,10 +14,10 @@ def drawValues ():
     draw.drawXCentered (episodeValue, view.moneyView, yPos)
 
 def initialize ():
-    view.moneyView = view.mainView.subsurface ((0, DC.CLICKVIEWSIZE [1] - 1, DC.MONEYVIEWSIZE [0], DC.MONEYVIEWSIZE [1]))
-    pygame.draw.rect (view.moneyView, color.DARKGREEN, (0, 0, DC.MONEYVIEWSIZE [0] - 1, DC.MONEYVIEWSIZE [1] - 1), 2)
+    view.moneyView = view.mainView.subsurface ((0, DC.CLICK_VIEW_SIZE [1] - 1, DC.MONEY_VIEW_SIZE [0], DC.MONEY_VIEW_SIZE [1]))
+    pygame.draw.rect (view.moneyView, color.DARK_GREEN, (0, 0, DC.MONEY_VIEW_SIZE [0] - 1, DC.MONEY_VIEW_SIZE [1] - 1), 2)
 
 def update ():
     view.moneyView.fill (color.BLACK)
     drawValues ()
-    pygame.draw.rect (view.moneyView, color.DARKGREEN, (0, 0, DC.MONEYVIEWSIZE [0] - 1, DC.MONEYVIEWSIZE [1] - 1), 2)
+    pygame.draw.rect (view.moneyView, color.DARK_GREEN, (0, 0, DC.MONEY_VIEW_SIZE [0] - 1, DC.MONEY_VIEW_SIZE [1] - 1), 2)

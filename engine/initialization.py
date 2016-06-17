@@ -7,7 +7,7 @@ import random
 
 def initializeFont ():
     gameState.fontName = pygame.font.get_default_font ()
-    gameState.font = pygame.font.Font (gameState.fontName, DC.FONTSIZE)
+    gameState.font = pygame.font.Font (gameState.fontName, DC.FONT_SIZE)
 
 def initializeViews ():
     view.screen = pygame.display.set_mode (DC.RESOLUTION, pygame.FULLSCREEN | pygame.HWSURFACE)

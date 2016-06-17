@@ -6,9 +6,9 @@ import pygame
 import random
 
 def buildSingleTextLine (text, textColor, backgroundColor):
-    fontSize = DC.CLICKVIEWFONTSIZE
+    fontSize = DC.CLICK_VIEW_FONT_SIZE
     font = pygame.font.Font (gameState.fontName, fontSize)
-    while (font.size (text)[0] > DC.CLICKVIEWSIZE[0]) & (fontSize > 0):
+    while (font.size (text)[0] > DC.CLICK_VIEW_SIZE[0]) & (fontSize > 0):
         fontSize -= 1
         font = pygame.font.Font (gameState.fontName, fontSize)
     return font.render (text, True, textColor, backgroundColor)

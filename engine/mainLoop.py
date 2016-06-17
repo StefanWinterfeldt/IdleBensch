@@ -18,6 +18,6 @@ def handleEvents ():
 
 def loop ():
     while True:
-        gameState.clock.tick (DC.FRAMERATE)
+        gameState.clock.tick (DC.FRAME_RATE)
         handleEvents ()
         updateDisplay ()
