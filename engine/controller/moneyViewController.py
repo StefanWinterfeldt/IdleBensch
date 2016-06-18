@@ -9,7 +9,6 @@ import globals.view as GV
 import pygame
 
 
-activeSections = []
 episodeSection = None
 episodeSectionAbsoluteRect = None
 episodeSectionAreaCode = 'MVES'
@@ -61,18 +60,12 @@ def drawViewSection ():
     pygame.draw.rect (viewSection, CC.DARK_GREEN, viewSection.get_rect (), 1)
 
 def drawSections ():
-    if episodeSection in activeSections:
-        drawEpisodeSection ()
-    if seasonSection in activeSections:
-        drawSeasonSection ()
-    if streamSection in activeSections:
-        drawStreamSection ()
-    if subscriberSection in activeSections:
-        drawSubscriberSection ()
-    if viewSection in activeSections:
-        drawViewSection ()
-    if moneySection in activeSections:
-        drawMoneySection ()
+    drawEpisodeSection ()
+    drawSeasonSection ()
+    drawStreamSection ()
+    drawSubscriberSection ()
+    drawViewSection ()
+    drawMoneySection ()
 
 def handleEmptySectionMotion ():
     if GGS.currentMouseArea is not None:
@@ -137,52 +130,40 @@ def initialize ():
     pygame.draw.rect (GV.moneyView, CC.DARK_GREEN, (0, 0, CD.MONEY_VIEW_SIZE [0] - 1, CD.MONEY_VIEW_SIZE [1] - 1), 2)
 
 def initializeEpisodeSection ():
-    global activeSections
     global episodeSectionAbsoluteRect
     global episodeSection
     episodeSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1], sectionSize [0], sectionSize [1])
     episodeSection = GV.moneyView.subsurface ((0, 0, sectionSize [0], sectionSize [1]))
-    activeSections.append (episodeSection)
 
 def initializeSeasonSection ():
-    global activeSections
     global seasonSectionAbsoluteRect
     global seasonSection
     seasonSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + sectionSize [1], sectionSize [0], sectionSize [1])
     seasonSection = GV.moneyView.subsurface ((0, sectionSize [1], sectionSize [0], sectionSize [1]))
-    activeSections.append (seasonSection)
 
 def initializeStreamSection ():
-    global activeSections
     global streamSectionAbsoluteRect
     global streamSection
     streamSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + (sectionSize [1] * 2), sectionSize [0], sectionSize [1])
     streamSection = GV.moneyView.subsurface ((0, (sectionSize [1] * 2), sectionSize [0], sectionSize [1]))
-    activeSections.append (streamSection)
 
 def initializeSubscriberSection ():
-    global activeSections
     global subscriberSectionAbsoluteRect
     global subscriberSection
     subscriberSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + (sectionSize [1] * 3), sectionSize [0], sectionSize [1])
     subscriberSection = GV.moneyView.subsurface ((0, (sectionSize [1] * 3), sectionSize [0], sectionSize [1]))
-    activeSections.append (subscriberSection)
 
 def initializeViewSection ():
-    global activeSections
     global viewSectionAbsoluteRect
     global viewSection
     viewSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + (sectionSize [1] * 4), sectionSize [0], sectionSize [1])
     viewSection = GV.moneyView.subsurface ((0, (sectionSize [1] * 4), sectionSize [0], sectionSize [1]))
-    activeSections.append (viewSection)
-    
+
 def initializeMoneySection ():
-    global activeSections
     global moneySectionAbsoluteRect
     global moneySection
     moneySectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + (sectionSize [1] * 5), sectionSize [0], sectionSize [1])
     moneySection = GV.moneyView.subsurface ((0, (sectionSize [1] * 5), sectionSize [0], sectionSize [1]))
-    activeSections.append (moneySection)
 
 def update ():
     GV.moneyView.fill (CC.BLACK)
