@@ -2,6 +2,7 @@ import constants.display as DC
 import engine.service.keyHandler as keyHandler
 import engine.service.mouseHandler as mouseHandler
 import engine.controller.mainViewController as mainViewController
+import engine.controller.timeSlotController as timeSlotController
 import globals.gameUtils as GGU
 import pygame
 import sys
@@ -9,6 +10,9 @@ import sys
 def updateDisplay ():
     mainViewController.update ()
     pygame.display.flip ()
+
+def updateTimeSlots ():
+    timeSlotController.update ()
 
 def handleEvents ():
     for event in pygame.event.get ():
@@ -21,3 +25,4 @@ def loop ():
         GGU.clock.tick (DC.FRAME_RATE)
         handleEvents ()
         updateDisplay ()
+        updateTimeSlots ()
