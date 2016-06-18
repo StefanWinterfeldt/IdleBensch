@@ -12,3 +12,5 @@ messageViewAbsoluteRecht = None
 moneyView = None
 moneyViewAbsoluteRect = None
 screen = None
+upgradeView = None
+upgradeViewAbsoluteRect = None

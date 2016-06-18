@@ -5,6 +5,7 @@ import engine.controller.faceViewController as faceViewController
 import engine.controller.hintViewController as hintViewController
 import engine.controller.messageViewController as messageViewController
 import engine.controller.moneyViewController as moneyViewController
+import engine.controller.upgradeViewController as upgradeViewController
 import globals.view as view
 import pygame
 
@@ -15,6 +16,7 @@ def initialize ():
     hintViewController.initialize ()
     faceViewController.initialize ()
     chatViewController.initialize ()
+    upgradeViewController.initialize ()
     messageViewController.initialize ()
 
 def update ():
@@ -24,4 +26,5 @@ def update ():
     faceViewController.update ()
     chatViewController.update ()
     messageViewController.update ()
+    upgradeViewController.update ()
     view.screen.blit (view.mainView, (0, 0))
