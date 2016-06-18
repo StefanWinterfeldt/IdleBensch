@@ -2,7 +2,6 @@ import constants.color as CC
 import constants.display as CD
 import constants.gameLogic as CGL
 import engine.controller.hintViewController as hintViewController
-import engine.controller.timeSlotController as timeSlotController
 import engine.service.idleGameNameGenerator as idleGameNameGenerator
 import engine.util.color as colorUtil
 import engine.util.draw as draw
@@ -27,7 +26,6 @@ def checkAndHandleEpisodeCompletion ():
     if episodeCompletion >= 1:
         episodesCompleted = int (math.floor (episodeCompletion))
         GGS.episodes += episodesCompleted
-        timeSlotController.handleNewEpisodes (episodesCompleted)
         episodeCompletion -= episodesCompleted
         seasonCompletion += (episodesCompleted / float (CGL.BASE_EPISODES_PER_SEASON))
 
