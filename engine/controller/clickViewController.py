@@ -1,6 +1,6 @@
 import constants.color as CC
 import constants.display as CD
-import constants.gameLogic as GL
+import constants.gameLogic as CGL
 import engine.controller.hintViewController as hintViewController
 import engine.service.idleGameNameGenerator as idleGameNameGenerator
 import engine.util.color as colorUtil
@@ -17,35 +17,56 @@ circleFullRadius = None
 episodeCirclePos = None
 episodeCompletion = 0
 hintText = 'Klicke hier um Folgen zu produzieren.'
+seasonCirclePos = None
+seasonCompletion = 0
 
-def drawCompletionCircle ():
-    pygame.draw.circle (GV.clickView, CC.BLACK, episodeCirclePos, circleFullRadius)
-    currentRadius = int (circleFullRadius * episodeCompletion)
-    pygame.draw.circle (GV.clickView, CC.DARK_GREEN, episodeCirclePos, currentRadius)
-
-def getVariableHintText ():
-    return "Momentan produzierst du " + str (GL.BASE_EPISODES_PER_CLICK) + " Folgen pro Klick."
-
-def handleClick (event):
+def checkAndHandleEpisodeCompletion ():
     global episodeCompletion
-    randomize ()
-    episodeCompletion += GL.BASE_EPISODES_PER_CLICK
+    global seasonCompletion
     if episodeCompletion >= 1:
         episodesCompleted = int (math.floor (episodeCompletion))
         GGS.episodes += episodesCompleted
         episodeCompletion -= episodesCompleted
+        seasonCompletion += (episodesCompleted / float (CGL.BASE_EPISODES_PER_SEASON))
+
+def checkAndHandleSeasonCompletion ():
+    global seasonCompletion
+    if seasonCompletion >= 1:
+        seasonsCompleted = int (math.floor (seasonCompletion))
+        GGS.seasons += seasonsCompleted
+        seasonCompletion -= seasonsCompleted
+        randomize ()
+
+def drawCompletionCircles ():
+    pygame.draw.circle (GV.clickView, CC.BLACK, episodeCirclePos, circleFullRadius)
+    currentRadius = int (circleFullRadius * episodeCompletion)
+    pygame.draw.circle (GV.clickView, CC.DARK_GREEN, episodeCirclePos, currentRadius)
+    pygame.draw.circle (GV.clickView, CC.BLACK, seasonCirclePos, circleFullRadius)
+    currentRadius = int (circleFullRadius * seasonCompletion)
+    pygame.draw.circle (GV.clickView, CC.DARK_GREEN, seasonCirclePos, currentRadius)
+
+def getVariableHintText ():
+    return "Momentan produzierst du " + str (CGL.BASE_EPISODES_PER_CLICK) + " Folgen pro Klick."
+
+def handleClick (event):
+    global episodeCompletion
+    episodeCompletion += CGL.BASE_EPISODES_PER_CLICK
+    checkAndHandleEpisodeCompletion ()
+    checkAndHandleSeasonCompletion ()
 
 def handleMotion (event):
     if GGS.currentMouseArea != areaCode:
         GGS.currentMouseArea = areaCode
-        hintViewController.showText (' '.join([hintText, getVariableHintText()]))
+        hintViewController.showText (' '.join ([hintText, getVariableHintText ()]))
 
 def initialize ():
-    global episodeCirclePos
     global circleFullRadius
+    global episodeCirclePos
+    global seasonCirclePos
     GV.clickViewAbsoluteRect = pygame.Rect ((0, 0, CD.CLICK_VIEW_SIZE [0], CD.CLICK_VIEW_SIZE [1]))
     GV.clickView = GV.mainView.subsurface (GV.clickViewAbsoluteRect)
     episodeCirclePos = (CD.CLICK_VIEW_SIZE [0] / 4, CD.CLICK_VIEW_SIZE [1] / 5)
+    seasonCirclePos = ((CD.CLICK_VIEW_SIZE [0] / 4) * 3, CD.CLICK_VIEW_SIZE [1] / 5)
     circleFullRadius = CD.CLICK_VIEW_SIZE [0] / 8
     randomize ()
 
@@ -56,4 +77,4 @@ def randomize ():
     pygame.draw.rect (GV.clickView, CC.DARK_GREEN, (0, 0, CD.CLICK_VIEW_SIZE [0] - 1, CD.CLICK_VIEW_SIZE [1] - 1), 2)
 
 def update ():
-    drawCompletionCircle ()
+    drawCompletionCircles ()
