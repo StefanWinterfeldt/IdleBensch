@@ -53,7 +53,7 @@ def drawStreamSection ():
     pygame.draw.rect (streamSection, CC.DARK_GREEN, streamSection.get_rect (), 1)
 
 def drawSubscriberSection ():
-    drawUtil.drawCentered (textUtil.renderLines (['Abonnenten:', str (GGS.subscriber)], True), subscriberSection)
+    drawUtil.drawCentered (textUtil.renderLines (['Abonnenten:', textUtil.convertToHumanReadableString (GGS.subscriber)], True), subscriberSection)
     pygame.draw.rect (subscriberSection, CC.DARK_GREEN, subscriberSection.get_rect (), 1)
 
 def drawViewSection ():
