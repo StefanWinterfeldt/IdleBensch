@@ -10,7 +10,7 @@ timeSlots = []
 
 def handleNewEpisodes (numberOfEpisodes):
     global timeSlots
-    totalViewsToAllocate = modifiedGameLogic.getViewsPerEpisode ()
+    totalViewsToAllocate = modifiedGameLogic.getViewsPerEpisode () * numberOfEpisodes
     totalSubscribersToAllocate = 0
     for i in range (numberOfEpisodes):
         totalSubscribersToAllocate += random.randint (CGL.BASE_MIN_SUBSCRIBERS_PER_EPISODE, CGL.BASE_MAX_SUBSCRIBERS_PER_EPISODE)
