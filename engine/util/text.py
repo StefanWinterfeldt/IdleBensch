@@ -1,4 +1,5 @@
 import constants.color as CC
+import constants.display as CD
 import engine.util.draw as drawUtil
 import globals.gameUtils as GGU
 import pygame
@@ -7,8 +8,9 @@ def checkIfWordsWouldFit (words, maxWidth):
     line = ' '.join (words)
     return GGU.font.size (line) [0] < maxWidth
 
-def renderLines (lines, centered = False):
-    renderedLines = [GGU.font.render (line, True, CC.WHITE) for line in lines]
+def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE):
+    font = pygame.font.Font (GGU.fontName, fontSize)
+    renderedLines = [font.render (line, True, CC.WHITE) for line in lines]
     yPos = 0
     neededX = max ([l.get_width () for l in renderedLines])
     neededY = sum ([l.get_height () for l in renderedLines])

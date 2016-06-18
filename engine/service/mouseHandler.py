@@ -1,4 +1,5 @@
 import engine.controller.clickViewController as clickViewController
+import engine.controller.faceViewController as faceViewController
 import engine.controller.hintViewController as hintViewController
 import engine.controller.moneyViewController as moneyViewController
 import engine.util.event as eventUtil
@@ -16,6 +17,8 @@ def dispatchMotionToView (event):
         moneyViewController.handleMotion (event)
     elif eventUtil.eventHappenedInRect (event, GV.hintViewAbsoluteRect):
         hintViewController.handleMotion (event)
+    elif eventUtil.eventHappenedInRect (event, GV.faceViewAbsoluteRect):
+        faceViewController.handleMotion (event)
     else:
         if GGS.currentMouseArea is not None:
             GGS.currentMouseArea = None
