@@ -1,5 +1,7 @@
 clickView = None
 clickViewAbsoluteRect = None
+faceView = None
+faceViewAbsoluteRect = None
 hintView = None
 hintViewAbsoluteRect = None
 mainView = None
