@@ -5,6 +5,7 @@ import math
 
 
 lastFullEpisodes = 0
+lastFullSeasons = 0
 lastFullViews = 0
 
 def checkEpisodes ():
@@ -12,6 +13,12 @@ def checkEpisodes ():
     if lastFullEpisodes != GGS.episodes:
         timeSlotController.handleNewEpisodes (GGS.episodes - lastFullEpisodes)
         lastFullEpisodes = GGS.episodes
+
+def checkSeasons ():
+    global lastFullSeasons
+    if lastFullSeasons != GGS.seasons:
+        timeSlotController.handleNewSeasons (GGS.seasons - lastFullSeasons)
+        lastFullSeasons = GGS.seasons
 
 def checkViews ():
     global lastFullViews
@@ -26,4 +33,5 @@ def initialize ():
 
 def update ():
     checkEpisodes ()
+    checkSeasons ()
     checkViews ()

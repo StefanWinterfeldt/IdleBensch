@@ -20,6 +20,15 @@ def handleNewEpisodes (numberOfEpisodes):
         timeSlots [i].addAction (TimedAction (increaseViews, viewsPerSlot))
         timeSlots [i].addAction (TimedAction (increaseSubscribers, subscribersPerSlot))
 
+def handleNewSeasons (numberOfSeasons):
+    global timeSlots
+    totalSubscribersToAllocate = 0
+    for i in range (numberOfSeasons):
+        totalSubscribersToAllocate += random.randint (CGL.BASE_MIN_SUBSCRIBERS_PER_SEASON, CGL.BASE_MAX_SUBSCRIBERS_PER_SEASON)
+    subscribersPerSlot = totalSubscribersToAllocate / float (CGL.BASE_TICKS_TO_PROCESS_SEASON)
+    for i in range (CGL.BASE_TICKS_TO_PROCESS_SEASON):
+        timeSlots [i].addAction (TimedAction (increaseSubscribers, subscribersPerSlot))
+
 def initialize ():
     pass
 
