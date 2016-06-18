@@ -2,11 +2,19 @@ import constants.color as CC
 import constants.display as CD
 import engine.util.draw as drawUtil
 import globals.gameUtils as GGU
+import math
 import pygame
 
 def checkIfWordsWouldFit (words, maxWidth):
     line = ' '.join (words)
     return GGU.font.size (line) [0] < maxWidth
+
+def convertToHumanReadableString (number, withFractions = False):
+    numberString = str (int (math.floor (number)))
+    if withFractions:
+        fraction = str (number).split ('.') [1]
+        numberString += '.' + fraction [:2]
+    return numberString
 
 def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE):
     font = pygame.font.Font (GGU.fontName, fontSize)

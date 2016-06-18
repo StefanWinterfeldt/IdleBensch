@@ -57,7 +57,7 @@ def drawSubscriberSection ():
     pygame.draw.rect (subscriberSection, CC.DARK_GREEN, subscriberSection.get_rect (), 1)
 
 def drawViewSection ():
-    drawUtil.drawCentered (textUtil.renderLines (['Views:', str (GGS.views)], True), viewSection)
+    drawUtil.drawCentered (textUtil.renderLines (['Views:', textUtil.convertToHumanReadableString (GGS.views)], True), viewSection)
     pygame.draw.rect (viewSection, CC.DARK_GREEN, viewSection.get_rect (), 1)
 
 def drawSections ():
