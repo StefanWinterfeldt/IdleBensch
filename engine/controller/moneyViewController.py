@@ -23,6 +23,10 @@ streamSection = None
 streamSectionAbsoluteRect = None
 streamSectionAreaCode = 'MVSTS'
 streamSectionHintText = 'Streams produzieren Abonnenten und Geld durch Spenden.'
+subscriberSection = None
+subscriberSectionAbsoluteRect = None
+subscriberSectionAreaCode = 'MVSUS'
+subscriberSectionHintText = 'Abonnenten produzieren staendig views und Geld durch Merchandise.'
 
 def drawEpisodeSection ():
     drawUtil.drawCentered (textUtil.renderLines (['Folgen:', str (GGS.episodes)], True), episodeSection)
@@ -36,6 +40,10 @@ def drawStreamSection ():
     drawUtil.drawCentered (textUtil.renderLines (['Streams:', str (GGS.streams)], True), streamSection)
     pygame.draw.rect (streamSection, CC.DARK_GREEN, streamSection.get_rect (), 1)
 
+def drawSubscriberSection ():
+    drawUtil.drawCentered (textUtil.renderLines (['Abonnenten:', str (GGS.subscriber)], True), subscriberSection)
+    pygame.draw.rect (subscriberSection, CC.DARK_GREEN, subscriberSection.get_rect (), 1)
+
 def drawSections ():
     if episodeSection in activeSections:
         drawEpisodeSection ()
@@ -43,6 +51,8 @@ def drawSections ():
         drawSeasonSection ()
     if streamSection in activeSections:
         drawStreamSection ()
+    if subscriberSection in activeSections:
+        drawSubscriberSection ()
 
 def handleEmptySectionMotion ():
     if GGS.currentMouseArea is not None:
@@ -64,6 +74,11 @@ def handleStreamSectionMotion ():
         GGS.currentMouseArea = streamSectionAreaCode
         hintViewController.showText (streamSectionHintText)
 
+def handleSubscriberSectionMotion ():
+    if GGS.currentMouseArea != subscriberSectionAreaCode:
+        GGS.currentMouseArea = subscriberSectionAreaCode
+        hintViewController.showText (subscriberSectionHintText)
+
 def handleMotion (event):
     if eventUtil.eventHappenedInRect (event, episodeSectionAbsoluteRect):
         handleEpisodeSectionMotion ()
@@ -71,6 +86,8 @@ def handleMotion (event):
         handleSeasonSectionMotion ()
     elif eventUtil.eventHappenedInRect (event, streamSectionAbsoluteRect):
         handleStreamSectionMotion ()
+    elif eventUtil.eventHappenedInRect (event, subscriberSectionAbsoluteRect):
+        handleSubscriberSectionMotion ()
     else:
         handleEmptySectionMotion ()
 
@@ -80,6 +97,7 @@ def initialize ():
     initializeEpisodeSection ()
     initializeSeasonSection ()
     initializeStreamSection ()
+    initializeSubscriberSection ()
     pygame.draw.rect (GV.moneyView, CC.DARK_GREEN, (0, 0, CD.MONEY_VIEW_SIZE [0] - 1, CD.MONEY_VIEW_SIZE [1] - 1), 2)
 
 def initializeEpisodeSection ():
@@ -97,14 +115,22 @@ def initializeSeasonSection ():
     seasonSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + sectionSize [1], sectionSize [0], sectionSize [1])
     seasonSection = GV.moneyView.subsurface ((0, sectionSize [1], sectionSize [0], sectionSize [1]))
     activeSections.append (seasonSection)
-    
+
 def initializeStreamSection ():
     global activeSections
     global streamSectionAbsoluteRect
     global streamSection
-    streamSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + (sectionSize [1]*2), sectionSize [0], sectionSize [1])
-    streamSection = GV.moneyView.subsurface ((0, (sectionSize [1]*2), sectionSize [0], sectionSize [1]))
+    streamSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + (sectionSize [1] * 2), sectionSize [0], sectionSize [1])
+    streamSection = GV.moneyView.subsurface ((0, (sectionSize [1] * 2), sectionSize [0], sectionSize [1]))
     activeSections.append (streamSection)
+
+def initializeSubscriberSection ():
+    global activeSections
+    global subscriberSectionAbsoluteRect
+    global subscriberSection
+    subscriberSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + (sectionSize [1] * 3), sectionSize [0], sectionSize [1])
+    subscriberSection = GV.moneyView.subsurface ((0, (sectionSize [1] * 3), sectionSize [0], sectionSize [1]))
+    activeSections.append (subscriberSection)
 
 def update ():
     GV.moneyView.fill (CC.BLACK)
