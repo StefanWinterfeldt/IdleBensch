@@ -14,6 +14,10 @@ episodeSection = None
 episodeSectionAbsoluteRect = None
 episodeSectionAreaCode = 'MVES'
 episodeSectionHintText = 'Folgen produzieren Views und mit einer gewissen Chance auch Abonnenten.'
+moneySection = None
+moneySectionAbsoluteRect = None
+moneySectionAreaCode = 'MVMS'
+moneySectionHintText = 'Geld!Geld!Geld!Geld!Geld!Geld! -Mr. Krabs'
 seasonSection = None
 seasonSectionAbsoluteRect = None
 seasonSectionAreaCode = 'MVSS'
@@ -35,6 +39,10 @@ viewSectionHintText = 'Views produzieren Geld durch Werbung.'
 def drawEpisodeSection ():
     drawUtil.drawCentered (textUtil.renderLines (['Folgen:', str (GGS.episodes)], True), episodeSection)
     pygame.draw.rect (episodeSection, CC.DARK_GREEN, episodeSection.get_rect (), 1)
+    
+def drawMoneySection ():
+    drawUtil.drawCentered (textUtil.renderLines (['Euro:', str (GGS.money)], True), moneySection)
+    pygame.draw.rect (moneySection, CC.DARK_GREEN, moneySection.get_rect (), 1)
 
 def drawSeasonSection ():
     drawUtil.drawCentered (textUtil.renderLines (['Staffeln:', str (GGS.seasons)], True), seasonSection)
@@ -63,6 +71,8 @@ def drawSections ():
         drawSubscriberSection ()
     if viewSection in activeSections:
         drawViewSection ()
+    if moneySection in activeSections:
+        drawMoneySection ()
 
 def handleEmptySectionMotion ():
     if GGS.currentMouseArea is not None:
@@ -73,6 +83,11 @@ def handleEpisodeSectionMotion ():
     if GGS.currentMouseArea != episodeSectionAreaCode:
         GGS.currentMouseArea = episodeSectionAreaCode
         hintViewController.showText (episodeSectionHintText)
+        
+def handleMoneySectionMotion ():
+    if GGS.currentMouseArea != moneySectionAreaCode:
+        GGS.currentMouseArea = moneySectionAreaCode
+        hintViewController.showText (moneySectionHintText)
 
 def handleSeasonSectionMotion ():
     if GGS.currentMouseArea != seasonSectionAreaCode:
@@ -97,6 +112,8 @@ def handleViewSectionMotion ():
 def handleMotion (event):
     if eventUtil.eventHappenedInRect (event, episodeSectionAbsoluteRect):
         handleEpisodeSectionMotion ()
+    elif eventUtil.eventHappenedInRect (event, moneySectionAbsoluteRect):
+        handleMoneySectionMotion ()
     elif eventUtil.eventHappenedInRect (event, seasonSectionAbsoluteRect):
         handleSeasonSectionMotion ()
     elif eventUtil.eventHappenedInRect (event, streamSectionAbsoluteRect):
@@ -116,6 +133,7 @@ def initialize ():
     initializeStreamSection ()
     initializeSubscriberSection ()
     initializeViewSection ()
+    initializeMoneySection ()
     pygame.draw.rect (GV.moneyView, CC.DARK_GREEN, (0, 0, CD.MONEY_VIEW_SIZE [0] - 1, CD.MONEY_VIEW_SIZE [1] - 1), 2)
 
 def initializeEpisodeSection ():
@@ -157,6 +175,14 @@ def initializeViewSection ():
     viewSectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + (sectionSize [1] * 4), sectionSize [0], sectionSize [1])
     viewSection = GV.moneyView.subsurface ((0, (sectionSize [1] * 4), sectionSize [0], sectionSize [1]))
     activeSections.append (viewSection)
+    
+def initializeMoneySection ():
+    global activeSections
+    global moneySectionAbsoluteRect
+    global moneySection
+    moneySectionAbsoluteRect = pygame.Rect (GV.moneyViewAbsoluteRect [0], GV.moneyViewAbsoluteRect [1] + (sectionSize [1] * 5), sectionSize [0], sectionSize [1])
+    moneySection = GV.moneyView.subsurface ((0, (sectionSize [1] * 5), sectionSize [0], sectionSize [1]))
+    activeSections.append (moneySection)
 
 def update ():
     GV.moneyView.fill (CC.BLACK)
