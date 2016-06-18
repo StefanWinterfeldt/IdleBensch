@@ -41,7 +41,7 @@ def drawEpisodeSection ():
     pygame.draw.rect (episodeSection, CC.DARK_GREEN, episodeSection.get_rect (), 1)
     
 def drawMoneySection ():
-    drawUtil.drawCentered (textUtil.renderLines (['Euro:', str (GGS.money)], True), moneySection)
+    drawUtil.drawCentered (textUtil.renderLines (['Euro:', textUtil.convertToHumanReadableString (GGS.money, True)], True), moneySection)
     pygame.draw.rect (moneySection, CC.DARK_GREEN, moneySection.get_rect (), 1)
 
 def drawSeasonSection ():
