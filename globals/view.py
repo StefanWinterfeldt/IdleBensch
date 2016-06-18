@@ -1,3 +1,5 @@
+chatView = None
+chatViewAbsoluteRect = None
 clickView = None
 clickViewAbsoluteRect = None
 faceView = None
