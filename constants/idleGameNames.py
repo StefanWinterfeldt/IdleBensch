@@ -73,6 +73,7 @@ NAMES = [
     'Knight',
     'Kumpel',
     'Looter',
+    'Oligarch',
     'Pirate',
     'President',
     'Ranger'

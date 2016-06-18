@@ -7,32 +7,33 @@ import engine.util.color as colorUtil
 import engine.util.draw as draw
 import globals.gameState as GGS
 import globals.view as GV
+import math
 import pygame
 import random
 
 
 areaCode = 'CV'
-completionCircleFullRadius = None
-completionCirclePos = None
-episodeCompletionPercentage = 0
+circleFullRadius = None
+episodeCirclePos = None
+episodeCompletion = 0
 hintText = 'Klicke hier um Folgen zu produzieren.'
 
 def drawCompletionCircle ():
-    pygame.draw.circle (GV.clickView, CC.BLACK, completionCirclePos, completionCircleFullRadius)
-    currentRadius = int ((completionCircleFullRadius / 100.0) * episodeCompletionPercentage)
-    pygame.draw.circle (GV.clickView, CC.DARK_GREEN, completionCirclePos, currentRadius)
+    pygame.draw.circle (GV.clickView, CC.BLACK, episodeCirclePos, circleFullRadius)
+    currentRadius = int (circleFullRadius * episodeCompletion)
+    pygame.draw.circle (GV.clickView, CC.DARK_GREEN, episodeCirclePos, currentRadius)
 
 def getVariableHintText ():
-    episodesPerClick = GL.BASE_EPISODE_PERCENTAGE_PER_CLICK / 100.0
-    return "Momentan produzierst du " + str (episodesPerClick) + " Folgen pro Klick."
+    return "Momentan produzierst du " + str (GL.BASE_EPISODES_PER_CLICK) + " Folgen pro Klick."
 
 def handleClick (event):
-    global episodeCompletionPercentage
+    global episodeCompletion
     randomize ()
-    episodeCompletionPercentage += GL.BASE_EPISODE_PERCENTAGE_PER_CLICK
-    if episodeCompletionPercentage >= 100:
-        GGS.episodes += (episodeCompletionPercentage / 100)
-        episodeCompletionPercentage %= 100
+    episodeCompletion += GL.BASE_EPISODES_PER_CLICK
+    if episodeCompletion >= 1:
+        episodesCompleted = int (math.floor (episodeCompletion))
+        GGS.episodes += episodesCompleted
+        episodeCompletion -= episodesCompleted
 
 def handleMotion (event):
     if GGS.currentMouseArea != areaCode:
@@ -40,12 +41,12 @@ def handleMotion (event):
         hintViewController.showText (' '.join([hintText, getVariableHintText()]))
 
 def initialize ():
-    global completionCirclePos
-    global completionCircleFullRadius
+    global episodeCirclePos
+    global circleFullRadius
     GV.clickViewAbsoluteRect = pygame.Rect ((0, 0, CD.CLICK_VIEW_SIZE [0], CD.CLICK_VIEW_SIZE [1]))
     GV.clickView = GV.mainView.subsurface (GV.clickViewAbsoluteRect)
-    completionCirclePos = (CD.CLICK_VIEW_SIZE [0] / 2, CD.CLICK_VIEW_SIZE [1] / 5)
-    completionCircleFullRadius = CD.CLICK_VIEW_SIZE [0] / 8
+    episodeCirclePos = (CD.CLICK_VIEW_SIZE [0] / 4, CD.CLICK_VIEW_SIZE [1] / 5)
+    circleFullRadius = CD.CLICK_VIEW_SIZE [0] / 8
     randomize ()
 
 def randomize ():
