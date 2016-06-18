@@ -1,3 +1,5 @@
+achievementView = None
+achievementViewAbsoluteRect = None
 chatView = None
 chatViewAbsoluteRect = None
 clickView = None

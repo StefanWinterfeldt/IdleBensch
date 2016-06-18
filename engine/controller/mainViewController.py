@@ -1,4 +1,5 @@
 import constants.display as DC
+import engine.controller.achievementViewController as achievementViewController
 import engine.controller.chatViewController as chatViewController
 import engine.controller.clickViewController as clickViewController
 import engine.controller.faceViewController as faceViewController
@@ -11,6 +12,7 @@ import pygame
 
 def initialize ():
     view.mainView = pygame.Surface (DC.RESOLUTION, pygame.HWSURFACE)
+    achievementViewController.initialize ()
     clickViewController.initialize ()
     moneyViewController.initialize ()
     hintViewController.initialize ()
@@ -27,4 +29,5 @@ def update ():
     chatViewController.update ()
     messageViewController.update ()
     upgradeViewController.update ()
+    achievementViewController.update ()
     view.screen.blit (view.mainView, (0, 0))
