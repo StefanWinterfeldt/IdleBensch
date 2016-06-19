@@ -4,6 +4,7 @@ import engine.util.draw as drawUtil
 import globals.gameUtils as GGU
 import math
 import pygame
+import types
 
 def checkIfWordsWouldFit (words, maxWidth):
     line = ' '.join (words)
@@ -32,6 +33,15 @@ def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE):
     return combinedLines
 
 def renderTextWithWordWrap (text, maxWidth):
+    if isinstance (text, types.StringType):
+        return renderLines(getWrappedLines (text, maxWidth))
+    elif isinstance (text, types.ListType):
+        lines = []
+        for line in text:
+            lines += getWrappedLines (line, maxWidth)
+        return renderLines (lines)
+
+def getWrappedLines (text, maxWidth):
     words = text.split ()
     assembledLines = []
     nextLine = []
@@ -42,4 +52,4 @@ def renderTextWithWordWrap (text, maxWidth):
             assembledLines.append (' '.join (nextLine))
             nextLine = []
     assembledLines.append (' '.join (nextLine))
-    return renderLines (assembledLines)
+    return assembledLines
