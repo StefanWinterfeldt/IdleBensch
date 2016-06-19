@@ -1,5 +1,8 @@
 import constants.color as CC
 import constants.display as CD
+import engine.controller.hintViewController as hintViewController
+import engine.util.event as eventUtil
+import globals.gameState as GGS
 import globals.upgrade.categories as UC
 import globals.view as GV
 import pygame
@@ -15,10 +18,11 @@ def initializeCategory (category):
     global categoriesInitialized
     setCategoryHeaderAbsoluteRect (category)
     setCategoryHeaderRelativeRect (category)
+    category.header.areaCode = categoriesInitialized
     categoriesInitialized += 1
 
 def setCategoryHeaderAbsoluteRect (category):
-    category.header.absoluteRect = (
+    category.header.absoluteRect = pygame.Rect (
         GV.upgradeViewAbsoluteRect [0] + 10,
         GV.upgradeViewAbsoluteRect [1] + 10 + categoriesInitialized * (CD.UPGRADE_HEADER_SIZE [1] + 10),
         CD.UPGRADE_HEADER_SIZE [0],
@@ -26,12 +30,28 @@ def setCategoryHeaderAbsoluteRect (category):
     )
 
 def setCategoryHeaderRelativeRect (category):
-    category.header.relativeRect = (
+    category.header.relativeRect = pygame.Rect (
         10,
         10 + categoriesInitialized * (CD.UPGRADE_HEADER_SIZE [1] + 10),
         CD.UPGRADE_HEADER_SIZE [0],
         CD.UPGRADE_HEADER_SIZE [1]
     )
+
+def handleMotion (event):
+    motionWasHandled = False
+    for header in [category.header for category in UC.categories]:
+        if eventUtil.eventHappenedInRect (event, header.absoluteRect):
+            handleMotionInHeader (header)
+            motionWasHandled = True
+            break
+    if not motionWasHandled:
+        GGS.currentMouseArea = None
+        hintViewController.clearText ()
+
+def handleMotionInHeader (header):
+    if GGS.currentMouseArea != header.areaCode:
+        GGS.currentMouseArea = header.areaCode
+        hintViewController.showText (header.hintText)
 
 def initialize ():
     GV.upgradeViewAbsoluteRect = pygame.Rect ((0 + CD.CLICK_VIEW_SIZE [0], CD.MESSAGE_VIEW_SIZE [1], CD.UPGRADE_VIEW_SIZE [0], CD.UPGRADE_VIEW_SIZE [1]))
