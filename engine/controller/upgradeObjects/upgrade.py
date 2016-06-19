@@ -11,7 +11,7 @@ class Upgrade:
     unlockFunction = None
     visibilityFunction = None
 
-    def __init__(self, imagePath, hintText, unlockFunction, activationFunction, visibilityFunction):
+    def __init__(self, imagePath, hintText, visibilityFunction, unlockFunction, activationFunction):
         self.activationFunction = activationFunction
         self.image = pygame.image.load (imagePath)
         self.hintText = hintText
