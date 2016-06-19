@@ -9,9 +9,10 @@ class Upgrade:
     unlockFunction = None
     visible = False
 
-    def __init__(self, imagePath, hintText):
+    def __init__(self, imagePath, hintText, unlockFunction):
         self.image = pygame.image.load (imagePath)
         self.hintText = hintText
+        self.unlockFunction = unlockFunction
 
     def isUnlocked (self):
         return self.unlockFunction ()

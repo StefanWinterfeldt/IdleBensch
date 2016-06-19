@@ -1,6 +1,7 @@
 import constants.color as CC
 import constants.display as CD
 import engine.controller.hintViewController as hintViewController
+import engine.util.draw as drawUtil
 import engine.util.event as eventUtil
 import globals.gameState as GGS
 import globals.gameUtils as GGU
@@ -100,5 +101,9 @@ def drawCategories ():
 def drawCategory (category):
     GV.upgradeView.blit (category.header.image, category.header.relativeRect)
     for upgrade in category.upgrades:
-        if upgrade.visible: GV.upgradeView.blit (upgrade.image, upgrade.relativeRect)
-        if not upgrade.active: GV.upgradeView.blit (GGU.upgradeInactiveMask, upgrade.relativeRect)
+        if upgrade.visible:
+            GV.upgradeView.blit (upgrade.image, upgrade.relativeRect)
+            if not upgrade.active:
+                GV.upgradeView.blit (GGU.upgradeInactiveMask, upgrade.relativeRect)
+                if not upgrade.isUnlocked ():
+                    GV.upgradeView.blit (GGU.lockedSymbol, upgrade.relativeRect)
