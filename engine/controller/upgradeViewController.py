@@ -8,6 +8,7 @@ import globals.view as GV
 import pygame
 
 
+allMotionObjects = []
 categoriesInitialized = 0
 
 def initializeCategories ():
@@ -15,10 +16,12 @@ def initializeCategories ():
         initializeCategory (category)
 
 def initializeCategory (category):
+    global allMotionObjects
     global categoriesInitialized
     setCategoryHeaderAbsoluteRect (category)
     setCategoryHeaderRelativeRect (category)
     category.header.areaCode = 'H' + str (categoriesInitialized)
+    allMotionObjects.append (category.header)
     initializeUpgrades (category)
     categoriesInitialized += 1
 
@@ -39,10 +42,12 @@ def setCategoryHeaderRelativeRect (category):
     )
 
 def initializeUpgrades (category):
+    global allMotionObjects
     for i in range (len (category.upgrades)):
         setUpgradeAbsoluteRect (category.upgrades [i], i)
         setUpgradeRelativeRect (category.upgrades [i], i)
         category.upgrades [i].areaCode = 'U' + str (i * (categoriesInitialized + 1))
+        allMotionObjects.append (category.upgrades [i])
 
 def setUpgradeAbsoluteRect (upgrade, upgradeNumber):
     upgrade.absoluteRect = pygame.Rect (
@@ -62,19 +67,19 @@ def setUpgradeRelativeRect (upgrade, upgradeNumber):
 
 def handleMotion (event):
     motionWasHandled = False
-    for header in [category.header for category in UC.categories]:
-        if eventUtil.eventHappenedInRect (event, header.absoluteRect):
-            handleMotionInHeader (header)
+    for motionObject in allMotionObjects:
+        if eventUtil.eventHappenedInRect (event, motionObject.absoluteRect):
+            handleMotionOnObject (motionObject)
             motionWasHandled = True
             break
     if not motionWasHandled:
         GGS.currentMouseArea = None
         hintViewController.clearText ()
 
-def handleMotionInHeader (header):
-    if GGS.currentMouseArea != header.areaCode:
-        GGS.currentMouseArea = header.areaCode
-        hintViewController.showText (header.hintText)
+def handleMotionOnObject (motionObject):
+    if GGS.currentMouseArea != motionObject.areaCode:
+        GGS.currentMouseArea = motionObject.areaCode
+        hintViewController.showText (motionObject.hintText)
 
 def initialize ():
     GV.upgradeViewAbsoluteRect = pygame.Rect ((0 + CD.CLICK_VIEW_SIZE [0], CD.MESSAGE_VIEW_SIZE [1], CD.UPGRADE_VIEW_SIZE [0], CD.UPGRADE_VIEW_SIZE [1]))
