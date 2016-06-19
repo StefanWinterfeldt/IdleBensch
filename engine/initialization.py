@@ -2,6 +2,7 @@ import constants.display as DC
 import engine.controller.mainViewController as mainViewController
 import globals.gameUtils as GGU
 import globals.view as GV
+import os
 import pygame
 import random
 
@@ -17,5 +18,6 @@ def initialize ():
     random.seed ()
     pygame.init ()
     GGU.clock = pygame.time.Clock ()
+    GGU.upgradeInactiveMask = pygame.image.load (os.path.join ('resources', 'ingame', 'upgrade', 'inactiveMask.png'))
     initializeFont ()
     initializeViews ()

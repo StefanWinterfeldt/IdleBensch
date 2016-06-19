@@ -2,7 +2,17 @@ from engine.controller.upgradeObjects.upgrade import Upgrade
 import os
 
 
-testUpgrade = Upgrade (
+testUpgrade1 = Upgrade (
     os.path.join ('resources', 'ingame', 'upgrade', 'defaultUpgrade.png'),
-    ['Upgrade1 lang lang lang lang lang lang lang lang lang lang lang lang lang', 'Line2 lang lang lang lang lang lang lang lang lang lang lang lang lang lang']
+    'Upgrade1'
+)
+
+testUpgrade2 = Upgrade (
+    os.path.join ('resources', 'ingame', 'upgrade', 'defaultUpgrade.png'),
+    'Upgrade2'
+)
+
+testUpgrade3 = Upgrade (
+    os.path.join ('resources', 'ingame', 'upgrade', 'defaultUpgrade.png'),
+    'Upgrade3'
 )

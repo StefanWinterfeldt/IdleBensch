@@ -3,6 +3,7 @@ import constants.display as CD
 import engine.controller.hintViewController as hintViewController
 import engine.util.event as eventUtil
 import globals.gameState as GGS
+import globals.gameUtils as GGU
 import globals.upgrade.categories as UC
 import globals.view as GV
 import pygame
@@ -47,6 +48,7 @@ def initializeUpgrades (category):
         setUpgradeAbsoluteRect (category.upgrades [i], i)
         setUpgradeRelativeRect (category.upgrades [i], i)
         category.upgrades [i].areaCode = 'U' + str (i * (categoriesInitialized + 1))
+        category.upgrades [i].visible = i == 0
         allMotionObjects.append (category.upgrades [i])
 
 def setUpgradeAbsoluteRect (upgrade, upgradeNumber):
@@ -68,7 +70,7 @@ def setUpgradeRelativeRect (upgrade, upgradeNumber):
 def handleMotion (event):
     motionWasHandled = False
     for motionObject in allMotionObjects:
-        if eventUtil.eventHappenedInRect (event, motionObject.absoluteRect):
+        if motionObject.visible & eventUtil.eventHappenedInRect (event, motionObject.absoluteRect):
             handleMotionOnObject (motionObject)
             motionWasHandled = True
             break
@@ -98,4 +100,5 @@ def drawCategories ():
 def drawCategory (category):
     GV.upgradeView.blit (category.header.image, category.header.relativeRect)
     for upgrade in category.upgrades:
-        GV.upgradeView.blit (upgrade.image, upgrade.relativeRect)
+        if upgrade.visible: GV.upgradeView.blit (upgrade.image, upgrade.relativeRect)
+        if not upgrade.active: GV.upgradeView.blit (GGU.upgradeInactiveMask, upgrade.relativeRect)
