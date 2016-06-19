@@ -1,7 +1,9 @@
 import pygame
 
 class UpgradeHeader:
-    def __init__(self, imagePath, absoluteRect, hintText):
+
+    absoluteRect = None
+
+    def __init__(self, imagePath, hintText):
         self.image = pygame.image.load (imagePath)
-        self.absoluteRect = absoluteRect
         self.hintText = hintText
