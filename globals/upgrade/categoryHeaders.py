@@ -1,8 +1,8 @@
-from engine.controller.upgradeObjects.upgradeHeader import UpgradeHeader
+from engine.controller.upgradeObjects.categoryHeader import CategoryHeader
 import os
 
 
-benschHeader = UpgradeHeader (
+benschHeader = CategoryHeader (
     os.path.join ('resources', 'ingame', 'upgrade', 'benschHeader.png'),
     'Kategorie1'
 )

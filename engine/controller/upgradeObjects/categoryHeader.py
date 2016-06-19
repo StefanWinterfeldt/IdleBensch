@@ -1,6 +1,6 @@
 import pygame
 
-class UpgradeHeader:
+class CategoryHeader:
 
     absoluteRect = None
     relativeRect = None
