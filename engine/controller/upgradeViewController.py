@@ -1,7 +1,6 @@
 import constants.color as CC
 import constants.display as CD
 import engine.controller.hintViewController as hintViewController
-import engine.util.draw as drawUtil
 import engine.util.event as eventUtil
 import globals.gameState as GGS
 import globals.gameUtils as GGU
@@ -11,6 +10,7 @@ import pygame
 
 
 allMotionObjects = []
+allClickObjects = []
 categoriesInitialized = 0
 
 def initializeCategories ():
@@ -44,12 +44,13 @@ def setCategoryHeaderRelativeRect (category):
     )
 
 def initializeUpgrades (category):
+    global allClickObjects
     global allMotionObjects
     for i in range (len (category.upgrades)):
         setUpgradeAbsoluteRect (category.upgrades [i], i)
         setUpgradeRelativeRect (category.upgrades [i], i)
         category.upgrades [i].areaCode = 'U' + str (i * (categoriesInitialized + 1))
-        category.upgrades [i].visible = i == 0
+        allClickObjects.append (category.upgrades [i])
         allMotionObjects.append (category.upgrades [i])
 
 def setUpgradeAbsoluteRect (upgrade, upgradeNumber):
@@ -71,7 +72,7 @@ def setUpgradeRelativeRect (upgrade, upgradeNumber):
 def handleMotion (event):
     motionWasHandled = False
     for motionObject in allMotionObjects:
-        if motionObject.visible & eventUtil.eventHappenedInRect (event, motionObject.absoluteRect):
+        if motionObject.isVisible () and eventUtil.eventHappenedInRect (event, motionObject.absoluteRect):
             handleMotionOnObject (motionObject)
             motionWasHandled = True
             break
@@ -83,6 +84,16 @@ def handleMotionOnObject (motionObject):
     if GGS.currentMouseArea != motionObject.areaCode:
         GGS.currentMouseArea = motionObject.areaCode
         hintViewController.showText (motionObject.hintText)
+
+def handleClick (event):
+    for clickObject in allClickObjects:
+        if clickObject.isVisible () and eventUtil.eventHappenedInRect (event, clickObject.absoluteRect):
+            handleClickOnObject (clickObject)
+
+def handleClickOnObject (clickObject):
+    if clickObject.isUnlocked () and clickObject.cost <= GGS.money:
+        clickObject.activate ()
+        drawCategories ()
 
 def initialize ():
     GV.upgradeViewAbsoluteRect = pygame.Rect ((0 + CD.CLICK_VIEW_SIZE [0], CD.MESSAGE_VIEW_SIZE [1], CD.UPGRADE_VIEW_SIZE [0], CD.UPGRADE_VIEW_SIZE [1]))
@@ -101,7 +112,7 @@ def drawCategories ():
 def drawCategory (category):
     GV.upgradeView.blit (category.header.image, category.header.relativeRect)
     for upgrade in category.upgrades:
-        if upgrade.visible:
+        if upgrade.isVisible ():
             GV.upgradeView.blit (upgrade.image, upgrade.relativeRect)
             if not upgrade.active:
                 GV.upgradeView.blit (GGU.upgradeInactiveMask, upgrade.relativeRect)

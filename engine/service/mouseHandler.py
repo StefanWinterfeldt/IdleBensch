@@ -9,7 +9,10 @@ import globals.view as GV
 import pygame
 
 def dispatchClickToView (event):
-    if eventUtil.eventHappenedInRect (event, GV.clickViewAbsoluteRect): clickViewController.handleClick (event)
+    if eventUtil.eventHappenedInRect (event, GV.clickViewAbsoluteRect):
+        clickViewController.handleClick (event)
+    elif eventUtil.eventHappenedInRect (event, GV.upgradeViewAbsoluteRect):
+        upgradeViewController.handleClick (event)
 
 def dispatchMotionToView (event):
     if eventUtil.eventHappenedInRect (event, GV.clickViewAbsoluteRect):

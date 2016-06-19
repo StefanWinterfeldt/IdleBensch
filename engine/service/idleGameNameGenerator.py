@@ -8,7 +8,7 @@ import random
 def buildSingleTextLine (text, textColor, backgroundColor):
     fontSize = CD.CLICK_VIEW_FONT_SIZE
     font = pygame.font.Font (GGU.fontName, fontSize)
-    while (font.size (text)[0] > CD.CLICK_VIEW_SIZE[0]) & (fontSize > 0):
+    while (font.size (text)[0] > CD.CLICK_VIEW_SIZE[0]) and (fontSize > 0):
         fontSize -= 1
         font = pygame.font.Font (GGU.fontName, fontSize)
     return font.render (text, True, textColor, backgroundColor)
