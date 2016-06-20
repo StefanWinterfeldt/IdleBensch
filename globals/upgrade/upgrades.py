@@ -4,11 +4,11 @@ import os
 
 
 billigerEDrink = Upgrade (
-    'Billiger E-Drink',
-    0.29,
-    ['Du erzeugst doppelt so viele Folgen pro Klick.', 'Guenstiger kommst du nicht an Koffein.'],
-    os.path.join ('resources', 'ingame', 'upgrade', 'defaultUpgrade.png'),
-    lambda: True,
-    lambda: True,
+    name = 'Billiger E-Drink',
+    cost = 0.29,
+    hintText = ['Du erzeugst doppelt so viele Folgen pro Klick.', 'Guenstiger kommst du nicht an Koffein.'],
+    imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'billigerEDrink.png'),
+    visibilityFunction = lambda: True,
+    unlockFunction = lambda: True,
     activationFunction = AF.doubleEpisodesPerClick
 )
