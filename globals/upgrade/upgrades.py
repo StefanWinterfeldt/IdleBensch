@@ -1,13 +1,14 @@
 from engine.controller.upgradeObjects.upgrade import Upgrade
+import globals.upgrade.activationFunctions as AF
 import os
 
-def upgrade1Activation ():
-    print 'test1'
 
-testUpgrade1 = Upgrade (
+billigerEDrink = Upgrade (
+    'Billiger E-Drink',
+    0.29,
+    ['Du erzeugst doppelt so viele Folgen pro Klick.', 'Guenstiger kommst du nicht an Koffein.'],
     os.path.join ('resources', 'ingame', 'upgrade', 'defaultUpgrade.png'),
-    'Upgrade1',
     lambda: True,
     lambda: True,
-    upgrade1Activation
+    activationFunction = AF.doubleEpisodesPerClick
 )

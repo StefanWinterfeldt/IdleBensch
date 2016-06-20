@@ -3,6 +3,6 @@ import globals.upgrade.categoryHeaders as CH
 import globals.upgrade.upgrades as U
 
 
-benschCategory = UpgradeCategory (CH.benschHeader, [U.testUpgrade1])
+benschCategory = UpgradeCategory (CH.benschHeader, [U.billigerEDrink])
 
 categories = [benschCategory]

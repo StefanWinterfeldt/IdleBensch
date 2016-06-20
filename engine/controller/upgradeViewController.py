@@ -10,7 +10,7 @@ import pygame
 
 
 allMotionObjects = []
-allClickObjects = []
+allUpgrades = []
 categoriesInitialized = 0
 
 def initializeCategories ():
@@ -44,13 +44,13 @@ def setCategoryHeaderRelativeRect (category):
     )
 
 def initializeUpgrades (category):
-    global allClickObjects
+    global allUpgrades
     global allMotionObjects
     for i in range (len (category.upgrades)):
         setUpgradeAbsoluteRect (category.upgrades [i], i)
         setUpgradeRelativeRect (category.upgrades [i], i)
         category.upgrades [i].areaCode = 'U' + str (i * (categoriesInitialized + 1))
-        allClickObjects.append (category.upgrades [i])
+        allUpgrades.append (category.upgrades [i])
         allMotionObjects.append (category.upgrades [i])
 
 def setUpgradeAbsoluteRect (upgrade, upgradeNumber):
@@ -83,16 +83,16 @@ def handleMotion (event):
 def handleMotionOnObject (motionObject):
     if GGS.currentMouseArea != motionObject.areaCode:
         GGS.currentMouseArea = motionObject.areaCode
-        hintViewController.showText (motionObject.hintText)
+        hintViewController.showText (motionObject.getHintText ())
 
 def handleClick (event):
-    for clickObject in allClickObjects:
-        if clickObject.isVisible () and eventUtil.eventHappenedInRect (event, clickObject.absoluteRect):
-            handleClickOnObject (clickObject)
+    for upgrade in allUpgrades:
+        if upgrade.isVisible () and eventUtil.eventHappenedInRect (event, upgrade.absoluteRect):
+            handleClickOnUpgrade (upgrade)
 
-def handleClickOnObject (clickObject):
-    if clickObject.isUnlocked () and clickObject.cost <= GGS.money:
-        clickObject.activate ()
+def handleClickOnUpgrade (upgrade):
+    if upgrade.isUnlocked () and upgrade.cost <= GGS.money:
+        upgrade.activate ()
         drawCategories ()
 
 def initialize ():

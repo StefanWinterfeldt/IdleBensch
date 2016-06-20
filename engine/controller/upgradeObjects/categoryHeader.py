@@ -12,3 +12,6 @@ class CategoryHeader:
 
     def isVisible (self):
         return True
+
+    def getHintText (self):
+        return self.hintText
