@@ -13,11 +13,11 @@ def handleNewEpisodes (numberOfEpisodes):
     totalViewsToAllocate = modifiedGameLogic.getViewsPerEpisode () * numberOfEpisodes
     totalSubscribersToAllocate = 0
     for i in range (numberOfEpisodes):
-        totalSubscribersToAllocate += random.randint (CGL.BASE_MIN_SUBSCRIBERS_PER_EPISODE, CGL.BASE_MAX_SUBSCRIBERS_PER_EPISODE)
-    viewsPerSlot = totalViewsToAllocate / float (CGL.BASE_TICKS_TO_PROCESS_EPISODE)
-    subscribersPerSlot = totalSubscribersToAllocate / float (CGL.BASE_TICKS_TO_PROCESS_EPISODE)
-    prepareTimeSlotsForFutureTicks (CGL.BASE_TICKS_TO_PROCESS_EPISODE)
-    for i in range (CGL.BASE_TICKS_TO_PROCESS_EPISODE):
+        totalSubscribersToAllocate += random.randint (modifiedGameLogic.getMinSubscribersPerEpisode (), modifiedGameLogic.getMaxSubscribersPerEpisode ())
+    viewsPerSlot = totalViewsToAllocate / float (modifiedGameLogic.getTicksToProcessEpisode ())
+    subscribersPerSlot = totalSubscribersToAllocate / float (modifiedGameLogic.getTicksToProcessEpisode ())
+    prepareTimeSlotsForFutureTicks (modifiedGameLogic.getTicksToProcessEpisode ())
+    for i in range (modifiedGameLogic.getTicksToProcessEpisode ()):
         timeSlots [i].addAction (TimedAction (increaseViews, viewsPerSlot))
         timeSlots [i].addAction (TimedAction (increaseSubscribers, subscribersPerSlot))
 
@@ -25,10 +25,10 @@ def handleNewSeasons (numberOfSeasons):
     global timeSlots
     totalSubscribersToAllocate = 0
     for i in range (numberOfSeasons):
-        totalSubscribersToAllocate += random.randint (CGL.BASE_MIN_SUBSCRIBERS_PER_SEASON, CGL.BASE_MAX_SUBSCRIBERS_PER_SEASON)
-    subscribersPerSlot = totalSubscribersToAllocate / float (CGL.BASE_TICKS_TO_PROCESS_SEASON)
-    prepareTimeSlotsForFutureTicks (CGL.BASE_TICKS_TO_PROCESS_SEASON)
-    for i in range (CGL.BASE_TICKS_TO_PROCESS_SEASON):
+        totalSubscribersToAllocate += random.randint (modifiedGameLogic.getMinSubscribersPerSeason (), modifiedGameLogic.getMaxSubscribersPerSeason ())
+    subscribersPerSlot = totalSubscribersToAllocate / float (modifiedGameLogic.getTicksToProcessSeason ())
+    prepareTimeSlotsForFutureTicks (modifiedGameLogic.getTicksToProcessSeason ())
+    for i in range (modifiedGameLogic.getTicksToProcessSeason ()):
         timeSlots [i].addAction (TimedAction (increaseSubscribers, subscribersPerSlot))
 
 def initialize ():

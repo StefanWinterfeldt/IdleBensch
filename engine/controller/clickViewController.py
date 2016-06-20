@@ -3,6 +3,7 @@ import constants.display as CD
 import constants.gameLogic as CGL
 import engine.controller.hintViewController as hintViewController
 import engine.service.idleGameNameGenerator as idleGameNameGenerator
+import engine.service.modifiedGameLogic as modifiedGameLogic
 import engine.util.color as colorUtil
 import engine.util.draw as draw
 import globals.gameState as GGS
@@ -27,7 +28,7 @@ def checkAndHandleEpisodeCompletion ():
         episodesCompleted = int (math.floor (episodeCompletion))
         GGS.episodes += episodesCompleted
         episodeCompletion -= episodesCompleted
-        seasonCompletion += (episodesCompleted / float (CGL.BASE_EPISODES_PER_SEASON))
+        seasonCompletion += (episodesCompleted / float (modifiedGameLogic.getEpisodesPerSeason ()))
 
 def checkAndHandleSeasonCompletion ():
     global seasonCompletion
@@ -46,11 +47,11 @@ def drawCompletionCircles ():
     pygame.draw.circle (GV.clickView, CC.DARK_GREEN, seasonCirclePos, currentRadius)
 
 def getVariableHintText ():
-    return "Momentan produzierst du " + str (CGL.BASE_EPISODES_PER_CLICK) + " Folgen pro Klick."
+    return "Momentan produzierst du " + str (modifiedGameLogic.getEpisodesPerClick ()) + " Folgen pro Klick."
 
 def handleClick (event):
     global episodeCompletion
-    episodeCompletion += CGL.BASE_EPISODES_PER_CLICK
+    episodeCompletion += modifiedGameLogic.getEpisodesPerClick ()
     checkAndHandleEpisodeCompletion ()
     checkAndHandleSeasonCompletion ()
 

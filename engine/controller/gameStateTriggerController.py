@@ -1,5 +1,6 @@
 import constants.gameLogic as CGL
 import engine.controller.timeSlotController as timeSlotController
+import engine.service.modifiedGameLogic as modifiedGameLogic
 import globals.gameState as GGS
 import math
 
@@ -24,7 +25,7 @@ def checkViews ():
     global lastFullViews
     currentFullViews = int (math.floor (GGS.views))
     if currentFullViews != lastFullViews:
-        GGS.money += CGL.BASE_MONEY_PER_VIEW * (currentFullViews - lastFullViews)
+        GGS.money += modifiedGameLogic.getMoneyPerView () * (currentFullViews - lastFullViews)
         lastFullViews = currentFullViews
 
 # ToDo: Remember to set last values when loading a save game
