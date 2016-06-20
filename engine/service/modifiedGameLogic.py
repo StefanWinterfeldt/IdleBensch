@@ -1,4 +1,4 @@
-import constants.gameLogic as CGL
+import globals.gameLogic as CGL
 import globals.gameState as GGS
 
 def getEpisodesPerClick ():

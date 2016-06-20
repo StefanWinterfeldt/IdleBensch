@@ -1,9 +1,9 @@
-import constants.gameLogic as CGL
-from engine.controller.timeObjects.timedAction import TimedAction
-from engine.controller.timeObjects.timeSlot import TimeSlot
+import random
+
 import engine.service.modifiedGameLogic as modifiedGameLogic
 import globals.gameState as GGS
-import random
+from engine.controller.timeObjects.timeSlot import TimeSlot
+from engine.controller.timeObjects.timedAction import TimedAction
 
 
 timeSlots = []

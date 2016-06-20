@@ -1,6 +1,10 @@
+import math
+import random
+
+import pygame
+
 import constants.color as CC
 import constants.display as CD
-import constants.gameLogic as CGL
 import engine.controller.hintViewController as hintViewController
 import engine.service.idleGameNameGenerator as idleGameNameGenerator
 import engine.service.modifiedGameLogic as modifiedGameLogic
@@ -8,9 +12,6 @@ import engine.util.color as colorUtil
 import engine.util.draw as draw
 import globals.gameState as GGS
 import globals.view as GV
-import math
-import pygame
-import random
 
 
 areaCode = 'CV'
