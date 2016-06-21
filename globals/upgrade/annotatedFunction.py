@@ -5,4 +5,4 @@ class AnnotatedFunction:
         self.text = text
 
     def execute (self):
-        self.function (self.parameter)
+        return self.function (self.parameter)

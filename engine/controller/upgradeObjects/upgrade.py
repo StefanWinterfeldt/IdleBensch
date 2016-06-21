@@ -23,15 +23,13 @@ class Upgrade:
         self.activationFunction.execute ()
 
     def getHintText (self):
-        lines = [
-            self.name,
-            'Kosten: ' + textUtil.convertToHumanReadableString (self.cost, True),
-            self.activationFunction.text
-        ]
+        lines = [self.name, 'Kosten: ' + textUtil.convertToHumanReadableString (self.cost, True)]
+        if self.unlockFunction.text is not None: lines.append (self.unlockFunction.text)
+        lines.append (self.activationFunction.text)
         return lines + self.hintText
 
     def isUnlocked (self):
-        return self.unlockFunction ()
+        return self.unlockFunction.execute ()
 
     def isVisible (self):
         return self.visibilityFunction ()
