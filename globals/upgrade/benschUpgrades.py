@@ -6,9 +6,36 @@ import os
 
 billigerEDrink = Upgrade (
     name = 'Billiger E-Drink',
-    cost = 0.29,
-    hintText = ['Guenstiger kommst du nicht an Koffein.'],
+    cost = 0.09,
+    hintText = ['Schmeckt nach Klebstoff. Weil welcher drinn ist'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'billigerEDrink.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (100)
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (20)
+)
+
+normalerEDrink = Upgrade (
+    name = 'Standard E-Drink',
+    cost = 0.99,
+    hintText = ['Bekannt aus jeder Tankstelle.'],
+    imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'normalerEDrink.png'),
+    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (30)
+)
+
+teurerEDrink = Upgrade (
+    name = 'Premium E-Drink',
+    cost = 3.99,
+    hintText = ['Er hat ein Bild von nem C-Promi auf der Rueckseite'],
+    imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'teurerEDrink.png'),
+    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (40)
+)
+
+fuenfKomma0 = Upgrade (
+    name = '5,0',
+    cost = 0.49,
+    hintText = ['Das Universalbier, macht gluecklich und loest die Zunge.'],
+    imagePath = os.path.join ('resources', 'ingame', 'upgrade', '5komma0.png'),
+    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode(1)
 )
