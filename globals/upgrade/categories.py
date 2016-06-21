@@ -1,8 +1,8 @@
 from engine.controller.upgradeObjects.upgradeCategory import UpgradeCategory
 import globals.upgrade.categoryHeaders as CH
-import globals.upgrade.upgrades as U
+import globals.upgrade.benschUpgrades as BU
 
 
-benschCategory = UpgradeCategory (CH.benschHeader, [U.billigerEDrink])
+benschCategory = UpgradeCategory (CH.benschHeader, [BU.billigerEDrink])
 
 categories = [benschCategory]
