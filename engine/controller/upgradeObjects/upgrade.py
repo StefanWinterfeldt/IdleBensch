@@ -7,15 +7,15 @@ class Upgrade:
     active = False
     areaCode = None
     relativeRect = None
+    visible = False
 
-    def __init__ (self, name, cost, hintText, imagePath, visibilityFunction, unlockFunction, activationFunction):
+    def __init__ (self, name, cost, hintText, imagePath, unlockFunction, activationFunction):
         self.activationFunction = activationFunction
         self.cost = cost
         self.hintText = hintText
         self.image = pygame.image.load (imagePath)
         self.name = name
         self.unlockFunction = unlockFunction
-        self.visibilityFunction = visibilityFunction
 
     def activate (self):
         GGS.money -= self.cost
@@ -30,6 +30,3 @@ class Upgrade:
 
     def isUnlocked (self):
         return self.unlockFunction.execute ()
-
-    def isVisible (self):
-        return self.visibilityFunction ()

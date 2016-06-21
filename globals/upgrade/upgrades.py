@@ -9,7 +9,6 @@ billigerEDrink = Upgrade (
     cost = 0.29,
     hintText = ['Guenstiger kommst du nicht an Koffein.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'billigerEDrink.png'),
-    visibilityFunction = lambda: True,
     unlockFunction = UF.getAlwaysUnlockedFunction (),
     activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (100)
 )

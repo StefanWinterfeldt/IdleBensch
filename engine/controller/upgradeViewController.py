@@ -72,7 +72,7 @@ def setUpgradeRelativeRect (upgrade, upgradeNumber):
 def handleMotion (event):
     motionWasHandled = False
     for motionObject in allMotionObjects:
-        if motionObject.isVisible () and eventUtil.eventHappenedInRect (event, motionObject.absoluteRect):
+        if motionObject.visible and eventUtil.eventHappenedInRect (event, motionObject.absoluteRect):
             handleMotionOnObject (motionObject)
             motionWasHandled = True
             break
@@ -87,7 +87,7 @@ def handleMotionOnObject (motionObject):
 
 def handleClick (event):
     for upgrade in allUpgrades:
-        if upgrade.isVisible () and eventUtil.eventHappenedInRect (event, upgrade.absoluteRect):
+        if upgrade.visible and eventUtil.eventHappenedInRect (event, upgrade.absoluteRect):
             handleClickOnUpgrade (upgrade)
 
 def handleClickOnUpgrade (upgrade):
@@ -110,11 +110,18 @@ def drawCategories ():
         drawCategory (category)
 
 def drawCategory (category):
+    refreshUpgradeVisibility (category)
     GV.upgradeView.blit (category.header.image, category.header.relativeRect)
     for upgrade in category.upgrades:
-        if upgrade.isVisible ():
+        if upgrade.visible:
             GV.upgradeView.blit (upgrade.image, upgrade.relativeRect)
             if not upgrade.active:
                 GV.upgradeView.blit (GGU.upgradeInactiveMask, upgrade.relativeRect)
                 if not upgrade.isUnlocked ():
                     GV.upgradeView.blit (GGU.lockedSymbol, upgrade.relativeRect)
+
+def refreshUpgradeVisibility (category):
+    for i in range (len (category.upgrades)):
+        if not category.upgrades[i].visible and (i == 0 or category.upgrades[i-1].active):
+            category.upgrades [i].visible = True
+            break
