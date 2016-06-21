@@ -20,10 +20,14 @@ class Upgrade:
     def activate (self):
         GGS.money -= self.cost
         self.active = True
-        self.activationFunction ()
+        self.activationFunction.execute ()
 
     def getHintText (self):
-        lines = [self.name, 'Kosten: ' + textUtil.convertToHumanReadableString (self.cost, True)]
+        lines = [
+            self.name,
+            'Kosten: ' + textUtil.convertToHumanReadableString (self.cost, True),
+            self.activationFunction.text
+        ]
         return lines + self.hintText
 
     def isUnlocked (self):

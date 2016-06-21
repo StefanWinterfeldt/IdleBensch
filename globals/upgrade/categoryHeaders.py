@@ -4,5 +4,5 @@ import os
 
 benschHeader = CategoryHeader (
     os.path.join ('resources', 'ingame', 'upgrade', 'benschHeader.png'),
-    'Kategorie1'
+    'Bensch Upgrades'
 )
