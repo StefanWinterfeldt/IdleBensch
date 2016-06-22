@@ -20,3 +20,10 @@ def getIncreaseMaxSubscribersPerEpisode (value):
         function = increaseMaxSubscribersPerEpisode,
         parameter = value
     )
+
+def getPassiveFunction (text):
+    return AnnotatedFunction (
+        text = text,
+        function = lambda x: None,
+        parameter = None
+    )

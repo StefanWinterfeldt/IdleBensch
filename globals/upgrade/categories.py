@@ -9,7 +9,19 @@ benschCategory = UpgradeCategory (
         BU.billigerEDrink,
         BU.fuenfKomma0,
         BU.normalerEDrink,
-        BU.teurerEDrink
+        BU.schwarzerKaffee,
+        BU.unterbewusstesKlicken,
+        BU.leibwaechter,
+        BU.teurerEDrink,
+        BU.logikKurs,
+        BU.mrScotch,
+        BU.matheKurs,
+        BU.hamsterProgrammer,
+        BU.extraHaende,
+        BU.streamMod,
+        BU.klon,
+        BU.senorPopo,
+        BU.drittesAuge
     ]
 )
 
