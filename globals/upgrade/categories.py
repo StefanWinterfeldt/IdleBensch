@@ -25,4 +25,9 @@ benschCategory = UpgradeCategory (
     ]
 )
 
-categories = [benschCategory]
+computerCategory = UpgradeCategory (
+    header = CH.computerHeader,
+    upgrades = []
+)
+
+categories = [benschCategory, computerCategory]
