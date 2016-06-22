@@ -1,6 +1,9 @@
 import globals.gameLogic as CGL
 import globals.gameState as GGS
 
+def getClicksPerSecond ():
+    return CGL.BASE_CLICKS_PER_SECOND
+
 def getEpisodesPerClick ():
     return CGL.BASE_EPISODES_PER_CLICK
 

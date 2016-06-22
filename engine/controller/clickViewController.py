@@ -1,8 +1,3 @@
-import math
-import random
-
-import pygame
-
 import constants.color as CC
 import constants.display as CD
 import engine.controller.hintViewController as hintViewController
@@ -10,8 +5,13 @@ import engine.service.idleGameNameGenerator as idleGameNameGenerator
 import engine.service.modifiedGameLogic as modifiedGameLogic
 import engine.util.color as colorUtil
 import engine.util.draw as draw
+import engine.util.text as textUtil
+import globals.gameLogic as GL
 import globals.gameState as GGS
 import globals.view as GV
+import math
+import pygame
+import random
 
 
 areaCode = 'CV'
@@ -48,7 +48,9 @@ def drawCompletionCircles ():
     pygame.draw.circle (GV.clickView, CC.DARK_GREEN, seasonCirclePos, currentRadius)
 
 def getVariableHintText ():
-    return "Momentan produzierst du " + str (modifiedGameLogic.getEpisodesPerClick ()) + " Folgen pro Klick."
+    text = "Momentan produzierst du " + textUtil.convertToHumanReadableString (modifiedGameLogic.getEpisodesPerClick (), True) + " Folgen pro Klick."
+    if GL.AUTO_CLICKING_ACTIVE: text += " Und du klickst " + textUtil.convertToHumanReadableString (modifiedGameLogic.getClicksPerSecond (), True) + " mal pro Sekunde automatisch."
+    return text
 
 def handleClick (event):
     global episodeCompletion
