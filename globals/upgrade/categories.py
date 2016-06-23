@@ -1,6 +1,7 @@
 from engine.controller.upgradeObjects.upgradeCategory import UpgradeCategory
 import globals.upgrade.categoryHeaders as CH
 import globals.upgrade.benschUpgrades as BU
+import globals.upgrade.computerUpgrades as CU
 
 
 benschCategory = UpgradeCategory (
@@ -27,7 +28,24 @@ benschCategory = UpgradeCategory (
 
 computerCategory = UpgradeCategory (
     header = CH.computerHeader,
-    upgrades = []
+    upgrades = [
+        CU.schulPC,
+        CU.modem56K,
+        CU.anrufbeantworter,
+        CU.schlechteKamera,
+        CU.normalPC,
+        CU.modemDSL,
+        CU.ergoMaus,
+        CU.hdKamera,
+        CU.highEndPC,
+        CU.satellitModem,
+        CU.ultraTastatur,
+        CU.brainInAJar,
+        CU.holoKamera,
+        CU.glasfaser,
+        CU.brainInterface,
+        CU.quantumComputer
+    ]
 )
 
 categories = [benschCategory, computerCategory]
