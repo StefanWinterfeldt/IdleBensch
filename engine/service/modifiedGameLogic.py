@@ -1,3 +1,4 @@
+import constants.display as CD
 import globals.gameLogic as CGL
 import globals.gameState as GGS
 
@@ -24,6 +25,9 @@ def getMaxSubscribersPerSeason ():
 
 def getMoneyPerView ():
     return CGL.BASE_MONEY_PER_VIEW
+
+def getSubscribersPerTick ():
+    return GGS.streams * CGL.BASE_SUBSCRIBERS_PER_STREAM_PER_SECOND / float (CD.FRAME_RATE)
 
 def getSubscriberViewsPerEpisode ():
     return CGL.BASE_SUBSCRIBER_VIEWS_PER_EPISODE
