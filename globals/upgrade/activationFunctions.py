@@ -1,11 +1,22 @@
-import globals.gameLogic as CGL
+import globals.gameLogic as GL
+import globals.gameState as GS
 from globals.upgrade.annotatedFunction import AnnotatedFunction
 
+def activateStream (param):
+    GS.streams = 1
+
 def increaseEpisodesPerClickByPercentage (percentage):
-    CGL.BASE_EPISODES_PER_CLICK *= ((100 + percentage) / 100.0)
+    GL.BASE_EPISODES_PER_CLICK *= ((100 + percentage) / 100.0)
 
 def increaseMaxSubscribersPerEpisode (value):
-    CGL.BASE_MAX_SUBSCRIBERS_PER_EPISODE += value
+    GL.BASE_MAX_SUBSCRIBERS_PER_EPISODE += value
+
+def getActivateStreamFunction ():
+    return AnnotatedFunction (
+        text = 'Schaltet deinen ersten Stream live.',
+        function = activateStream,
+        parameter = None
+    )
 
 def getIncreaseEpisodesPerClickByPercentageFunction (percentage):
     return AnnotatedFunction (
