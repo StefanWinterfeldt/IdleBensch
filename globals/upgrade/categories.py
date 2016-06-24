@@ -1,7 +1,8 @@
 from engine.controller.upgradeObjects.upgradeCategory import UpgradeCategory
-import globals.upgrade.categoryHeaders as CH
 import globals.upgrade.benschUpgrades as BU
+import globals.upgrade.categoryHeaders as CH
 import globals.upgrade.computerUpgrades as CU
+import globals.upgrade.merchUpgrades as MU
 
 
 benschCategory = UpgradeCategory (
@@ -48,4 +49,26 @@ computerCategory = UpgradeCategory (
     ]
 )
 
-categories = [benschCategory, computerCategory]
+merchCategory = UpgradeCategory (
+    header = CH.merchHeader,
+    upgrades = [
+        MU.shirt,
+        MU.tasse,
+        MU.arschPad,
+        MU.bier,
+        MU.film1,
+        MU.eauDeBensch,
+        MU.bart,
+        MU.musicAlbum,
+        MU.schnapps,
+        MU.actionFigur,
+        MU.hoerspiel,
+        MU.roman,
+        MU.film2,
+        MU.modeLabel,
+        MU.oper,
+        MU.realDoll
+    ]
+)
+
+categories = [benschCategory, computerCategory, merchCategory]

@@ -11,3 +11,8 @@ computerHeader = CategoryHeader (
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'computerHeader.png'),
     hintText = 'Computer Upgrades'
 )
+
+merchHeader = CategoryHeader (
+    imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'merchHeader.png'),
+    hintText = 'Merchandise!'
+)
