@@ -3,6 +3,7 @@ import engine.service.keyHandler as keyHandler
 import engine.service.mouseHandler as mouseHandler
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.mainViewController as mainViewController
+import engine.controller.streamController as streamController
 import engine.controller.timeSlotController as timeSlotController
 import globals.gameUtils as GGU
 import pygame
@@ -11,6 +12,9 @@ import sys
 def updateDisplay ():
     mainViewController.update ()
     pygame.display.flip ()
+
+def updateNonDisplayControllers ():
+    streamController.update()
 
 def updateTimeSlots ():
     timeSlotController.update ()
@@ -29,5 +33,6 @@ def loop ():
         GGU.clock.tick (DC.FRAME_RATE)
         handleEvents ()
         triggerActionsBasedOnGameStateChanges()
+        updateNonDisplayControllers ()
         updateTimeSlots ()
         updateDisplay ()
