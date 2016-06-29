@@ -3,6 +3,7 @@ import globals.upgrade.benschUpgrades as BU
 import globals.upgrade.categoryHeaders as CH
 import globals.upgrade.computerUpgrades as CU
 import globals.upgrade.merchUpgrades as MU
+import globals.upgrade.occultUpgrades as OU
 import globals.upgrade.techUpgrades as TU
 
 
@@ -94,4 +95,26 @@ techCategory = UpgradeCategory (
     ]
 )
 
-categories = [benschCategory, computerCategory, merchCategory, techCategory]
+occultCategory = UpgradeCategory (
+    header = CH.occultHeader,
+    upgrades = [
+        OU.zombiePact,
+        OU.ghostPact,
+        OU.golemPact,
+        OU.bloodPact,
+        OU.slimePact,
+        OU.moonPact,
+        OU.demonPact,
+        OU.krakenPact,
+        OU.angelPact,
+        OU.dragonPact,
+        OU.sandWormPact,
+        OU.deathPact,
+        OU.cookiePact,
+        OU.tentaclePact,
+        OU.elderPact,
+        OU.forbiddenKnowledge
+    ]
+)
+
+categories = [benschCategory, computerCategory, merchCategory, techCategory, occultCategory]

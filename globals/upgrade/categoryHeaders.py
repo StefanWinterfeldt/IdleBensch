@@ -19,7 +19,7 @@ merchHeader = CategoryHeader (
 
 occultHeader = CategoryHeader (
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'occultHeader.png'),
-    hintText = 'Das Okkulte'
+    hintText = 'Das Okkulte - schliesse Vertraege mit den Wesen der Unterwelt und erweitere deine Fanbase.'
 )
 
 techHeader = CategoryHeader (
