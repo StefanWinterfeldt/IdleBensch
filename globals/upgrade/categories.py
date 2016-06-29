@@ -3,6 +3,7 @@ import globals.upgrade.benschUpgrades as BU
 import globals.upgrade.categoryHeaders as CH
 import globals.upgrade.computerUpgrades as CU
 import globals.upgrade.merchUpgrades as MU
+import globals.upgrade.techUpgrades as TU
 
 
 benschCategory = UpgradeCategory (
@@ -71,4 +72,26 @@ merchCategory = UpgradeCategory (
     ]
 )
 
-categories = [benschCategory, computerCategory, merchCategory]
+techCategory = UpgradeCategory (
+    header = CH.techHeader,
+    upgrades = [
+        TU.kaffeeMaschine,
+        TU.catTV,
+        TU.unterbewussteBotschaften,
+        TU.riesenLaser,
+        TU.roboBensch,
+        TU.seti,
+        TU.kiPsychologie,
+        TU.dnaMutation,
+        TU.dysonSphere,
+        TU.ftlTransmission,
+        TU.timeTravel,
+        TU.tesseract,
+        TU.parallelRealities,
+        TU.omnipresentBroadcast,
+        TU.metaTheory,
+        TU.idleBensch
+    ]
+)
+
+categories = [benschCategory, computerCategory, merchCategory, techCategory]

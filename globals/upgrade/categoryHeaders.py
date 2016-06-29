@@ -14,5 +14,15 @@ computerHeader = CategoryHeader (
 
 merchHeader = CategoryHeader (
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'merchHeader.png'),
-    hintText = 'Merchandise!'
+    hintText = 'Merchandise! Kauf meinen Scheiss!'
+)
+
+occultHeader = CategoryHeader (
+    imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'occultHeader.png'),
+    hintText = 'Das Okkulte'
+)
+
+techHeader = CategoryHeader (
+    imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'techHeader.png'),
+    hintText = 'Technologie'
 )
