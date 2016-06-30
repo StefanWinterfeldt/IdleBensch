@@ -5,14 +5,23 @@ import globals.gameState as GGS
 def getClicksPerSecond ():
     return CGL.BASE_CLICKS_PER_SECOND
 
+def getDonationChancePerStreamPerTick ():
+    return CGL.BASE_DONATION_CHANCE_PER_STREAM_PER_SECOND / float (CD.FRAME_RATE)
+
 def getEpisodesPerClick ():
     return CGL.BASE_EPISODES_PER_CLICK
 
 def getEpisodesPerSeason ():
     return CGL.BASE_EPISODES_PER_SEASON
 
+def getMinDonation ():
+    return CGL.BASE_MIN_DONATION
+
 def getMinSubscribersPerEpisode ():
     return CGL.BASE_MIN_SUBSCRIBERS_PER_EPISODE
+
+def getMaxDonation ():
+    return CGL.BASE_MAX_DONATION
 
 def getMaxSubscribersPerEpisode ():
     return CGL.BASE_MAX_SUBSCRIBERS_PER_EPISODE
