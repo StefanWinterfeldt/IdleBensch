@@ -5,6 +5,9 @@ import globals.gameState as GGS
 def getClicksPerSecond ():
     return CGL.BASE_CLICKS_PER_SECOND
 
+def getClicksPerTick ():
+    return CGL.BASE_CLICKS_PER_SECOND / float (CD.FRAME_RATE)
+
 def getDonationChancePerStreamPerTick ():
     return CGL.BASE_DONATION_CHANCE_PER_STREAM_PER_SECOND / float (CD.FRAME_RATE)
 

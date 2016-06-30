@@ -2,6 +2,9 @@ import globals.gameLogic as GL
 import globals.gameState as GS
 from globals.upgrade.annotatedFunction import AnnotatedFunction
 
+def activateAutoClicking (params):
+    GL.BASE_CLICKS_PER_SECOND = 0.1
+
 def activateStream (param):
     GS.streams = 1
 
@@ -10,6 +13,13 @@ def increaseEpisodesPerClickByPercentage (percentage):
 
 def increaseMaxSubscribersPerEpisode (value):
     GL.BASE_MAX_SUBSCRIBERS_PER_EPISODE += value
+
+def getActivateAutoClickFunction ():
+    return AnnotatedFunction (
+        text = 'Du beginnst automatisch zu klicken.',
+        function = activateAutoClicking,
+        parameter = None
+    )
 
 def getActivateStreamFunction ():
     return AnnotatedFunction (

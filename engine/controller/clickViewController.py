@@ -49,7 +49,7 @@ def drawCompletionCircles ():
 
 def getVariableHintText ():
     text = "Momentan produzierst du " + textUtil.convertToHumanReadableString (modifiedGameLogic.getEpisodesPerClick (), True) + " Folgen pro Klick."
-    if GL.AUTO_CLICKING_ACTIVE: text += " Und du klickst " + textUtil.convertToHumanReadableString (modifiedGameLogic.getClicksPerSecond (), True) + " mal pro Sekunde automatisch."
+    if modifiedGameLogic.getClicksPerSecond () >= 0.00001: text += "Und du klickst " + textUtil.convertToHumanReadableString (modifiedGameLogic.getClicksPerSecond (), True) + " mal pro Sekunde automatisch."
     return text
 
 def handleClick (event):

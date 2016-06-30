@@ -1,9 +1,11 @@
+import engine.controller.clickViewController as clickViewController
 import engine.service.modifiedGameLogic as MGL
 import globals.gameState as GS
 import math
 import random
 
 
+currentAutoClicks = 0
 currentSubscribers = 0
 
 def processMerchPurchases ():
@@ -36,10 +38,20 @@ def processSubscriberIncrease ():
         GS.subscriber += newSubscribers
         currentSubscribers -= newSubscribers
 
+def processAutoClicks ():
+    global currentAutoClicks
+    currentAutoClicks += MGL.getClicksPerTick ()
+    if currentAutoClicks >= 1:
+        newClicks = int (currentAutoClicks)
+        for i in range (newClicks):
+            clickViewController.handleClick (None)
+        currentAutoClicks -= newClicks
+
 def initialize ():
     pass
 
 def update ():
+    processAutoClicks ()
     processSubscriberIncrease ()
     processDonations ()
     processMerchPurchases ()

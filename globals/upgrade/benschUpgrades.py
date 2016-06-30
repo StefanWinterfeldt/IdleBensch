@@ -145,5 +145,5 @@ unterbewusstesKlicken = Upgrade (
     hintText = ['Egal was du tust, nach diesem Buch wird dein Finger immer weiter klicken.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'unterbewusstesKlicken.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getActivateAutoClickFunction()
 )
