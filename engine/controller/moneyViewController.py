@@ -1,6 +1,7 @@
 import constants.color as CC
 import constants.display as CD
 import engine.controller.hintViewController as hintViewController
+import engine.service.modifiedGameLogic as MGL
 import engine.util.draw as drawUtil
 import engine.util.event as eventUtil
 import engine.util.text as textUtil
@@ -38,7 +39,7 @@ viewSectionHintText = 'Views produzieren Geld durch Werbung.'
 def drawEpisodeSection ():
     drawUtil.drawCentered (textUtil.renderLines (['Folgen:', str (GGS.episodes)], True), episodeSection)
     pygame.draw.rect (episodeSection, CC.DARK_GREEN, episodeSection.get_rect (), 1)
-    
+
 def drawMoneySection ():
     drawUtil.drawCentered (textUtil.renderLines (['Euro:', textUtil.convertToHumanReadableString (GGS.money, True)], True), moneySection)
     pygame.draw.rect (moneySection, CC.DARK_GREEN, moneySection.get_rect (), 1)
@@ -67,6 +68,26 @@ def drawSections ():
     drawViewSection ()
     drawMoneySection ()
 
+def getVariableEpisodeHintText ():
+    minSubs = textUtil.convertToHumanReadableString (MGL.getMinSubscribersPerEpisode ())
+    maxSubs = textUtil.convertToHumanReadableString (MGL.getMaxSubscribersPerEpisode ())
+    views = textUtil.convertToHumanReadableString (MGL.getViewsPerEpisode ())
+    seconds = textUtil.convertToHumanReadableString (MGL.getSecondsToProcessEpisode ())
+    return 'Momentan produziert eine Folge ' + views + ' Views und ' + minSubs + ' bis ' + maxSubs + ' Abonnenten ueber ' + seconds + ' Sekunden.'
+
+def getVariableSeasonHintText ():
+    minSubs = textUtil.convertToHumanReadableString (MGL.getMinSubscribersPerSeason ())
+    maxSubs = textUtil.convertToHumanReadableString (MGL.getMaxSubscribersPerSeason ())
+    seconds = textUtil.convertToHumanReadableString (MGL.getSecondsToProcessSeason ())
+    return 'Momentan produziert eine Staffel ' + minSubs + ' bis ' + maxSubs + ' Abonnenten ueber ' + seconds + ' Sekunden.'
+
+def getVariableStreamHintText ():
+    subsPerSec = textUtil.convertToHumanReadableString (MGL.getSubscribersPerSecond (), True)
+    donChancePerSec = textUtil.convertToHumanReadableString (MGL.getDonationChancePerStreamPerSecondInPercent (), True)
+    minDon = textUtil.convertToHumanReadableString (MGL.getMinDonation (), True)
+    maxDon = textUtil.convertToHumanReadableString (MGL.getMaxDonation (), True)
+    return 'Momentan produzieren deine Streams zusammen ' + subsPerSec + ' Abonnenten pro Sekunde. Jeder Stream hat jede Sekunde eine ' + donChancePerSec + '% Chance eine Spende von ' + minDon + ' bis ' + maxDon + ' Euro zu erzeugen.'
+
 def handleEmptySectionMotion ():
     if GGS.currentMouseArea is not None:
         GGS.currentMouseArea = None
@@ -75,8 +96,8 @@ def handleEmptySectionMotion ():
 def handleEpisodeSectionMotion ():
     if GGS.currentMouseArea != episodeSectionAreaCode:
         GGS.currentMouseArea = episodeSectionAreaCode
-        hintViewController.showText (episodeSectionHintText)
-        
+        hintViewController.showText (' '.join ([episodeSectionHintText, getVariableEpisodeHintText ()]))
+
 def handleMoneySectionMotion ():
     if GGS.currentMouseArea != moneySectionAreaCode:
         GGS.currentMouseArea = moneySectionAreaCode
@@ -85,12 +106,12 @@ def handleMoneySectionMotion ():
 def handleSeasonSectionMotion ():
     if GGS.currentMouseArea != seasonSectionAreaCode:
         GGS.currentMouseArea = seasonSectionAreaCode
-        hintViewController.showText (seasonSectionHintText)
+        hintViewController.showText (' '.join ([seasonSectionHintText, getVariableSeasonHintText ()]))
 
 def handleStreamSectionMotion ():
     if GGS.currentMouseArea != streamSectionAreaCode:
         GGS.currentMouseArea = streamSectionAreaCode
-        hintViewController.showText (streamSectionHintText)
+        hintViewController.showText (' '.join ([streamSectionHintText, getVariableStreamHintText ()]))
 
 def handleSubscriberSectionMotion ():
     if GGS.currentMouseArea != subscriberSectionAreaCode:

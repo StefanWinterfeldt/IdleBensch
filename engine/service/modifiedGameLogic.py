@@ -8,6 +8,9 @@ def getClicksPerSecond ():
 def getClicksPerTick ():
     return CGL.BASE_CLICKS_PER_SECOND / float (CD.FRAME_RATE)
 
+def getDonationChancePerStreamPerSecondInPercent ():
+    return CGL.BASE_DONATION_CHANCE_PER_STREAM_PER_SECOND * 100
+
 def getDonationChancePerStreamPerTick ():
     return CGL.BASE_DONATION_CHANCE_PER_STREAM_PER_SECOND / float (CD.FRAME_RATE)
 
@@ -47,17 +50,26 @@ def getMoneyPerView ():
 def getPurchaseChancePerSubscriberPerTick ():
     return CGL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND / float (CD.FRAME_RATE)
 
+def getSubscribersPerSecond ():
+    return GGS.streams * CGL.BASE_SUBSCRIBERS_PER_STREAM_PER_SECOND
+
 def getSubscribersPerTick ():
     return GGS.streams * CGL.BASE_SUBSCRIBERS_PER_STREAM_PER_SECOND / float (CD.FRAME_RATE)
 
 def getSubscriberViewsPerEpisode ():
     return CGL.BASE_SUBSCRIBER_VIEWS_PER_EPISODE
 
+def getSecondsToProcessEpisode ():
+    return CGL.BASE_SECONDS_TO_PROCESS_EPISODE
+
+def getSecondsToProcessSeason ():
+    return CGL.BASE_SECONDS_TO_PROCESS_SEASON
+
 def getTicksToProcessEpisode ():
-    return CGL.BASE_TICKS_TO_PROCESS_EPISODE
+    return int (CGL.BASE_SECONDS_TO_PROCESS_EPISODE * float (CD.FRAME_RATE))
 
 def getTicksToProcessSeason ():
-    return CGL.BASE_TICKS_TO_PROCESS_SEASON
+    return int (CGL.BASE_SECONDS_TO_PROCESS_SEASON * float (CD.FRAME_RATE))
 
 def getViewsPerEpisode ():
     return CGL.BASE_VIEWS_PER_EPISODE + (GGS.subscriber * getSubscriberViewsPerEpisode ())
