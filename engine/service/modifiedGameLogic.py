@@ -17,11 +17,17 @@ def getEpisodesPerSeason ():
 def getMinDonation ():
     return CGL.BASE_MIN_DONATION
 
+def getMinPurchase ():
+    return CGL.BASE_MIN_PURCHASE
+
 def getMinSubscribersPerEpisode ():
     return CGL.BASE_MIN_SUBSCRIBERS_PER_EPISODE
 
 def getMaxDonation ():
     return CGL.BASE_MAX_DONATION
+
+def getMaxPurchase ():
+    return CGL.BASE_MAX_PURCHASE
 
 def getMaxSubscribersPerEpisode ():
     return CGL.BASE_MAX_SUBSCRIBERS_PER_EPISODE
@@ -34,6 +40,9 @@ def getMaxSubscribersPerSeason ():
 
 def getMoneyPerView ():
     return CGL.BASE_MONEY_PER_VIEW
+
+def getPurchaseChancePerSubscriberPerTick ():
+    return CGL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND / float (CD.FRAME_RATE)
 
 def getSubscribersPerTick ():
     return GGS.streams * CGL.BASE_SUBSCRIBERS_PER_STREAM_PER_SECOND / float (CD.FRAME_RATE)

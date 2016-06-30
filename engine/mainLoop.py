@@ -3,7 +3,7 @@ import engine.service.keyHandler as keyHandler
 import engine.service.mouseHandler as mouseHandler
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.mainViewController as mainViewController
-import engine.controller.streamController as streamController
+import engine.controller.passiveIncome as passiveIncomeController
 import engine.controller.timeSlotController as timeSlotController
 import globals.gameUtils as GGU
 import pygame
@@ -14,7 +14,7 @@ def updateDisplay ():
     pygame.display.flip ()
 
 def updateNonDisplayControllers ():
-    streamController.update()
+    passiveIncomeController.update()
 
 def updateTimeSlots ():
     timeSlotController.update ()

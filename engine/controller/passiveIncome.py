@@ -6,6 +6,17 @@ import random
 
 currentSubscribers = 0
 
+def processMerchPurchases ():
+    purchasesThisTick = 0
+    purchaseAmount = 0
+    for i in range (int (GS.subscriber)):
+        if random.random () < MGL.getPurchaseChancePerSubscriberPerTick ():
+            purchasesThisTick += 1
+    for i in range (purchasesThisTick):
+        purchaseCents = random.randint (math.floor (MGL.getMinPurchase () * 100), math.floor (MGL.getMaxPurchase () * 100))
+        purchaseAmount += (purchaseCents * 0.01)
+    GS.money += purchaseAmount
+
 def processDonations ():
     donationsThisTick = 0
     donationAmount = 0
@@ -31,3 +42,4 @@ def initialize ():
 def update ():
     processSubscriberIncrease ()
     processDonations ()
+    processMerchPurchases ()
