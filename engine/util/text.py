@@ -14,7 +14,7 @@ def convertToHumanReadableString (number, withFractions = False):
     numberString = str (int (math.floor (number)))
     if withFractions:
         fraction = str (number).split ('.') [1]
-        numberString += '.' + fraction [:2]
+        numberString += '.' + fraction [:4]
     return numberString
 
 def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE):

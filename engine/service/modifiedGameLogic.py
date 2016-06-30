@@ -47,6 +47,9 @@ def getMaxSubscribersPerSeason ():
 def getMoneyPerView ():
     return CGL.BASE_MONEY_PER_VIEW
 
+def getPurchaseChancePerSubscriberPerSecondInPercent ():
+    return CGL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND * 100.0
+
 def getPurchaseChancePerSubscriberPerTick ():
     return CGL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND / float (CD.FRAME_RATE)
 

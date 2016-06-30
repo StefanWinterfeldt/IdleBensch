@@ -88,6 +88,17 @@ def getVariableStreamHintText ():
     maxDon = textUtil.convertToHumanReadableString (MGL.getMaxDonation (), True)
     return 'Momentan produzieren deine Streams zusammen ' + subsPerSec + ' Abonnenten pro Sekunde. Jeder Stream hat jede Sekunde eine ' + donChancePerSec + '% Chance eine Spende von ' + minDon + ' bis ' + maxDon + ' Euro zu erzeugen.'
 
+def getVariableSubscriberHintText ():
+    views = textUtil.convertToHumanReadableString (MGL.getSubscriberViewsPerEpisode (), True)
+    purChancePerSec = textUtil.convertToHumanReadableString (MGL.getPurchaseChancePerSubscriberPerSecondInPercent ())
+    minPur = textUtil.convertToHumanReadableString (MGL.getMinPurchase ())
+    maxPur = textUtil.convertToHumanReadableString (MGL.getMaxPurchase ())
+    return 'Momentan liefert jeder Abonnent ' + views + ' extra Views pro Folge. Jeder Abonnent hat jede Sekunde eine ' + purChancePerSec + '% Chance fuer ' + minPur + ' bis ' + maxPur + ' Euro Merchandise zu kaufen.'
+
+def getVariableViewHintText ():
+    money = textUtil.convertToHumanReadableString (MGL.getMoneyPerView (), True)
+    return 'Momentan produziert jeder View ' + money + ' Euro.'
+
 def handleEmptySectionMotion ():
     if GGS.currentMouseArea is not None:
         GGS.currentMouseArea = None
@@ -116,12 +127,12 @@ def handleStreamSectionMotion ():
 def handleSubscriberSectionMotion ():
     if GGS.currentMouseArea != subscriberSectionAreaCode:
         GGS.currentMouseArea = subscriberSectionAreaCode
-        hintViewController.showText (subscriberSectionHintText)
+        hintViewController.showText (' '.join ([subscriberSectionHintText, getVariableSubscriberHintText ()]))
 
 def handleViewSectionMotion ():
     if GGS.currentMouseArea != viewSectionAreaCode:
         GGS.currentMouseArea = viewSectionAreaCode
-        hintViewController.showText (viewSectionHintText)
+        hintViewController.showText (' '.join ([viewSectionHintText, getVariableViewHintText ()]))
 
 def handleMotion (event):
     if eventUtil.eventHappenedInRect (event, episodeSectionAbsoluteRect):
