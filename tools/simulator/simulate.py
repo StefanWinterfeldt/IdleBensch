@@ -25,10 +25,12 @@ def analyze ():
         print 'Upgrade: ' + log ['name'] + ' bought at ' + getTimeString (log ['ticks'])
         distancesBetweenUpgrades.append (log ['ticks'] - lastTicks)
         lastTicks = log ['ticks']
+    mean = int (numpy.mean (distancesBetweenUpgrades))
     median = int (numpy.median (distancesBetweenUpgrades))
     std = numpy.std (distancesBetweenUpgrades)
     print '---'
     print 'Overall time taken: ' + getTimeString (buyLogs [-1] ['ticks'])
+    print 'Mean time between upgrades: ' + getTimeString (mean)
     print 'Median time between upgrades: ' + getTimeString (median)
     print 'Standard deviation: ' + str (std)
 
@@ -50,9 +52,10 @@ def getAllUpgrades ():
 
 def getCompletionPercentage ():
     percentage = 100.0 / getNumberOfUpgrades () * getNumberOfActiveUpgrades ()
-    return textUtil.convertToHumanReadableString (percentage, True) + '% ' + getCurrentTimeString ()
+    return 'Completion: ' + textUtil.convertToHumanReadableString (percentage, True) + '% ' + getCurrentTimeString ()
 
 def mockUnneededFunctionality ():
+    clickViewController.randomize = lambda: None
     upgradeViewController.drawCategories = lambda: None
 
 def refreshCategoryVisibility ():
@@ -68,9 +71,9 @@ def getAvailableUpgrades ():
 
 def getTimeString (ticks):
     seconds = ticks / CD.FRAME_RATE
-    minutes = seconds / 60
-    hours = minutes / 60
-    return str (ticks) + ' Ticks - ' + str (hours) + ' Hours ' + str (minutes) + ' Minutes ' + str (seconds) + ' Seconds'
+    minutes = ticks / (60 * CD.FRAME_RATE)
+    hours = ticks / (60 * 60 * CD.FRAME_RATE)
+    return str (ticks) + ' Ticks - ' + str (hours) + ' Hours | ' + str (minutes) + ' Minutes | ' + str (seconds) + ' Seconds'
 
 def getCurrentTimeString ():
     return getTimeString (tickCount)
@@ -100,6 +103,9 @@ def handleSimulatedClicks ():
         for i in range (newClicks): clickViewController.handleClick (None)
         accumulatedUserClicks -= newClicks
 
+def printCurrentMoney ():
+    print 'Money: ' + textUtil.convertToHumanReadableString (GS.money, True) + ' at ' + getCurrentTimeString ()
+
 def tick ():
     global tickCount
     buyUpgradeIfPossible ()
@@ -112,6 +118,8 @@ def tick ():
 def simulate ():
     while moreUpgradesAvailable ():
         tick ()
+        if tickCount % 1000 == 0:
+            printCurrentMoney ()
     analyze ()
 
 prepareSimulation ()
