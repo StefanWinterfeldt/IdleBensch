@@ -7,16 +7,53 @@ import engine.controller.upgradeViewController as upgradeViewController
 import engine.util.text as textUtil
 import globals.gameState as GS
 import globals.upgrade.categories as categories
+import numpy
 import random
 
 
 USER_CLICKS_PER_SECOND = 3
 
 accumulatedUserClicks = 0
+buyLogs = []
 tickCount = 0
 
+def analyze ():
+    print '---'
+    distancesBetweenUpgrades = []
+    lastTicks = 0
+    for log in buyLogs:
+        print 'Upgrade: ' + log ['name'] + ' bought at ' + getTimeString (log ['ticks'])
+        distancesBetweenUpgrades.append (log ['ticks'] - lastTicks)
+        lastTicks = log ['ticks']
+    median = int (numpy.median (distancesBetweenUpgrades))
+    std = numpy.std (distancesBetweenUpgrades)
+    print '---'
+    print 'Overall time taken: ' + getTimeString (buyLogs [-1] ['ticks'])
+    print 'Median time between upgrades: ' + getTimeString (median)
+    print 'Standard deviation: ' + str (std)
+
+def addBuyLog (upgradeName):
+    global buyLogs
+    buyLogs.append ({'name': upgradeName, 'ticks': tickCount})
+
+def getNumberOfActiveUpgrades ():
+    return len ([upgrade for upgrade in getAllUpgrades () if upgrade.active])
+
+def getNumberOfUpgrades ():
+    return len (getAllUpgrades ())
+
+def getAllUpgrades ():
+    allUpgrades = []
+    for category in categories.categories:
+        allUpgrades += category.upgrades
+    return allUpgrades
+
+def getCompletionPercentage ():
+    percentage = 100.0 / getNumberOfUpgrades () * getNumberOfActiveUpgrades ()
+    return textUtil.convertToHumanReadableString (percentage, True) + '% ' + getCurrentTimeString ()
+
 def mockUnneededFunctionality ():
-    upgradeViewController.drawCategories = lambda : None
+    upgradeViewController.drawCategories = lambda: None
 
 def refreshCategoryVisibility ():
     for category in categories.categories:
@@ -26,25 +63,24 @@ def moreUpgradesAvailable ():
     return len (getAvailableUpgrades ()) != 0
 
 def getAvailableUpgrades ():
-    allUpgrades = []
-    for category in categories.categories:
-        allUpgrades += category.upgrades
-    availableUpgrades = [upgrade for upgrade in allUpgrades if upgrade.active == False and upgrade.visible and upgrade.isUnlocked ()]
+    availableUpgrades = [upgrade for upgrade in getAllUpgrades () if upgrade.active == False and upgrade.visible and upgrade.isUnlocked ()]
     return availableUpgrades
 
-def printStatus ():
-    seconds = tickCount / CD.FRAME_RATE
+def getTimeString (ticks):
+    seconds = ticks / CD.FRAME_RATE
     minutes = seconds / 60
     hours = minutes / 60
-    print 'Time: ' + str (tickCount) + ' Ticks - ' + str (hours) + ' Hours ' + str (minutes) + ' Minutes ' + str (seconds) + ' Seconds'
-    print 'Money: ' + textUtil.convertToHumanReadableString(GS.money) + ' Euro'
+    return str (ticks) + ' Ticks - ' + str (hours) + ' Hours ' + str (minutes) + ' Minutes ' + str (seconds) + ' Seconds'
+
+def getCurrentTimeString ():
+    return getTimeString (tickCount)
 
 def getUserClicksPerTick ():
     return USER_CLICKS_PER_SECOND / float (CD.FRAME_RATE)
 
 def prepareSimulation ():
     random.seed ()
-    mockUnneededFunctionality()
+    mockUnneededFunctionality ()
     refreshCategoryVisibility ()
 
 def buyUpgradeIfPossible ():
@@ -53,8 +89,8 @@ def buyUpgradeIfPossible ():
         upgradeToBeBought = random.choice (affordableUpgrades)
         upgradeViewController.handleClickOnUpgrade (upgradeToBeBought)
         refreshCategoryVisibility ()
-        print 'Bought Upgrade: ' + upgradeToBeBought.name
-        printStatus ()
+        addBuyLog (upgradeToBeBought.name)
+        print getCompletionPercentage ()
 
 def handleSimulatedClicks ():
     global accumulatedUserClicks
@@ -76,6 +112,7 @@ def tick ():
 def simulate ():
     while moreUpgradesAvailable ():
         tick ()
+    analyze ()
 
 prepareSimulation ()
 simulate ()
