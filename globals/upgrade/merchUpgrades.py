@@ -150,7 +150,7 @@ shirt = Upgrade (
     cost = 0.01,
     hintText = ['Ein Shirt mit deinem Gesicht drauf, herzlich Glueckwunsch.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'shirt.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([31]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
