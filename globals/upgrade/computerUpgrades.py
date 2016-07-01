@@ -5,6 +5,7 @@ import os
 
 
 modem56K = Upgrade (
+    id = 17,
     name = '56k Modem',
     cost = 0.01,
     hintText = ['Endlich kannst du deinen Akustik-Koppler loswerden! Und Dubstep spielt es auch!'],
@@ -14,6 +15,7 @@ modem56K = Upgrade (
 )
 
 anrufbeantworter = Upgrade (
+    id = 18,
     name = 'Anrufbeantworter',
     cost = 0.01,
     hintText = ['Niemand wird dich mehr beim Aufnehmen stoeren.'],
@@ -23,6 +25,7 @@ anrufbeantworter = Upgrade (
 )
 
 brainInAJar = Upgrade (
+    id = 19,
     name = 'Bio-Computer',
     cost = 0.01,
     hintText = ['Ja, ich weiss dass es wie ne Suesskartoffel aussieht. Versuch du mal in Paint ein Gehirn zu malen.'],
@@ -32,6 +35,7 @@ brainInAJar = Upgrade (
 )
 
 brainInterface = Upgrade (
+    id = 20,
     name = 'Neurales Interface',
     cost = 0.01,
     hintText = ['Jetzt brauchst du deine laestigen Haende nicht mehr.'],
@@ -41,6 +45,7 @@ brainInterface = Upgrade (
 )
 
 modemDSL = Upgrade (
+    id = 21,
     name = 'DSL Modem',
     cost = 0.01,
     hintText = ['Garantiert bis zu 100K... zumindest zwischen 3:13 und 3:14 Uhr.'],
@@ -50,6 +55,7 @@ modemDSL = Upgrade (
 )
 
 ergoMaus = Upgrade (
+    id = 22,
     name = 'Ergonomische Maus',
     cost = 0.01,
     hintText = ['Aus echtem Stierhodenleder. Keine Macht dem Karpaltunnel!'],
@@ -59,6 +65,7 @@ ergoMaus = Upgrade (
 )
 
 glasfaser = Upgrade (
+    id = 23,
     name = 'Glasfaserverbindung',
     cost = 0.01,
     hintText = ['Internet mit Lichtgeschwindigkeit, damit koenntest du Pornos so schnell gucken wie neue produziert werden...'],
@@ -68,6 +75,7 @@ glasfaser = Upgrade (
 )
 
 hdKamera = Upgrade (
+    id = 24,
     name = 'HD Kamera',
     cost = 0.01,
     hintText = ['Jetzt kann man auch dein Gesicht erkennen, ob das so ne gute Idee war...'],
@@ -77,6 +85,7 @@ hdKamera = Upgrade (
 )
 
 highEndPC = Upgrade (
+    id = 25,
     name = 'High End PC',
     cost = 0.01,
     hintText = ['Darauf lauft sogar deine Mutter fluessig.'],
@@ -86,6 +95,7 @@ highEndPC = Upgrade (
 )
 
 holoKamera = Upgrade (
+    id = 26,
     name = 'Holographische Kamera',
     cost = 0.01,
     hintText = ['Mit dem richtigen Equipment koennen sich deine Zuschauer einen Lebensgrossen Holo-Bensch in ihr Wohnzimmer projizieren.'],
@@ -95,6 +105,7 @@ holoKamera = Upgrade (
 )
 
 normalPC = Upgrade (
+    id = 27,
     name = 'Normaler PC',
     cost = 0.01,
     hintText = ['Nix besonderes, aber auch nicht aus Presspappe.'],
@@ -104,6 +115,7 @@ normalPC = Upgrade (
 )
 
 quantumComputer = Upgrade (
+    id = 28,
     name = 'Quantencomputer',
     cost = 0.01,
     hintText = ['2000 Jahre Forschung fuer... Quanten-IdleGames'],
@@ -113,6 +125,7 @@ quantumComputer = Upgrade (
 )
 
 satellitModem = Upgrade (
+    id = 29,
     name = 'Satelliten-Uplink',
     cost = 0.01,
     hintText = ['Selbst das Hubble-Teleskop kann dir jetzt zuschauen.'],
@@ -122,6 +135,7 @@ satellitModem = Upgrade (
 )
 
 schlechteKamera = Upgrade (
+    id = 30,
     name = 'Billige Kamera',
     cost = 0.01,
     hintText = ['Gabs gebraucht auf Ebay. Ein Blick auf die SD-Karte verraet warum sie so billig war...'],
@@ -131,6 +145,7 @@ schlechteKamera = Upgrade (
 )
 
 schulPC = Upgrade (
+    id = 31,
     name = 'Alter Schul-PC',
     cost = 0.01,
     hintText = ['Der Stil der fruehen 90er in Nikotin-Gelb, niemand wird ihn vermissen.'],
@@ -140,6 +155,7 @@ schulPC = Upgrade (
 )
 
 ultraTastatur = Upgrade (
+    id = 32,
     name = 'Gaming Tastatur',
     cost = 0.01,
     hintText = ['Hat leichtgaengige Tasten und leuchtet im dunkeln'],

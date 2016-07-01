@@ -4,6 +4,7 @@ import globals.upgrade.unlockFunctions as UF
 import os
 
 angelPact = Upgrade (
+    id = 65,
     name = 'Engels-Pakt',
     cost = 0.01,
     hintText = ['Im Himmel kann es ziemlich langweilig werden, nicht mit dir.'],
@@ -13,6 +14,7 @@ angelPact = Upgrade (
 )
 
 bloodPact = Upgrade (
+    id = 66,
     name = 'Blut-Pakt',
     cost = 0.01,
     hintText = ['Solange du stets betonst wie wichtig Blutspenden sind werden dir auch die Vampire zuschauen.'],
@@ -22,6 +24,7 @@ bloodPact = Upgrade (
 )
 
 cookiePact = Upgrade (
+    id = 67,
     name = 'Cookie-Pakt',
     cost = 0.01,
     hintText = ['Die Wesen aus dem Cookieverse bieten dir Kekse gegen Views, ein fairer tausch.'],
@@ -31,6 +34,7 @@ cookiePact = Upgrade (
 )
 
 deathPact = Upgrade (
+    id = 68,
     name = 'Todes-Pakt',
     cost = 0.01,
     hintText = ['Der Schnitter und seine vielen Helfer schauen lieber deine Videos als Seelen zu ernten.'],
@@ -40,6 +44,7 @@ deathPact = Upgrade (
 )
 
 demonPact = Upgrade (
+    id = 69,
     name = 'Daemonen-Pakt',
     cost = 0.01,
     hintText = ['Die Hoelle muss warten - auf Hitbox laeuft Bensch!'],
@@ -49,6 +54,7 @@ demonPact = Upgrade (
 )
 
 dragonPact = Upgrade (
+    id = 70,
     name = 'Drachen-Pakt',
     cost = 0.01,
     hintText = ['Es gibt zwar nicht mehr viele Drachen, aber sie haben Geld. Viel Geld'],
@@ -58,6 +64,7 @@ dragonPact = Upgrade (
 )
 
 elderPact = Upgrade (
+    id = 71,
     name = 'Grosser Alter Pakt',
     cost = 0.01,
     hintText = ['Sie sehen und hoeren dich sowieso schon. Jetzt. In dieser Sekunde. Aber nun werden ihre Views gezaehlt.'],
@@ -67,6 +74,7 @@ elderPact = Upgrade (
 )
 
 forbiddenKnowledge = Upgrade (
+    id = 72,
     name = 'Verbotenes Wissen',
     cost = 0.01,
     hintText = ['Du weisst wohin das fuehrt. Und du wirst es trotzdem tun.'],
@@ -76,6 +84,7 @@ forbiddenKnowledge = Upgrade (
 )
 
 ghostPact = Upgrade (
+    id = 73,
     name = 'Geister-Pakt',
     cost = 0.01,
     hintText = ['Geister! Geister! Geister! Weissbrot!'],
@@ -85,6 +94,7 @@ ghostPact = Upgrade (
 )
 
 golemPact = Upgrade (
+    id = 74,
     name = 'Golem-Pakt',
     cost = 0.01,
     hintText = ['Diese Jungs koennen Monatelang am Stueck deine Videos gucken.'],
@@ -94,6 +104,7 @@ golemPact = Upgrade (
 )
 
 krakenPact = Upgrade (
+    id = 75,
     name = 'Kraken-Pakt',
     cost = 0.01,
     hintText = ['Auch in den lichtlosen Tiefen hoert man nun deine Stimme.'],
@@ -103,6 +114,7 @@ krakenPact = Upgrade (
 )
 
 moonPact = Upgrade (
+    id = 76,
     name = 'Mond-Pakt',
     cost = 0.01,
     hintText = ['Werwoelfe sehen dir zwar nur bei Vollmond zu, aber mit dem Haarwuchs steiger sich auch ihr Konsumverhalten.'],
@@ -112,6 +124,7 @@ moonPact = Upgrade (
 )
 
 sandWormPact = Upgrade (
+    id = 77,
     name = 'Sandwurm-Pakt',
     cost = 0.01,
     hintText = ['Der Stream muss fliessen.'],
@@ -121,6 +134,7 @@ sandWormPact = Upgrade (
 )
 
 slimePact = Upgrade (
+    id = 78,
     name = 'Schleim-Pakt',
     cost = 0.01,
     hintText = ['Hast du dich jemals gefragt was unter deiner Spuele lebt? Es ist ein Fan von dir.'],
@@ -130,6 +144,7 @@ slimePact = Upgrade (
 )
 
 tentaclePact = Upgrade (
+    id = 79,
     name = 'Tentakel-Pakt',
     cost = 0.01,
     hintText = ['Die Tentakel wollten einst die Erde erobern, nun heisst ihr Anfueher Taddaeus und schaut deinen Videos.'],
@@ -139,6 +154,7 @@ tentaclePact = Upgrade (
 )
 
 zombiePact = Upgrade (
+    id = 80,
     name = 'Zombie-Pakt',
     cost = 0.01,
     hintText = ['Zombies sind pflegeleicht und schauen regelmaessig deine Videos. Ausserdem unterscheiden sie sich kaum von deinen restlichen Fans.'],

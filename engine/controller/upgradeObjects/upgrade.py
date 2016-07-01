@@ -9,10 +9,11 @@ class Upgrade:
     relativeRect = None
     visible = False
 
-    def __init__ (self, name, cost, hintText, imagePath, unlockFunction, activationFunction):
+    def __init__ (self, id, name, cost, hintText, imagePath, unlockFunction, activationFunction):
         self.activationFunction = activationFunction
         self.cost = cost
         self.hintText = hintText
+        self.id = id
         self.image = pygame.image.load (imagePath)
         self.name = name
         self.unlockFunction = unlockFunction

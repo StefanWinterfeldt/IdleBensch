@@ -5,6 +5,7 @@ import os
 
 
 billigerEDrink = Upgrade (
+    id = 1,
     name = 'Billiger E-Drink',
     cost = 0.19,
     hintText = ['Schmeckt nach Klebstoff. Weil welcher drin ist'],
@@ -14,6 +15,7 @@ billigerEDrink = Upgrade (
 )
 
 normalerEDrink = Upgrade (
+    id = 2,
     name = 'Standard E-Drink',
     cost = 0.99,
     hintText = ['Bekannt aus jeder Tankstelle.'],
@@ -23,6 +25,7 @@ normalerEDrink = Upgrade (
 )
 
 teurerEDrink = Upgrade (
+    id = 3,
     name = 'Premium E-Drink',
     cost = 11.0,
     hintText = ['Er hat ein Bild von nem C-Promi auf der Rueckseite'],
@@ -32,6 +35,7 @@ teurerEDrink = Upgrade (
 )
 
 fuenfKomma0 = Upgrade (
+    id = 4,
     name = '5,0',
     cost = 0.45,
     hintText = ['Das Universalbier, macht gluecklich und loest die Zunge.'],
@@ -41,6 +45,7 @@ fuenfKomma0 = Upgrade (
 )
 
 drittesAuge = Upgrade (
+    id = 5,
     name = 'Drittes Auge',
     cost = 6660000.0,
     hintText = ['Oeffne deinen Geist fuer ein anderes Publikum'],
@@ -50,6 +55,7 @@ drittesAuge = Upgrade (
 )
 
 extraHaende = Upgrade (
+    id = 6,
     name = 'Extra Haende',
     cost = 5000.0,
     hintText = ['Unglaublich! Der Mann hat wirklich vier linke Haende!'],
@@ -59,6 +65,7 @@ extraHaende = Upgrade (
 )
 
 hamsterProgrammer = Upgrade (
+    id = 7,
     name = 'Hamsterartiger Programmierer',
     cost = 1337.0,
     hintText = ['Entwickelt mehr Idle Games, damit du mehr zu spielen hast.'],
@@ -68,6 +75,7 @@ hamsterProgrammer = Upgrade (
 )
 
 klon = Upgrade (
+    id = 8,
     name = 'Klon Bensch',
     cost = 250000.0,
     hintText = ['Jetzt gibt es zwei von dir, gib das mal bei der Steuererklaerung an.'],
@@ -77,6 +85,7 @@ klon = Upgrade (
 )
 
 logikKurs = Upgrade (
+    id = 9,
     name = "Logik fuer Let's Player",
     cost = 50.0,
     hintText = ['Du erkennst schneller Loopholes in Idle Games und wirst so noch effektiver.'],
@@ -86,6 +95,7 @@ logikKurs = Upgrade (
 )
 
 matheKurs = Upgrade (
+    id = 10,
     name = 'Mathe fuer Finanzbeamte',
     cost = 350.0,
     hintText = ['Wenn du das verstehst wirst du ach jedes Idle Game durchschauen.'],
@@ -95,6 +105,7 @@ matheKurs = Upgrade (
 )
 
 mrScotch = Upgrade (
+    id = 11,
     name = 'Mr. Scotch',
     cost = 120.0,
     hintText = ['Das ist mein Kumpel Mr. Scotch, mit ihm haben alle mehr Spass!'],
@@ -104,6 +115,7 @@ mrScotch = Upgrade (
 )
 
 streamMod = Upgrade (
+    id = 12,
     name = 'Stream Moderator',
     cost = 30000.0,
     hintText = ['"Nein, BrotFotzeHitler ist KEIN guter Nickname!"'],
@@ -113,6 +125,7 @@ streamMod = Upgrade (
 )
 
 leibwaechter = Upgrade (
+    id = 13,
     name = 'Der gute Leibwaechter',
     cost = 7.95,
     hintText = ['Wenn man dringend Schnapps braucht... trinkt man das auch nicht.'],
@@ -122,6 +135,7 @@ leibwaechter = Upgrade (
 )
 
 schwarzerKaffee = Upgrade (
+    id = 14,
     name = 'Richtig schwarzer Kaffee Junge!',
     cost = 2.49,
     hintText = ['"Willst du mich zu deinem Kaffee?"'],
@@ -131,15 +145,17 @@ schwarzerKaffee = Upgrade (
 )
 
 senorPopo = Upgrade (
+    id = 15,
     name = 'Senor Popo',
     cost = 500000.0,
     hintText = ['Das ist... schwer zu erklaeren'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'senorPopo.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage(200)
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (200)
 )
 
 unterbewusstesKlicken = Upgrade (
+    id = 16,
     name = '"Wie Sie unterbewusst klicken"',
     cost = 6.99,
     hintText = ['Egal was du tust, nach diesem Buch wird dein Finger immer weiter klicken.'],
