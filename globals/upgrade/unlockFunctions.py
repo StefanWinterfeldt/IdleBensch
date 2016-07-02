@@ -8,6 +8,10 @@ def allTheseUpgradesAreActive (upgradeIds):
         state = state and upgrade.active
     return state
 
+def getTextRequiringUpgrades (upgradeIds):
+    upgradeNames = [upgradeUtil.getUpgradeById(upgradeId).name for upgradeId in upgradeIds]
+    return 'Dieses Upgrade benoetigt noch die folgenden anderen Upgrades: ' + ', '.join (upgradeNames) + '.'
+
 def getAlwaysUnlockedFunction ():
     return AnnotatedFunction (
         text = None,
@@ -17,7 +21,7 @@ def getAlwaysUnlockedFunction ():
 
 def getUnlockFunctionRequiringActiveUpgrades (upgradeIds):
     return AnnotatedFunction (
-        text = 'Dieses Upgrade benoetigt noch andere Upgrades.',
+        textFunction = getTextRequiringUpgrades,
         function = allTheseUpgradesAreActive,
         parameter = upgradeIds
     )

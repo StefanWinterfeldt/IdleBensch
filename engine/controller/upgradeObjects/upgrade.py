@@ -25,8 +25,9 @@ class Upgrade:
 
     def getHintText (self):
         lines = [self.name, 'Kosten: ' + textUtil.convertToHumanReadableString (self.cost, True)]
-        if self.unlockFunction.text is not None: lines.append (self.unlockFunction.text)
-        lines.append (self.activationFunction.text)
+        unlockText = self.unlockFunction.getText ()
+        if unlockText is not None: lines.append (unlockText)
+        lines.append (self.activationFunction.getText ())
         return lines + self.hintText
 
     def isUnlocked (self):
