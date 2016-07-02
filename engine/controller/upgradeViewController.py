@@ -111,7 +111,7 @@ def drawCategories ():
 
 def drawCategory (category):
     refreshUpgradeVisibility (category)
-    GV.upgradeView.blit (category.header.image, category.header.relativeRect)
+    if category.header.visible: GV.upgradeView.blit (category.header.image, category.header.relativeRect)
     for upgrade in category.upgrades:
         if upgrade.visible:
             GV.upgradeView.blit (upgrade.image, upgrade.relativeRect)
@@ -122,6 +122,6 @@ def drawCategory (category):
 
 def refreshUpgradeVisibility (category):
     for i in range (len (category.upgrades)):
-        if not category.upgrades[i].visible and (i == 0 or category.upgrades[i-1].active):
+        if not category.upgrades[i].visible and category.upgrades[i-1].active:
             category.upgrades [i].visible = True
             break

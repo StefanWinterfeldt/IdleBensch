@@ -5,11 +5,11 @@ class CategoryHeader:
     absoluteRect = None
     areaCode = None
     relativeRect = None
-    visible = True
 
-    def __init__(self, imagePath, hintText):
+    def __init__(self, imagePath, hintText, visible = False):
         self.image = pygame.image.load (imagePath)
         self.hintText = hintText
+        self.visible = visible
 
     def getHintText (self):
         return self.hintText

@@ -4,7 +4,8 @@ import os
 
 benschHeader = CategoryHeader (
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'benschHeader.png'),
-    hintText = 'Bensch Upgrades'
+    hintText = 'Bensch Upgrades',
+    visible = True
 )
 
 computerHeader = CategoryHeader (

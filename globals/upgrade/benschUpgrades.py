@@ -11,7 +11,8 @@ billigerEDrink = Upgrade (
     hintText = ['Schmeckt nach Klebstoff. Weil welcher drin ist'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'billigerEDrink.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (10)
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (10),
+    visible = True
 )
 
 normalerEDrink = Upgrade (
