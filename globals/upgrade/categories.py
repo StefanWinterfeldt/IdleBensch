@@ -11,7 +11,7 @@ benschCategory = UpgradeCategory (
     header = CH.benschHeader,
     upgrades = [
         BU.billigerEDrink,
-        # BU.fuenfKomma0,
+        BU.fuenfKomma0,
         # BU.normalerEDrink,
         # BU.schwarzerKaffee,
         # BU.unterbewusstesKlicken,

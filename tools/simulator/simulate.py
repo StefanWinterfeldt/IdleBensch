@@ -22,17 +22,21 @@ def analyze ():
     distancesBetweenUpgrades = []
     lastTicks = 0
     for log in buyLogs:
-        print 'Upgrade: ' + log ['name'] + ' bought at ' + getTimeString (log ['ticks'])
-        distancesBetweenUpgrades.append (log ['ticks'] - lastTicks)
+        print 'Upgrade:             ' + log ['name']
+        print 'Bought at:           ' + getTimeString (log ['ticks'])
+        ticksSinceLastBuy = log ['ticks'] - lastTicks
+        print 'Time since last buy: ' + getTimeString (ticksSinceLastBuy)
+        print ''
+        distancesBetweenUpgrades.append (ticksSinceLastBuy)
         lastTicks = log ['ticks']
     mean = int (numpy.mean (distancesBetweenUpgrades))
     median = int (numpy.median (distancesBetweenUpgrades))
     std = numpy.std (distancesBetweenUpgrades)
     print '---'
-    print 'Overall time taken: ' + getTimeString (buyLogs [-1] ['ticks'])
-    print 'Mean time between upgrades: ' + getTimeString (mean)
+    print 'Overall time taken:           ' + getTimeString (buyLogs [-1] ['ticks'])
+    print 'Mean time between upgrades:   ' + getTimeString (mean)
     print 'Median time between upgrades: ' + getTimeString (median)
-    print 'Standard deviation: ' + str (std)
+    print 'Standard deviation:           ' + str (std)
 
 def addBuyLog (upgradeName):
     global buyLogs
@@ -70,11 +74,12 @@ def getAvailableUpgrades ():
     return availableUpgrades
 
 def getTimeString (ticks):
-    hours = ticks / (60 * 60 * CD.FRAME_RATE)
-    ticks -= (60 * 60 * CD.FRAME_RATE) * hours
-    minutes = (ticks / (60 * CD.FRAME_RATE))
-    ticks -= (60 * CD.FRAME_RATE) * minutes
-    seconds = ticks / CD.FRAME_RATE
+    countedTicks = ticks
+    hours = countedTicks / (60 * 60 * CD.FRAME_RATE)
+    countedTicks -= (60 * 60 * CD.FRAME_RATE) * hours
+    minutes = (countedTicks / (60 * CD.FRAME_RATE))
+    countedTicks -= (60 * CD.FRAME_RATE) * minutes
+    seconds = countedTicks / CD.FRAME_RATE
     return str (ticks) + ' Ticks - ' + str (hours) + ' Hours | ' + str (minutes) + ' Minutes | ' + str (seconds) + ' Seconds'
 
 def getCurrentTimeString ():

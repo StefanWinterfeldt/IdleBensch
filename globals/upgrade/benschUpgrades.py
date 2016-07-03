@@ -7,11 +7,11 @@ import os
 billigerEDrink = Upgrade (
     id = 1,
     name = 'Billiger E-Drink',
-    cost = 0.0,
+    cost = 0.19,
     hintText = ['Schmeckt nach Klebstoff. Weil welcher drin ist'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'billigerEDrink.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction(''),
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (10),
     visible = True
 )
 
@@ -22,7 +22,7 @@ normalerEDrink = Upgrade (
     hintText = ['Bekannt aus jeder Tankstelle.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'normalerEDrink.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 teurerEDrink = Upgrade (
@@ -32,17 +32,17 @@ teurerEDrink = Upgrade (
     hintText = ['Er hat ein Bild von nem C-Promi auf der Rueckseite'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'teurerEDrink.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 fuenfKomma0 = Upgrade (
     id = 4,
     name = '5,0',
-    cost = 0.0,
+    cost = 0.45,
     hintText = ['Das Universalbier, macht gluecklich und loest die Zunge.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', '5komma0.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 drittesAuge = Upgrade (
@@ -62,7 +62,7 @@ extraHaende = Upgrade (
     hintText = ['Unglaublich! Der Mann hat wirklich vier linke Haende!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'extraHaende.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 hamsterProgrammer = Upgrade (
@@ -72,7 +72,7 @@ hamsterProgrammer = Upgrade (
     hintText = ['Entwickelt mehr Idle Games, damit du mehr zu spielen hast.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'hamsterProgrammer.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([25]),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 klon = Upgrade (
@@ -82,7 +82,7 @@ klon = Upgrade (
     hintText = ['Jetzt gibt es zwei von dir, gib das mal bei der Steuererklaerung an.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'klon.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 logikKurs = Upgrade (
@@ -92,7 +92,7 @@ logikKurs = Upgrade (
     hintText = ['Du erkennst schneller Loopholes in Idle Games und wirst so noch effektiver.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'logikKurs.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 matheKurs = Upgrade (
@@ -102,7 +102,7 @@ matheKurs = Upgrade (
     hintText = ['Wenn du das verstehst wirst du ach jedes Idle Game durchschauen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'matheKurs.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 mrScotch = Upgrade (
@@ -112,7 +112,7 @@ mrScotch = Upgrade (
     hintText = ['Das ist mein Kumpel Mr. Scotch, mit ihm haben alle mehr Spass!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'mrScotch.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 streamMod = Upgrade (
@@ -122,7 +122,7 @@ streamMod = Upgrade (
     hintText = ['"Nein, BrotFotzeHitler ist KEIN guter Nickname!"'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'oriMod.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([30]),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 leibwaechter = Upgrade (
@@ -132,7 +132,7 @@ leibwaechter = Upgrade (
     hintText = ['Wenn man dringend Schnapps braucht... trinkt man das auch nicht.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'pott.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 schwarzerKaffee = Upgrade (
@@ -142,7 +142,7 @@ schwarzerKaffee = Upgrade (
     hintText = ['"Willst du mich zu deinem Kaffee?"'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'schwarzerKaffee.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 senorPopo = Upgrade (
@@ -152,7 +152,7 @@ senorPopo = Upgrade (
     hintText = ['Das ist... schwer zu erklaeren'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'senorPopo.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([40]),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 unterbewusstesKlicken = Upgrade (
@@ -162,5 +162,5 @@ unterbewusstesKlicken = Upgrade (
     hintText = ['Egal was du tust, nach diesem Buch wird dein Finger immer weiter klicken.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'unterbewusstesKlicken.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
