@@ -7,48 +7,48 @@ import os
 billigerEDrink = Upgrade (
     id = 1,
     name = 'Billiger E-Drink',
-    cost = 0.19,
+    cost = 0.0,
     hintText = ['Schmeckt nach Klebstoff. Weil welcher drin ist'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'billigerEDrink.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (10),
+    activationFunction = AF.getPassiveFunction(''),
     visible = True
 )
 
 normalerEDrink = Upgrade (
     id = 2,
     name = 'Standard E-Drink',
-    cost = 0.99,
+    cost = 0.0,
     hintText = ['Bekannt aus jeder Tankstelle.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'normalerEDrink.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (20)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 teurerEDrink = Upgrade (
     id = 3,
     name = 'Premium E-Drink',
-    cost = 11.0,
+    cost = 0.0,
     hintText = ['Er hat ein Bild von nem C-Promi auf der Rueckseite'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'teurerEDrink.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (40)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 fuenfKomma0 = Upgrade (
     id = 4,
     name = '5,0',
-    cost = 0.45,
+    cost = 0.0,
     hintText = ['Das Universalbier, macht gluecklich und loest die Zunge.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', '5komma0.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (1)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 drittesAuge = Upgrade (
     id = 5,
     name = 'Drittes Auge',
-    cost = 6660000.0,
+    cost = 0.0,
     hintText = ['Oeffne deinen Geist fuer ein anderes Publikum'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'drittesAuge.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([20]),
@@ -58,109 +58,109 @@ drittesAuge = Upgrade (
 extraHaende = Upgrade (
     id = 6,
     name = 'Extra Haende',
-    cost = 5000.0,
+    cost = 0.0,
     hintText = ['Unglaublich! Der Mann hat wirklich vier linke Haende!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'extraHaende.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
-    activationFunction = AF.getIncreaseClicksPerSecondByPercentageFunction (100)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 hamsterProgrammer = Upgrade (
     id = 7,
     name = 'Hamsterartiger Programmierer',
-    cost = 1337.0,
+    cost = 0.0,
     hintText = ['Entwickelt mehr Idle Games, damit du mehr zu spielen hast.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'hamsterProgrammer.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([25]),
-    activationFunction = AF.getIncreaseSubscriberViewsPerEpisodeByPercentage (30)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 klon = Upgrade (
     id = 8,
     name = 'Klon Bensch',
-    cost = 250000.0,
+    cost = 0.0,
     hintText = ['Jetzt gibt es zwei von dir, gib das mal bei der Steuererklaerung an.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'klon.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
-    activationFunction = AF.getIncreaseNumberOfStreamsByOne ()
+    activationFunction = AF.getPassiveFunction('')
 )
 
 logikKurs = Upgrade (
     id = 9,
     name = "Logik fuer Let's Player",
-    cost = 50.0,
+    cost = 0.0,
     hintText = ['Du erkennst schneller Loopholes in Idle Games und wirst so noch effektiver.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'logikKurs.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (20)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 matheKurs = Upgrade (
     id = 10,
     name = 'Mathe fuer Finanzbeamte',
-    cost = 350.0,
+    cost = 0.0,
     hintText = ['Wenn du das verstehst wirst du ach jedes Idle Game durchschauen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'matheKurs.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (30)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 mrScotch = Upgrade (
     id = 11,
     name = 'Mr. Scotch',
-    cost = 120.0,
+    cost = 0.0,
     hintText = ['Das ist mein Kumpel Mr. Scotch, mit ihm haben alle mehr Spass!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'mrScotch.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (5)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 streamMod = Upgrade (
     id = 12,
     name = 'Stream Moderator',
-    cost = 30000.0,
+    cost = 0.0,
     hintText = ['"Nein, BrotFotzeHitler ist KEIN guter Nickname!"'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'oriMod.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([30]),
-    activationFunction = AF.getIncreaseSubscribersPerStreamPerSecondByPercentage (100)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 leibwaechter = Upgrade (
     id = 13,
     name = 'Der gute Leibwaechter',
-    cost = 7.95,
+    cost = 0.0,
     hintText = ['Wenn man dringend Schnapps braucht... trinkt man das auch nicht.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'pott.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMinSubscribersPerEpisode (1)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 schwarzerKaffee = Upgrade (
     id = 14,
     name = 'Richtig schwarzer Kaffee Junge!',
-    cost = 2.49,
+    cost = 0.0,
     hintText = ['"Willst du mich zu deinem Kaffee?"'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'schwarzerKaffee.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (30)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 senorPopo = Upgrade (
     id = 15,
     name = 'Senor Popo',
-    cost = 500000.0,
+    cost = 0.0,
     hintText = ['Das ist... schwer zu erklaeren'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'senorPopo.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([40]),
-    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (200)
+    activationFunction = AF.getPassiveFunction('')
 )
 
 unterbewusstesKlicken = Upgrade (
     id = 16,
     name = '"Wie Sie unterbewusst klicken"',
-    cost = 6.99,
+    cost = 0.0,
     hintText = ['Egal was du tust, nach diesem Buch wird dein Finger immer weiter klicken.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'unterbewusstesKlicken.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getActivateAutoClickFunction ()
+    activationFunction = AF.getPassiveFunction('')
 )
