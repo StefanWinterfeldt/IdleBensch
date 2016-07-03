@@ -1,4 +1,5 @@
 import constants.display as CD
+import cProfile
 import engine.controller.clickViewController as clickViewController
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.passiveIncome as passiveIncomeController
@@ -29,11 +30,15 @@ def analyze ():
         print ''
         distancesBetweenUpgrades.append (ticksSinceLastBuy)
         lastTicks = log ['ticks']
+    minimum = int (min (distancesBetweenUpgrades))
+    maximum = int (max (distancesBetweenUpgrades))
     mean = int (numpy.mean (distancesBetweenUpgrades))
     median = int (numpy.median (distancesBetweenUpgrades))
     std = numpy.std (distancesBetweenUpgrades)
     print '---'
     print 'Overall time taken:           ' + getTimeString (buyLogs [-1] ['ticks'])
+    print 'Min time between upgrades:    ' + getTimeString (minimum)
+    print 'Max time between upgrades:    ' + getTimeString (maximum)
     print 'Mean time between upgrades:   ' + getTimeString (mean)
     print 'Median time between upgrades: ' + getTimeString (median)
     print 'Standard deviation:           ' + str (std)
@@ -129,8 +134,8 @@ def tick ():
 def simulate ():
     while moreUpgradesAvailable ():
         tick ()
-        if tickCount % 1000 == 0:
-            printCurrentMoney ()
+        # if tickCount % 1000 == 0:
+        #     printCurrentMoney ()
     analyze ()
 
 prepareSimulation ()

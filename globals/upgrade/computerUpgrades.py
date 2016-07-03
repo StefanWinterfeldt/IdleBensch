@@ -7,21 +7,21 @@ import os
 modem56K = Upgrade (
     id = 17,
     name = '56k Modem',
-    cost = 0.0,
+    cost = 10.0,
     hintText = ['Endlich kannst du deinen Akustik-Koppler loswerden! Und Dubstep spielt es auch!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', '56kModem.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseSubscriberViewsPerEpisodeByPercentage (50)
 )
 
 anrufbeantworter = Upgrade (
     id = 18,
     name = 'Anrufbeantworter',
-    cost = 0.0,
+    cost = 20.0,
     hintText = ['Niemand wird dich mehr beim Aufnehmen stoeren.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'anrufbeantworter.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (2)
 )
 
 brainInAJar = Upgrade (
@@ -57,11 +57,11 @@ modemDSL = Upgrade (
 ergoMaus = Upgrade (
     id = 22,
     name = 'Ergonomische Maus',
-    cost = 0.0,
+    cost = 70.0,
     hintText = ['Aus echtem Stierhodenleder. Keine Macht dem Karpaltunnel!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'ergoMaus.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (50)
 )
 
 glasfaser = Upgrade (
@@ -107,8 +107,8 @@ holoKamera = Upgrade (
 normalPC = Upgrade (
     id = 27,
     name = 'Normaler PC',
-    cost = 0.0,
-    hintText = ['Nix besonderes, aber auch nicht aus Presspappe.'],
+    cost = 200.0,
+    hintText = ['Gebraucht und nix besonderes, aber auch nicht aus Presspappe.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'normalPC.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
     activationFunction = AF.getActivateMerchCategory ()
@@ -137,11 +137,11 @@ satellitModem = Upgrade (
 schlechteKamera = Upgrade (
     id = 30,
     name = 'Billige Kamera',
-    cost = 0.0,
+    cost = 50.0,
     hintText = ['Gabs gebraucht auf Ebay. Ein Blick auf die SD-Karte verraet warum sie so billig war...'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'schlechteKamera.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getActivateStreamFunction ()
 )
 
 schulPC = Upgrade (

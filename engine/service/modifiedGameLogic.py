@@ -11,6 +11,9 @@ def getClicksPerTick ():
 def getDonationChancePerStreamPerSecondInPercent ():
     return CGL.BASE_DONATION_CHANCE_PER_STREAM_PER_SECOND * 100
 
+def getDonationChancePerStreamPerSecond ():
+    return CGL.BASE_DONATION_CHANCE_PER_STREAM_PER_SECOND
+
 def getDonationChancePerStreamPerTick ():
     return CGL.BASE_DONATION_CHANCE_PER_STREAM_PER_SECOND / float (CD.FRAME_RATE)
 
@@ -49,6 +52,9 @@ def getMoneyPerView ():
 
 def getPurchaseChancePerSubscriberPerSecondInPercent ():
     return CGL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND * 100.0
+
+def getPurchaseChancePerSubscriberPerSecond ():
+    return CGL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND
 
 def getPurchaseChancePerSubscriberPerTick ():
     return CGL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND / float (CD.FRAME_RATE)

@@ -32,6 +32,7 @@ def activateTechCategory (params):
 
 def activateStream (param):
     GS.streams = 1
+    GL.BASE_SUBSCRIBERS_PER_STREAM_PER_SECOND = 0.05
 
 def increaseClicksPerSecondByPercentage (percentage):
     GL.BASE_CLICKS_PER_SECOND *= ((100 + percentage) / 100.0)
