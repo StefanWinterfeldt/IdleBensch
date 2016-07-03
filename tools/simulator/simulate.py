@@ -11,7 +11,7 @@ import numpy
 import random
 
 
-USER_CLICKS_PER_SECOND = 3
+USER_CLICKS_PER_SECOND = 4
 
 accumulatedUserClicks = 0
 buyLogs = []

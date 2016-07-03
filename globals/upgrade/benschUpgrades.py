@@ -18,11 +18,11 @@ billigerEDrink = Upgrade (
 normalerEDrink = Upgrade (
     id = 2,
     name = 'Standard E-Drink',
-    cost = 0.0,
+    cost = 0.99,
     hintText = ['Bekannt aus jeder Tankstelle.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'normalerEDrink.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (20)
 )
 
 teurerEDrink = Upgrade (
@@ -42,7 +42,7 @@ fuenfKomma0 = Upgrade (
     hintText = ['Das Universalbier, macht gluecklich und loest die Zunge.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', '5komma0.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (1)
 )
 
 drittesAuge = Upgrade (
@@ -138,11 +138,11 @@ leibwaechter = Upgrade (
 schwarzerKaffee = Upgrade (
     id = 14,
     name = 'Richtig schwarzer Kaffee Junge!',
-    cost = 0.0,
+    cost = 2.19,
     hintText = ['"Willst du mich zu deinem Kaffee?"'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'schwarzerKaffee.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getActivateComputerCategory ()
 )
 
 senorPopo = Upgrade (
@@ -158,9 +158,9 @@ senorPopo = Upgrade (
 unterbewusstesKlicken = Upgrade (
     id = 16,
     name = '"Wie Sie unterbewusst klicken"',
-    cost = 0.0,
+    cost = 6.99,
     hintText = ['Egal was du tust, nach diesem Buch wird dein Finger immer weiter klicken.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'unterbewusstesKlicken.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getActivateAutoClickFunction()
 )

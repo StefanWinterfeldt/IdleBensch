@@ -12,9 +12,9 @@ benschCategory = UpgradeCategory (
     upgrades = [
         BU.billigerEDrink,
         BU.fuenfKomma0,
-        # BU.normalerEDrink,
-        # BU.schwarzerKaffee,
-        # BU.unterbewusstesKlicken,
+        BU.normalerEDrink,
+        BU.schwarzerKaffee,
+        BU.unterbewusstesKlicken,
         # BU.leibwaechter,
         # BU.teurerEDrink,
         # BU.logikKurs,
@@ -32,7 +32,7 @@ benschCategory = UpgradeCategory (
 computerCategory = UpgradeCategory (
     header = CH.computerHeader,
     upgrades = [
-        # CU.schulPC,
+        CU.schulPC,
         # CU.modem56K,
         # CU.anrufbeantworter,
         # CU.schlechteKamera,
@@ -119,7 +119,7 @@ occultCategory = UpgradeCategory (
 
 categories = [
     benschCategory,
-    # computerCategory,
+    computerCategory,
     # merchCategory,
     # techCategory,
     # occultCategory

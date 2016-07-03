@@ -10,8 +10,7 @@ benschHeader = CategoryHeader (
 
 computerHeader = CategoryHeader (
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'computerHeader.png'),
-    hintText = 'Computer Upgrades',
-    visible = True
+    hintText = 'Computer Upgrades'
 )
 
 merchHeader = CategoryHeader (

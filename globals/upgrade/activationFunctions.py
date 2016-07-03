@@ -4,7 +4,13 @@ from globals.upgrade.annotatedFunction import AnnotatedFunction
 import importlib
 
 def activateAutoClicking (params):
-    GL.BASE_CLICKS_PER_SECOND = 0.1
+    GL.BASE_CLICKS_PER_SECOND = 1.0
+
+def activateComputerCategory (params):
+    CH = importlib.import_module('globals.upgrade.categoryHeaders')
+    CU = importlib.import_module('globals.upgrade.computerUpgrades')
+    CH.computerHeader.visible = True
+    CU.schulPC.visible = True
 
 def activateMerchCategory (params):
     CH = importlib.import_module('globals.upgrade.categoryHeaders')
@@ -55,6 +61,13 @@ def getActivateAutoClickFunction ():
     return AnnotatedFunction (
         text = 'Du beginnst automatisch zu klicken.',
         function = activateAutoClicking,
+        parameter = None
+    )
+
+def getActivateComputerCategory ():
+    return AnnotatedFunction (
+        text = 'Da deine grundlegende Koffein-Versorgung sicher gestellt ist kannst du dich jetzt um deinen PC kuemmern. Aktiviert Computer Upgrades.',
+        function = activateComputerCategory,
         parameter = None
     )
 

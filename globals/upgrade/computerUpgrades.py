@@ -11,7 +11,7 @@ modem56K = Upgrade (
     hintText = ['Endlich kannst du deinen Akustik-Koppler loswerden! Und Dubstep spielt es auch!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', '56kModem.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 anrufbeantworter = Upgrade (
@@ -21,7 +21,7 @@ anrufbeantworter = Upgrade (
     hintText = ['Niemand wird dich mehr beim Aufnehmen stoeren.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'anrufbeantworter.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 brainInAJar = Upgrade (
@@ -51,7 +51,7 @@ modemDSL = Upgrade (
     hintText = ['Garantiert bis zu 100K... zumindest zwischen 3:13 und 3:14 Uhr.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'dslModem.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 ergoMaus = Upgrade (
@@ -61,7 +61,7 @@ ergoMaus = Upgrade (
     hintText = ['Aus echtem Stierhodenleder. Keine Macht dem Karpaltunnel!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'ergoMaus.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 glasfaser = Upgrade (
@@ -71,7 +71,7 @@ glasfaser = Upgrade (
     hintText = ['Internet mit Lichtgeschwindigkeit, damit koenntest du Pornos so schnell gucken wie neue produziert werden...'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'glasfaser.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 hdKamera = Upgrade (
@@ -81,7 +81,7 @@ hdKamera = Upgrade (
     hintText = ['Jetzt kann man auch dein Gesicht erkennen, ob das so ne gute Idee war...'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'HDKamera.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 highEndPC = Upgrade (
@@ -131,7 +131,7 @@ satellitModem = Upgrade (
     hintText = ['Selbst das Hubble-Teleskop kann dir jetzt zuschauen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'satellitModem.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 schlechteKamera = Upgrade (
@@ -141,18 +141,17 @@ schlechteKamera = Upgrade (
     hintText = ['Gabs gebraucht auf Ebay. Ein Blick auf die SD-Karte verraet warum sie so billig war...'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'schlechteKamera.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
 
 schulPC = Upgrade (
     id = 31,
     name = 'Alter Schul-PC',
-    cost = 0.0,
+    cost = 5.0,
     hintText = ['Der Stil der fruehen 90er in Nikotin-Gelb, niemand wird ihn vermissen und du musst nicht mehr so tun als dei lieblings Pappkarton ein Rechner sein.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'schulPC.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction(''),
-    visible = True
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (50)
 )
 
 ultraTastatur = Upgrade (
@@ -162,5 +161,5 @@ ultraTastatur = Upgrade (
     hintText = ['Hat leichtgaengige Tasten und leuchtet im dunkeln'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'ultraTastatur.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction('')
+    activationFunction = AF.getPassiveFunction ('')
 )
