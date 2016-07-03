@@ -70,9 +70,11 @@ def getAvailableUpgrades ():
     return availableUpgrades
 
 def getTimeString (ticks):
-    seconds = ticks / CD.FRAME_RATE
-    minutes = ticks / (60 * CD.FRAME_RATE)
     hours = ticks / (60 * 60 * CD.FRAME_RATE)
+    ticks -= (60 * 60 * CD.FRAME_RATE) * hours
+    minutes = (ticks / (60 * CD.FRAME_RATE))
+    ticks -= (60 * CD.FRAME_RATE) * minutes
+    seconds = ticks / CD.FRAME_RATE
     return str (ticks) + ' Ticks - ' + str (hours) + ' Hours | ' + str (minutes) + ' Minutes | ' + str (seconds) + ' Seconds'
 
 def getCurrentTimeString ():
