@@ -30,7 +30,7 @@ brainInAJar = Upgrade (
     cost = 0.01,
     hintText = ['Ja, ich weiss dass es wie ne Suesskartoffel aussieht. Versuch du mal in Paint ein Gehirn zu malen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'brainInAJar.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([50]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -151,7 +151,8 @@ schulPC = Upgrade (
     hintText = ['Der Stil der fruehen 90er in Nikotin-Gelb, niemand wird ihn vermissen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'schulPC.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getPassiveFunction ('Missing Text'),
+    visible = True
 )
 
 ultraTastatur = Upgrade (

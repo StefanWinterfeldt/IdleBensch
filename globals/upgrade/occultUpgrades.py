@@ -149,7 +149,7 @@ tentaclePact = Upgrade (
     cost = 0.01,
     hintText = ['Die Tentakel wollten einst die Erde erobern, nun heisst ihr Anfueher Taddaeus und schaut deinen Videos.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'tentaclePact.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([44]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 

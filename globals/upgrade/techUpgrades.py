@@ -10,7 +10,7 @@ catTV = Upgrade (
     cost = 0.01,
     hintText = ['Auch Katzen werden dir zusehen mit dem patentierten Katzenfernseher.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'catTV.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([24]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -40,7 +40,7 @@ ftlTransmission = Upgrade (
     cost = 0.01,
     hintText = ['Aliens koennen dich in Echtzeit bewundern und an deinen Streams teilnehmen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'ftlTransmission.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([23]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -80,7 +80,7 @@ metaTheory = Upgrade (
     cost = 0.01,
     hintText = ['Die Meta-Theorie besagt dass alles ineinander enthalten ist. Wenn du lange genug auf ein Quantenteilchen zoomst siehst du das ganze Universum.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'metaTheory.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([72]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -100,7 +100,7 @@ parallelRealities = Upgrade (
     cost = 0.01,
     hintText = ['Wirr lieferrn auch in parrrallele Rrealitaeten. Menschen aus Parallelwelten, selbst andere Versionen von dir, schauen dir nun zu.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'parallelRealities.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([28]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -130,7 +130,7 @@ seti = Upgrade (
     cost = 0.01,
     hintText = ['Wer Ausserirdische sucht, der findet sie auch. Und sie sind Fans von dir.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'seti.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([29]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -160,6 +160,6 @@ unterbewussteBotschaften = Upgrade (
     cost = 0.01,
     hintText = ['Mach deine Zuschauer Geistig von dir abhaengig. Damit bist du auch nicht schlimmer als das Fernsehen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'unterbewussteBotschaften.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([21]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )

@@ -60,7 +60,7 @@ film1 = Upgrade (
     cost = 0.01,
     hintText = ['Der Kult Film, jetzt im Directors-Cut (3 Sek. laenger).'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'film1.png'),
-    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([24]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
