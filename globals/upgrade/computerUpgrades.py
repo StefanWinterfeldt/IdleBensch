@@ -30,7 +30,7 @@ brainInAJar = Upgrade (
     cost = 0.01,
     hintText = ['Ja, ich weiss dass es wie ne Suesskartoffel aussieht. Versuch du mal in Paint ein Gehirn zu malen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'brainInAJar.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([50]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -91,7 +91,7 @@ highEndPC = Upgrade (
     hintText = ['Darauf lauft sogar deine Mutter fluessig.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'highEndPC.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getActivateTechCategory ()
 )
 
 holoKamera = Upgrade (
@@ -111,7 +111,7 @@ normalPC = Upgrade (
     hintText = ['Nix besonderes, aber auch nicht aus Presspappe.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'normalPC.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getActivateMerchCategory ()
 )
 
 quantumComputer = Upgrade (

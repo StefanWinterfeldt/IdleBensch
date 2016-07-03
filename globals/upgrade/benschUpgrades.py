@@ -51,8 +51,8 @@ drittesAuge = Upgrade (
     cost = 6660000.0,
     hintText = ['Oeffne deinen Geist fuer ein anderes Publikum'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'drittesAuge.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([20]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([20]),
+    activationFunction = AF.getActivateOccultCategory ()
 )
 
 extraHaende = Upgrade (
@@ -61,7 +61,7 @@ extraHaende = Upgrade (
     cost = 5000.0,
     hintText = ['Unglaublich! Der Mann hat wirklich vier linke Haende!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'extraHaende.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([50]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
     activationFunction = AF.getIncreaseClicksPerSecondByPercentageFunction (100)
 )
 
@@ -71,7 +71,7 @@ hamsterProgrammer = Upgrade (
     cost = 1337.0,
     hintText = ['Entwickelt mehr Idle Games, damit du mehr zu spielen hast.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'hamsterProgrammer.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([25]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([25]),
     activationFunction = AF.getIncreaseSubscriberViewsPerEpisodeByPercentage (30)
 )
 
@@ -81,7 +81,7 @@ klon = Upgrade (
     cost = 250000.0,
     hintText = ['Jetzt gibt es zwei von dir, gib das mal bei der Steuererklaerung an.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'klon.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([50]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
     activationFunction = AF.getIncreaseNumberOfStreamsByOne ()
 )
 
@@ -121,7 +121,7 @@ streamMod = Upgrade (
     cost = 30000.0,
     hintText = ['"Nein, BrotFotzeHitler ist KEIN guter Nickname!"'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'oriMod.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([30]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([30]),
     activationFunction = AF.getIncreaseSubscribersPerStreamPerSecondByPercentage (100)
 )
 
@@ -151,7 +151,7 @@ senorPopo = Upgrade (
     cost = 500000.0,
     hintText = ['Das ist... schwer zu erklaeren'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'senorPopo.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([40]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([40]),
     activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (200)
 )
 

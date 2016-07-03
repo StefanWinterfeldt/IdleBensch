@@ -1,9 +1,28 @@
 import globals.gameLogic as GL
 import globals.gameState as GS
 from globals.upgrade.annotatedFunction import AnnotatedFunction
+import importlib
 
 def activateAutoClicking (params):
     GL.BASE_CLICKS_PER_SECOND = 0.1
+
+def activateMerchCategory (params):
+    CH = importlib.import_module('globals.upgrade.categoryHeaders')
+    MU = importlib.import_module('globals.upgrade.merchUpgrades')
+    CH.merchHeader.visible = True
+    MU.shirt.visible = True
+
+def activateOccultCategory (params):
+    CH = importlib.import_module ('globals.upgrade.categoryHeaders')
+    OU = importlib.import_module ('globals.upgrade.occultUpgrades')
+    CH.occultHeader.visible = True
+    OU.zombiePact.visible = True
+
+def activateTechCategory (params):
+    CH = importlib.import_module ('globals.upgrade.categoryHeaders')
+    TU = importlib.import_module ('globals.upgrade.techUpgrades')
+    CH.techHeader.visible = True
+    TU.kaffeeMaschine.visible = True
 
 def activateStream (param):
     GS.streams = 1
@@ -36,6 +55,27 @@ def getActivateAutoClickFunction ():
     return AnnotatedFunction (
         text = 'Du beginnst automatisch zu klicken.',
         function = activateAutoClicking,
+        parameter = None
+    )
+
+def getActivateMerchCategory ():
+    return AnnotatedFunction (
+        text = 'Der Rechner ist schnell genug um einen Web-Shop zu erstellen. Aktiviert Merchandise Upgrades.',
+        function = activateMerchCategory,
+        parameter = None
+    )
+
+def getActivateOccultCategory ():
+    return AnnotatedFunction (
+        text = 'Aktiviert ausserweltliche Upgrades.',
+        function = activateOccultCategory,
+        parameter = None
+    )
+
+def getActivateTechCategory ():
+    return AnnotatedFunction (
+        text = 'Der Rechner ist schnell genug um damit zu forschen. Aktiviert Technologie Upgrades.',
+        function = activateTechCategory,
         parameter = None
     )
 
