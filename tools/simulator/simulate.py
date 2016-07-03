@@ -91,7 +91,11 @@ def prepareSimulation ():
 def buyUpgradeIfPossible ():
     affordableUpgrades = [upgrade for upgrade in getAvailableUpgrades () if upgrade.cost <= GS.money]
     if len (affordableUpgrades) > 0:
-        upgradeToBeBought = random.choice (affordableUpgrades)
+        minCost = min ([upgrade.cost for upgrade in affordableUpgrades])
+        upgradeToBeBought = None
+        for upgrade in affordableUpgrades:
+            if upgrade.cost == minCost:
+                upgradeToBeBought = upgrade
         upgradeViewController.handleClickOnUpgrade (upgradeToBeBought)
         refreshCategoryVisibility ()
         addBuyLog (upgradeToBeBought.name)
