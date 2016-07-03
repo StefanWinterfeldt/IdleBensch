@@ -6,6 +6,10 @@ def makeAllUpgradesVisible ():
     for upgrade in getAllUpgrades ():
         upgrade.visible = True
 
+def setAllCostsToZero ():
+    for upgrade in getAllUpgrades():
+        upgrade.cost = 0.0
+
 def getAllUpgradeHeaders ():
     return [category.header for category in globals.upgrade.categories.categories]
 

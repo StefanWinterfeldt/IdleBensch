@@ -10,3 +10,5 @@ def handleKeyEvent (event):
     elif event.key == pygame.K_v and GL.DEV_MODE:
         upgradeUtil.makeAllUpgradesVisible ()
         upgradeViewController.drawCategories ()
+    elif event.key == pygame.K_c and GL.DEV_MODE:
+        upgradeUtil.setAllCostsToZero ()
