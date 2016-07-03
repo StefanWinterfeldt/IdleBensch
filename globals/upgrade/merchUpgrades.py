@@ -60,7 +60,7 @@ film1 = Upgrade (
     cost = 0.0,
     hintText = ['Der Kult Film, jetzt im Directors-Cut (3 Sek. laenger).'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'film1.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([24]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([24]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -147,19 +147,19 @@ schnapps = Upgrade (
 shirt = Upgrade (
     id = 47,
     name = 'Der Klassiker',
-    cost = 0.0,
+    cost = 300.0,
     hintText = ['Ein Shirt mit deinem Gesicht drauf, herzlich Glueckwunsch.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'shirt.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([31]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    unlockFunction = UF.getAlwaysUnlockedFunction (),
+    activationFunction = AF.getActivatePurchasesFunction ()
 )
 
 tasse = Upgrade (
     id = 48,
     name = 'Bensch-Tasse',
-    cost = 0.0,
+    cost = 500.0,
     hintText = ['Und ploetzlich stehen ueberall Leute die dir aus dem Kopf trinken...'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'tasse.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (20)
 )

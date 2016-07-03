@@ -7,14 +7,14 @@ def activateAutoClicking (params):
     GL.BASE_CLICKS_PER_SECOND = 1.0
 
 def activateComputerCategory (params):
-    CH = importlib.import_module('globals.upgrade.categoryHeaders')
-    CU = importlib.import_module('globals.upgrade.computerUpgrades')
+    CH = importlib.import_module ('globals.upgrade.categoryHeaders')
+    CU = importlib.import_module ('globals.upgrade.computerUpgrades')
     CH.computerHeader.visible = True
     CU.schulPC.visible = True
 
 def activateMerchCategory (params):
-    CH = importlib.import_module('globals.upgrade.categoryHeaders')
-    MU = importlib.import_module('globals.upgrade.merchUpgrades')
+    CH = importlib.import_module ('globals.upgrade.categoryHeaders')
+    MU = importlib.import_module ('globals.upgrade.merchUpgrades')
     CH.merchHeader.visible = True
     MU.shirt.visible = True
 
@@ -30,6 +30,11 @@ def activateTechCategory (params):
     CH.techHeader.visible = True
     TU.kaffeeMaschine.visible = True
 
+def activatePurchases (params):
+    GL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND = 0.0001
+    GL.BASE_MIN_PURCHASE = 0.50
+    GL.BASE_MAX_PURCHASE = 5.0
+
 def activateStream (param):
     GS.streams = 1
     GL.BASE_SUBSCRIBERS_PER_STREAM_PER_SECOND = 0.05
@@ -39,6 +44,9 @@ def increaseClicksPerSecondByPercentage (percentage):
 
 def increaseEpisodesPerClickByPercentage (percentage):
     GL.BASE_EPISODES_PER_CLICK *= ((100 + percentage) / 100.0)
+
+def increaseMaxPurchaseAmountByPercentage (percentage):
+    GL.BASE_MAX_PURCHASE *= ((100 + percentage) / 100.0)
 
 def increaseMaxSubscribersPerEpisode (value):
     GL.BASE_MAX_SUBSCRIBERS_PER_EPISODE += value
@@ -93,6 +101,13 @@ def getActivateTechCategory ():
         parameter = None
     )
 
+def getActivatePurchasesFunction ():
+    return AnnotatedFunction (
+        text = 'Abonnenten koennen jetzt bei dir einkaufen.',
+        function = activatePurchases,
+        parameter = None
+    )
+
 def getActivateStreamFunction ():
     return AnnotatedFunction (
         text = 'Schaltet deinen ersten Stream live.',
@@ -111,6 +126,13 @@ def getIncreaseEpisodesPerClickByPercentageFunction (percentage):
     return AnnotatedFunction (
         text = 'Du produzierst ' + str (percentage) + '% mehr Folgen pro Klick.',
         function = increaseEpisodesPerClickByPercentage,
+        parameter = percentage
+    )
+
+def getIncreaseMaxPurchaseAmountByPercentage (percentage):
+    return AnnotatedFunction (
+        text = 'Erhoeht den maximalen Merchandise Einkaufswert um ' + str (percentage) + '%.',
+        function = increaseMaxPurchaseAmountByPercentage,
         parameter = percentage
     )
 

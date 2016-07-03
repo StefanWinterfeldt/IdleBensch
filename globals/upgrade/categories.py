@@ -54,8 +54,8 @@ computerCategory = UpgradeCategory (
 merchCategory = UpgradeCategory (
     header = CH.merchHeader,
     upgrades = [
-        # MU.shirt,
-        # MU.tasse,
+        MU.shirt,
+        MU.tasse,
         # MU.arschPad,
         # MU.bier,
         # MU.film1,
@@ -120,7 +120,7 @@ occultCategory = UpgradeCategory (
 categories = [
     benschCategory,
     computerCategory,
-    # merchCategory,
+    merchCategory,
     # techCategory,
     # occultCategory
 ]
