@@ -37,11 +37,11 @@ brainInAJar = Upgrade (
 brainInterface = Upgrade (
     id = 20,
     name = 'Neurales Interface',
-    cost = 0.0,
+    cost = 500000.0,
     hintText = ['Jetzt brauchst du deine laestigen Haende nicht mehr.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'brainInterface.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseClicksPerSecondByPercentageFunction (100)
 )
 
 modemDSL = Upgrade (
@@ -67,11 +67,11 @@ ergoMaus = Upgrade (
 glasfaser = Upgrade (
     id = 23,
     name = 'Glasfaserverbindung',
-    cost = 0.0,
+    cost = 300000.0,
     hintText = ['Internet mit Lichtgeschwindigkeit, damit koenntest du Pornos so schnell gucken wie neue produziert werden...'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'glasfaser.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (20)
 )
 
 hdKamera = Upgrade (
@@ -97,11 +97,11 @@ highEndPC = Upgrade (
 holoKamera = Upgrade (
     id = 26,
     name = 'Holographische Kamera',
-    cost = 0.0,
+    cost = 80000.0,
     hintText = ['Mit dem richtigen Equipment koennen sich deine Zuschauer einen Lebensgrossen Holo-Bensch in ihr Wohnzimmer projizieren.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'holoKamera.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseSubscriberViewsPerEpisodeByPercentage (100)
 )
 
 normalPC = Upgrade (
@@ -117,11 +117,11 @@ normalPC = Upgrade (
 quantumComputer = Upgrade (
     id = 28,
     name = 'Quantencomputer',
-    cost = 0.0,
+    cost = 30000000.0,
     hintText = ['2000 Jahre Forschung fuer... Quanten-IdleGames'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'quantumComputer.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseClicksPerSecondByPercentageFunction (100)
 )
 
 satellitModem = Upgrade (

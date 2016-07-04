@@ -53,6 +53,9 @@ def increaseEpisodesPerClickByPercentage (percentage):
 def increaseMaxPurchaseAmountByPercentage (percentage):
     GL.BASE_MAX_PURCHASE *= ((100 + percentage) / 100.0)
 
+def increaseMaxDonationByValue (value):
+    GL.BASE_MAX_DONATION += value
+
 def increaseMaxSubscribersPerEpisode (value):
     GL.BASE_MAX_SUBSCRIBERS_PER_EPISODE += value
 
@@ -61,6 +64,9 @@ def increaseMinSubscribersPerEpisode (value):
 
 def increaseNumberOfStreams (value):
     GS.streams += value
+
+def increaseDonationChanceByPercentage (percentage):
+    GL.BASE_DONATION_CHANCE_PER_STREAM_PER_SECOND *= ((100 + percentage) / 100.0)
 
 def increasePurchaseChanceByPercentage (percentage):
     GL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND *= ((100 + percentage) / 100.0)
@@ -144,6 +150,13 @@ def getIncreaseEpisodesPerClickByPercentageFunction (percentage):
         parameter = percentage
     )
 
+def getIncreaseMaxDonationAmount (value):
+    return AnnotatedFunction (
+        text = 'Erhoeht die maximale Spendengroesse um ' + str(value) + ' Euro.',
+        function = increaseMaxDonationByValue,
+        parameter = value
+    )
+
 def getIncreaseMaxPurchaseAmountByPercentage (percentage):
     return AnnotatedFunction (
         text = 'Erhoeht den maximalen Merchandise Einkaufswert um ' + str (percentage) + '%.',
@@ -170,6 +183,13 @@ def getIncreaseNumberOfStreamsByOne ():
         text = 'Du erhaeltst einen zusaetzlichen Stream.',
         function = increaseNumberOfStreams,
         parameter = 1
+    )
+
+def getIncreaseDonationChanceByPercentage (percentage):
+    return AnnotatedFunction (
+        text = 'Die Chance, dass dir beim Streamen Geld gespendet wird steigt um ' + str(percentage) + '%.',
+        function = increaseDonationChanceByPercentage,
+        parameter = percentage
     )
 
 def getIncreasePurchaseChanceByPercentage (percentage):

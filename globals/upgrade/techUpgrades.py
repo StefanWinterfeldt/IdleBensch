@@ -27,31 +27,31 @@ dnaMutation = Upgrade (
 dysonSphere = Upgrade (
     id = 51,
     name = 'Dyson Sphaere',
-    cost = 0.0,
-    hintText = ['Loest alle Energieprobleme fuer die naechsten 2000 Jahre - so hat jeder mehr Zeit dir zuzusehen'],
+    cost = 2000000.0,
+    hintText = ['Im Angebot bei Ikea - loest alle Energieprobleme fuer die naechsten 2000 Jahre - so hat jeder mehr Zeit dir zuzusehen'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'dysonSphere.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (2000)
 )
 
 ftlTransmission = Upgrade (
     id = 52,
     name = 'Ueberlicht Uebertragung',
-    cost = 0.0,
+    cost = 1200000.0,
     hintText = ['Aliens koennen dich in Echtzeit bewundern und an deinen Streams teilnehmen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'ftlTransmission.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([23]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseSubscribersPerStreamPerSecondByPercentage (200)
 )
 
 idleBensch = Upgrade (
     id = 53,
     name = 'Idle Bensch - Das Spiel',
-    cost = 0.0,
+    cost = -3.1415,
     hintText = ['Tu das nicht. Du wirst das Multiversum durch 0 teilen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'idleBensch.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getPassiveFunction ('MiRrOrS aRe MoRe FuN tHaN Tv')
 )
 
 kaffeeMaschine = Upgrade (
@@ -77,31 +77,31 @@ kiPsychologie = Upgrade (
 metaTheory = Upgrade (
     id = 56,
     name = 'Meta-Theorie',
-    cost = 0.0,
+    cost = 876543210.0,
     hintText = ['Die Meta-Theorie besagt dass alles ineinander enthalten ist. Wenn du lange genug auf ein Quantenteilchen zoomst siehst du das ganze Universum.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'metaTheory.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([72]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage(0)
 )
 
 omnipresentBroadcast = Upgrade (
     id = 57,
     name = 'Allgegenwaertige Uebertragung',
-    cost = 0.0,
+    cost = 200000000.0,
     hintText = ['Du bist im ganzen Universum zu empfangen, gleichzeitig. Selbst die Wesen in der Schwaerze zwischen den Galaxien koennen dich jetzt sehen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'omnipresentBroadcast.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (1000)
 )
 
 parallelRealities = Upgrade (
     id = 58,
     name = 'Alternative Dimensionen',
-    cost = 0.0,
+    cost = 150000000.0,
     hintText = ['Wirr lieferrn auch in parrrallele Rrealitaeten. Menschen aus Parallelwelten, selbst andere Versionen von dir, schauen dir nun zu.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'parallelRealities.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([28]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseSubscriberViewsPerEpisodeByPercentage (200)
 )
 
 riesenLaser = Upgrade (
@@ -137,21 +137,21 @@ seti = Upgrade (
 tesseract = Upgrade (
     id = 62,
     name = 'Tesserakt',
-    cost = 0.0,
+    cost = 15000000.0,
     hintText = ['Ich bin mir nicht sicher wie es funktioniert, aber wenn du von der richtigen Seite hineinsiehst hast du mehr Zuschauer.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'tesseract.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (1000)
 )
 
 timeTravel = Upgrade (
     id = 63,
     name = 'Zeitreisen',
-    cost = 0.0,
+    cost = 5000000.0,
     hintText = ['Jetzt kann man deine Folgen sehen bevor du sie aufzeichnest. Und du kannst beim Aufnehmen schon auf Kommentare reagieren.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'timeTravel.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (1000)
 )
 
 unterbewussteBotschaften = Upgrade (

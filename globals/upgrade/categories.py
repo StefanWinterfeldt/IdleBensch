@@ -22,10 +22,10 @@ benschCategory = UpgradeCategory (
         BU.matheKurs,
         BU.hamsterProgrammer,
         BU.extraHaende,
-        # BU.streamMod,
-        # BU.klon,
-        # BU.senorPopo,
-        # BU.drittesAuge
+        BU.streamMod,
+        BU.klon,
+        BU.senorPopo,
+        BU.drittesAuge
     ]
 )
 
@@ -44,10 +44,10 @@ computerCategory = UpgradeCategory (
         CU.highEndPC,
         CU.satellitModem,
         CU.brainInAJar,
-        # CU.holoKamera,
-        # CU.glasfaser,
-        # CU.brainInterface,
-        # CU.quantumComputer
+        CU.holoKamera,
+        CU.glasfaser,
+        CU.brainInterface,
+        CU.quantumComputer
     ]
 )
 
@@ -64,12 +64,12 @@ merchCategory = UpgradeCategory (
         MU.musicAlbum,
         MU.schnapps,
         MU.actionFigur,
-        MU.hoerspiel,
+        MU.film2,
         MU.roman,
-        # MU.film2,
-        # MU.modeLabel,
-        # MU.oper,
-        # MU.realDoll
+        MU.modeLabel,
+        MU.hoerspiel,
+        MU.oper,
+        MU.realDoll
     ]
 )
 
@@ -84,36 +84,36 @@ techCategory = UpgradeCategory (
         TU.seti,
         TU.kiPsychologie,
         TU.dnaMutation,
-        # TU.dysonSphere,
-        # TU.ftlTransmission,
-        # TU.timeTravel,
-        # TU.tesseract,
-        # TU.parallelRealities,
-        # TU.omnipresentBroadcast,
-        # TU.metaTheory,
-        # TU.idleBensch
+        TU.ftlTransmission,
+        TU.dysonSphere,
+        TU.timeTravel,
+        TU.tesseract,
+        TU.parallelRealities,
+        TU.omnipresentBroadcast,
+        TU.metaTheory,
+        TU.idleBensch
     ]
 )
 
 occultCategory = UpgradeCategory (
     header = CH.occultHeader,
     upgrades = [
-        # OU.zombiePact,
-        # OU.ghostPact,
-        # OU.golemPact,
-        # OU.bloodPact,
-        # OU.slimePact,
-        # OU.moonPact,
-        # OU.demonPact,
-        # OU.krakenPact,
-        # OU.angelPact,
-        # OU.dragonPact,
-        # OU.sandWormPact,
-        # OU.deathPact,
-        # OU.cookiePact,
-        # OU.tentaclePact,
-        # OU.elderPact,
-        # OU.forbiddenKnowledge
+        OU.zombiePact,
+        OU.ghostPact,
+        OU.golemPact,
+        OU.bloodPact,
+        OU.slimePact,
+        OU.moonPact,
+        OU.demonPact,
+        OU.krakenPact,
+        OU.angelPact,
+        OU.tentaclePact,
+        OU.dragonPact,
+        OU.sandWormPact,
+        OU.deathPact,
+        OU.cookiePact,
+        OU.elderPact,
+        OU.forbiddenKnowledge
     ]
 )
 
@@ -122,5 +122,5 @@ categories = [
     computerCategory,
     merchCategory,
     techCategory,
-    # occultCategory
+    occultCategory
 ]

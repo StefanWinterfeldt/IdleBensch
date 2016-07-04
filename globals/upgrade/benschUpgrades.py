@@ -48,7 +48,7 @@ fuenfKomma0 = Upgrade (
 drittesAuge = Upgrade (
     id = 5,
     name = 'Drittes Auge',
-    cost = 0.0,
+    cost = 666000.0,
     hintText = ['Oeffne deinen Geist fuer ein anderes Publikum'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'drittesAuge.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([20]),
@@ -78,11 +78,11 @@ hamsterProgrammer = Upgrade (
 klon = Upgrade (
     id = 8,
     name = 'Klon Bensch',
-    cost = 0.0,
+    cost = 200000.0,
     hintText = ['Jetzt gibt es zwei von dir, gib das mal bei der Steuererklaerung an.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'klon.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseNumberOfStreamsByOne ()
 )
 
 logikKurs = Upgrade (
@@ -118,11 +118,11 @@ mrScotch = Upgrade (
 streamMod = Upgrade (
     id = 12,
     name = 'Stream Moderator',
-    cost = 0.0,
+    cost = 92000.0,
     hintText = ['"Nein, BrotFotzeHitler ist KEIN guter Nickname!"'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'oriMod.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([26]),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseSubscribersPerStreamPerSecondByPercentage (100)
 )
 
 leibwaechter = Upgrade (
@@ -148,11 +148,11 @@ schwarzerKaffee = Upgrade (
 senorPopo = Upgrade (
     id = 15,
     name = 'Senor Popo',
-    cost = 0.0,
+    cost = 380000.0,
     hintText = ['Das ist... schwer zu erklaeren'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'senorPopo.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([40]),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseSubscriberViewsPerEpisodeByPercentage (100)
 )
 
 unterbewusstesKlicken = Upgrade (

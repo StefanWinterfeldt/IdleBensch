@@ -67,17 +67,17 @@ film1 = Upgrade (
 film2 = Upgrade (
     id = 39,
     name = 'Church Dreams on Acid',
-    cost = 0.0,
+    cost = 40000.0,
     hintText = ['Der umstrittene Nachfolger von DOUDD.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'film2.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (100)
 )
 
 hoerspiel = Upgrade (
     id = 40,
     name = 'Die drei XXX',
-    cost = 40000.0,
+    cost = 230000.0,
     hintText = ['Die beliebte Hoerspielserie.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'hoerspiel.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
@@ -87,11 +87,11 @@ hoerspiel = Upgrade (
 modeLabel = Upgrade (
     id = 41,
     name = 'Ein eigenes Modelabel',
-    cost = 0.0,
+    cost = 110000.0,
     hintText = ['Mal ehrlich, jeder Idiot kann heutzutage Mode Designen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'modeLabel.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (100)
 )
 
 musicAlbum = Upgrade (
@@ -107,21 +107,21 @@ musicAlbum = Upgrade (
 oper = Upgrade (
     id = 43,
     name = 'Das Phantom von Opa',
-    cost = 0.0,
+    cost = 3200000.0,
     hintText = ['Endlich wieder ein Grund ins Staatstheater zu gehen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'oper.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreasePurchaseChanceByPercentage (50)
 )
 
 realDoll = Upgrade (
     id = 44,
     name = 'Bensch RealDoll',
-    cost = 0.0,
-    hintText = ['Auf Wusch auch mit ueberraschtem Gesichtsausdruck. Platz zwei neben der Antonio Banderas Blow up Doll.'],
+    cost = 7000000.0,
+    hintText = ['Auf Wusch auch mit ueberraschtem Gesichtsausdruck. Platz zwei bei Amazon neben der Antonio Banderas Blow up Doll.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'realDoll.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (100)
 )
 
 roman = Upgrade (
