@@ -7,61 +7,61 @@ import os
 actionFigur = Upgrade (
     id = 33,
     name = 'Bensch Action-Figur',
-    cost = 0.0,
+    cost = 26000.0,
     hintText = ['Jetzt kann jeder den historischen Kampf gegen Dr. Octokraken nachspielen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'actionFigur.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getActivateDonationsFunction ()
 )
 
 arschPad = Upgrade (
     id = 34,
     name = 'Ergo-Mousepad mit Arsch-Kissen',
-    cost = 0.0,
+    cost = 900.0,
     hintText = ['Eine naturgetreue Abformung deines Hinterns, mit echtem Rosshaar.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'arschPad.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (30)
 )
 
 bart = Upgrade (
     id = 35,
     name = 'Der Bart fuer ihn und sie',
-    cost = 0.0,
-    hintText = ['Besonders beliebt bei Zuschauern mit altersbedingt ausgebliebenem Bartwuchs'],
+    cost = 3200.0,
+    hintText = ['Besonders beliebt bei Zuschauern mit altersbedingt ausgebliebenem Bartwuchs.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'bart.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreasePurchaseChanceByPercentage (30)
 )
 
 bier = Upgrade (
     id = 36,
     name = 'Das Bensch-Bier',
-    cost = 0.0,
+    cost = 1200.0,
     hintText = ['Beliebtester Brauweizen bei baertigen Bauarbeitern.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'bier.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreasePurchaseChanceByPercentage (20)
 )
 
 eauDeBensch = Upgrade (
     id = 37,
     name = 'Eau De Bensch',
-    cost = 0.0,
+    cost = 2500.0,
     hintText = ['Der Name ist Programm'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'eauDeBensch.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (40)
 )
 
 film1 = Upgrade (
     id = 38,
     name = 'Das Opossum und die Drogen',
-    cost = 0.0,
+    cost = 1750.0,
     hintText = ['Der Kult Film, jetzt im Directors-Cut (3 Sek. laenger).'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'film1.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([24]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (30)
 )
 
 film2 = Upgrade (
@@ -77,11 +77,11 @@ film2 = Upgrade (
 hoerspiel = Upgrade (
     id = 40,
     name = 'Die drei XXX',
-    cost = 0.0,
+    cost = 40000.0,
     hintText = ['Die beliebte Hoerspielserie.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'hoerspiel.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (100)
 )
 
 modeLabel = Upgrade (
@@ -97,11 +97,11 @@ modeLabel = Upgrade (
 musicAlbum = Upgrade (
     id = 42,
     name = 'Schrapnellgemaecht - Das Album',
-    cost = 0.0,
+    cost = 8500.0,
     hintText = ['Im Keller gefunden und rasch 2 Millionen Mal aufgelegt.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'musicAlbum.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (40)
 )
 
 oper = Upgrade (
@@ -127,21 +127,21 @@ realDoll = Upgrade (
 roman = Upgrade (
     id = 45,
     name = 'Autobiographie',
-    cost = 0.0,
+    cost = 65000.0,
     hintText = ['Sollte erst unter dem Titel "50 Shades of Bensch" erscheinen, aber "Bart und Spiele" passte besser.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'roman.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxPurchaseAmountByPercentage (50)
 )
 
 schnapps = Upgrade (
     id = 46,
     name = 'Bensch - Der Schnapps',
-    cost = 0.0,
+    cost = 11500.0,
     hintText = ['Aus der Kurzkieseler Pils Brauerei.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'merch', 'schnaps.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreasePurchaseChanceByPercentage (50)
 )
 
 shirt = Upgrade (

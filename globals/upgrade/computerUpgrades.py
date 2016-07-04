@@ -27,11 +27,11 @@ anrufbeantworter = Upgrade (
 brainInAJar = Upgrade (
     id = 19,
     name = 'Bio-Computer',
-    cost = 0.0,
+    cost = 60000.0,
     hintText = ['Ja, ich weiss dass es wie ne Suesskartoffel aussieht. Versuch du mal in Paint ein Gehirn zu malen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'brainInAJar.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseSubscriberViewsPerEpisodeByPercentage (100)
 )
 
 brainInterface = Upgrade (
@@ -47,11 +47,11 @@ brainInterface = Upgrade (
 modemDSL = Upgrade (
     id = 21,
     name = 'DSL Modem',
-    cost = 0.0,
+    cost = 700.0,
     hintText = ['Garantiert bis zu 100K... zumindest zwischen 3:13 und 3:14 Uhr.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'dslModem.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseSubscribersPerStreamPerSecondByPercentage (50)
 )
 
 ergoMaus = Upgrade (
@@ -77,17 +77,17 @@ glasfaser = Upgrade (
 hdKamera = Upgrade (
     id = 24,
     name = 'HD Kamera',
-    cost = 0.0,
+    cost = 1500.0,
     hintText = ['Jetzt kann man auch dein Gesicht erkennen, ob das so ne gute Idee war...'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'HDKamera.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (5)
 )
 
 highEndPC = Upgrade (
     id = 25,
     name = 'High End PC',
-    cost = 0.0,
+    cost = 4000.0,
     hintText = ['Darauf lauft sogar deine Mutter fluessig.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'highEndPC.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
@@ -127,11 +127,11 @@ quantumComputer = Upgrade (
 satellitModem = Upgrade (
     id = 29,
     name = 'Satelliten-Uplink',
-    cost = 0.0,
+    cost = 30000.0,
     hintText = ['Selbst das Hubble-Teleskop kann dir jetzt zuschauen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'satellitModem.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseSubscribersPerStreamPerSecondByPercentage (70)
 )
 
 schlechteKamera = Upgrade (
@@ -157,9 +157,9 @@ schulPC = Upgrade (
 ultraTastatur = Upgrade (
     id = 32,
     name = 'Gaming Tastatur',
-    cost = 0.0,
-    hintText = ['Hat leichtgaengige Tasten und leuchtet im dunkeln'],
+    cost = 2000.0,
+    hintText = ['Hat leichtgaengige Tasten und leuchtet im dunkeln.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'ultraTastatur.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (70)
 )

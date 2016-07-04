@@ -7,21 +7,21 @@ import os
 catTV = Upgrade (
     id = 49,
     name = 'Katzenfernsehen',
-    cost = 0.0,
+    cost = 6000.0,
     hintText = ['Auch Katzen werden dir zusehen mit dem patentierten Katzenfernseher.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'catTV.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([24]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([24]),
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (5)
 )
 
 dnaMutation = Upgrade (
     id = 50,
     name = 'DNA-Mutation',
-    cost = 0.0,
-    hintText = ['Oeffnet die Tuer fuer eine Reihe von ebenso wunderbaren wie fragwuerdigen Koerpermodifikationen'],
+    cost = 45000.0,
+    hintText = ['Oeffnet die Tuer fuer eine Reihe von ebenso wunderbaren wie fragwuerdigen Koerpermodifikationen, den Leuten gefaellts.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'dnaMutation.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (10)
 )
 
 dysonSphere = Upgrade (
@@ -40,7 +40,7 @@ ftlTransmission = Upgrade (
     cost = 0.0,
     hintText = ['Aliens koennen dich in Echtzeit bewundern und an deinen Streams teilnehmen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'ftlTransmission.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([23]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([23]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -57,21 +57,21 @@ idleBensch = Upgrade (
 kaffeeMaschine = Upgrade (
     id = 54,
     name = 'Kaffeemaschine',
-    cost = 0.0,
-    hintText = ['Auch ein Koffeintremor kann beim Klicken helfen.'],
+    cost = 5000.0,
+    hintText = ['Vollautomatisch - auch ein Koffeintremor kann beim Klicken helfen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'kaffeeMaschine.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseClicksPerSecondByPercentageFunction (50)
 )
 
 kiPsychologie = Upgrade (
     id = 55,
     name = 'KI-Psychologie',
-    cost = 0.0,
+    cost = 37000.0,
     hintText = ['Wenn du denken kannst wie eine KI kannst du sie besser ausnutzen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'kiPsychologie.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (100)
 )
 
 metaTheory = Upgrade (
@@ -80,7 +80,7 @@ metaTheory = Upgrade (
     cost = 0.0,
     hintText = ['Die Meta-Theorie besagt dass alles ineinander enthalten ist. Wenn du lange genug auf ein Quantenteilchen zoomst siehst du das ganze Universum.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'metaTheory.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([72]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([72]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
@@ -100,38 +100,38 @@ parallelRealities = Upgrade (
     cost = 0.0,
     hintText = ['Wirr lieferrn auch in parrrallele Rrealitaeten. Menschen aus Parallelwelten, selbst andere Versionen von dir, schauen dir nun zu.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'parallelRealities.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([28]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([28]),
     activationFunction = AF.getPassiveFunction ('Missing Text')
 )
 
 riesenLaser = Upgrade (
     id = 59,
     name = 'Riesiger Laser',
-    cost = 0.0,
-    hintText = ['Du kannst ih dazu verwenden um dein Gesicht in den Mond zu brennen - kostenlose Werbung!'],
+    cost = 18000.0,
+    hintText = ['Du kannst ihn dazu verwenden um dein Gesicht in den Mond zu brennen - kostenlose Werbung!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'riesenLaser.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (5)
 )
 
 roboBensch = Upgrade (
     id = 60,
     name = 'Robo-Bensch',
-    cost = 0.0,
+    cost = 23000.0,
     hintText = ['Sieht dir verblueffend aehlich. Deine Zuschauer bemerken sicher keinen Unterschied.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'roboBensch.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    activationFunction = AF.getIncreaseNumberOfStreamsByOne ()
 )
 
 seti = Upgrade (
     id = 61,
     name = 'SETI',
-    cost = 0.0,
+    cost = 34000.0,
     hintText = ['Wer Ausserirdische sucht, der findet sie auch. Und sie sind Fans von dir.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'seti.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([29]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([29]),
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (10)
 )
 
 tesseract = Upgrade (
@@ -157,9 +157,9 @@ timeTravel = Upgrade (
 unterbewussteBotschaften = Upgrade (
     id = 64,
     name = 'Unterbewusste Botschaften',
-    cost = 0.0,
+    cost = 10000.0,
     hintText = ['Mach deine Zuschauer Geistig von dir abhaengig. Damit bist du auch nicht schlimmer als das Fernsehen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'unterbewussteBotschaften.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades([21]),
-    activationFunction = AF.getPassiveFunction ('Missing Text')
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([21]),
+    activationFunction = AF.getIncreaseSubscriberViewsPerEpisodeByPercentage (100)
 )

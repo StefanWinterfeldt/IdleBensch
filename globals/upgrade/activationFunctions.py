@@ -30,6 +30,11 @@ def activateTechCategory (params):
     CH.techHeader.visible = True
     TU.kaffeeMaschine.visible = True
 
+def activateDonations (params):
+    GL.BASE_DONATION_CHANCE_PER_STREAM_PER_SECOND = 0.01
+    GL.BASE_MIN_DONATION = 1.0
+    GL.BASE_MAX_DONATION = 2.0
+
 def activatePurchases (params):
     GL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND = 0.0001
     GL.BASE_MIN_PURCHASE = 0.50
@@ -56,6 +61,9 @@ def increaseMinSubscribersPerEpisode (value):
 
 def increaseNumberOfStreams (value):
     GS.streams += value
+
+def increasePurchaseChanceByPercentage (percentage):
+    GL.BASE_PURCHASE_CHANCE_PER_SUBSCRIBER_PER_SECOND *= ((100 + percentage) / 100.0)
 
 def increaseViewsPerEpisodeByPercentage (percentage):
     GL.BASE_VIEWS_PER_EPISODE *= ((100 + percentage) / 100.0)
@@ -98,6 +106,13 @@ def getActivateTechCategory ():
     return AnnotatedFunction (
         text = 'Der Rechner ist schnell genug um damit zu forschen. Aktiviert Technologie Upgrades.',
         function = activateTechCategory,
+        parameter = None
+    )
+
+def getActivateDonationsFunction ():
+    return AnnotatedFunction (
+        text = 'Abonnenten koennen dir jetzt im Stream direkt Geld spenden.',
+        function = activateDonations,
         parameter = None
     )
 
@@ -155,6 +170,13 @@ def getIncreaseNumberOfStreamsByOne ():
         text = 'Du erhaeltst einen zusaetzlichen Stream.',
         function = increaseNumberOfStreams,
         parameter = 1
+    )
+
+def getIncreasePurchaseChanceByPercentage (percentage):
+    return AnnotatedFunction (
+        text = 'Die Chance, dass Abonnenten etwas bei dir kaufen steigt um ' + str(percentage) + '%.',
+        function = increasePurchaseChanceByPercentage,
+        parameter = percentage
     )
 
 def getIncreaseViewsPerEpisodeByPercentage (percentage):

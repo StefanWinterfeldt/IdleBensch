@@ -58,21 +58,21 @@ drittesAuge = Upgrade (
 extraHaende = Upgrade (
     id = 6,
     name = 'Extra Haende',
-    cost = 0.0,
+    cost = 50000.0,
     hintText = ['Unglaublich! Der Mann hat wirklich vier linke Haende!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'extraHaende.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([50]),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseEpisodesPerClickByPercentageFunction (100)
 )
 
 hamsterProgrammer = Upgrade (
     id = 7,
     name = 'Hamsterartiger Programmierer',
-    cost = 0.0,
+    cost = 13370.0,
     hintText = ['Entwickelt mehr Idle Games, damit du mehr zu spielen hast.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'hamsterProgrammer.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([25]),
-    activationFunction = AF.getPassiveFunction ('')
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (50)
 )
 
 klon = Upgrade (
@@ -121,7 +121,7 @@ streamMod = Upgrade (
     cost = 0.0,
     hintText = ['"Nein, BrotFotzeHitler ist KEIN guter Nickname!"'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'oriMod.png'),
-    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([30]),
+    unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([26]),
     activationFunction = AF.getPassiveFunction ('')
 )
 
