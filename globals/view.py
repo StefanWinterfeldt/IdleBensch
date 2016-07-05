@@ -9,6 +9,7 @@ faceViewAbsoluteRect = None
 hintView = None
 hintViewAbsoluteRect = None
 mainView = None
+menuView = None
 messageView = None
 messageViewAbsoluteRecht = None
 moneyView = None

@@ -5,8 +5,10 @@ import engine.controller.clickViewController as clickViewController
 import engine.controller.faceViewController as faceViewController
 import engine.controller.hintViewController as hintViewController
 import engine.controller.messageViewController as messageViewController
+import engine.controller.menuViewController as menuViewController
 import engine.controller.moneyViewController as moneyViewController
 import engine.controller.upgradeViewController as upgradeViewController
+import globals.gameState as GS
 import globals.view as view
 import pygame
 
@@ -20,6 +22,7 @@ def initialize ():
     chatViewController.initialize ()
     upgradeViewController.initialize ()
     messageViewController.initialize ()
+    menuViewController.initialize ()
 
 def update ():
     clickViewController.update ()

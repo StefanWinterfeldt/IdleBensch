@@ -1,5 +1,5 @@
 import constants.display as DC
-import engine.controller.mainViewController as mainViewController
+import engine.controller.gameViewController as mainViewController
 import globals.gameUtils as GGU
 import globals.view as GV
 import os
