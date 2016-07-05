@@ -38,6 +38,7 @@ def loop ():
         GGU.clock.tick (DC.FRAME_RATE)
         handleEvents ()
         if GS.context == 'game':
+            GS.stateWasAltered = True
             triggerActionsBasedOnGameStateChanges()
             updateNonDisplayControllers ()
             updateTimeSlots ()

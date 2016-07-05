@@ -38,8 +38,10 @@ def drawTitle ():
 def drawButtons ():
     pygame.draw.rect (gameButton, CC.DARK_GREEN, (1, 1, gameButton.get_width () - 2, gameButton.get_height () - 2), 2)
     pygame.draw.rect (quitButton, CC.DARK_GREEN, (1, 1, quitButton.get_width () - 2, quitButton.get_height () - 2), 2)
-    drawUtil.drawCentered (textUtil.renderLines (['Neues Spiel'], True, 72), gameButton)
-    drawUtil.drawCentered (textUtil.renderLines (['Beenden'], True, 72), quitButton)
+    gameButtonText = 'Neues Spiel' if not GS.stateWasAltered else 'Weiterspielen'
+    quitButtonText = 'Beenden' if not GS.stateWasAltered else 'Speichern und Beenden'
+    drawUtil.drawCentered (textUtil.renderLines ([gameButtonText], True, 72), gameButton)
+    drawUtil.drawCentered (textUtil.renderLines ([quitButtonText], True, 72), quitButton)
 
 def update ():
     drawButtons ()
