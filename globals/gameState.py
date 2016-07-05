@@ -1,4 +1,4 @@
-context = 'game'
+context = 'menu'
 currentMouseArea = None
 episodes = 0
 money = 0.0

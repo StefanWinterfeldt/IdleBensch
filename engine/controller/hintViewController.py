@@ -20,7 +20,7 @@ def handleMotion (event):
 
 def initialize ():
     GV.hintViewAbsoluteRect = pygame.Rect ((0, CD.CLICK_VIEW_SIZE [1] + CD.MONEY_VIEW_SIZE [1] - 1, CD.HINT_VIEW_SIZE [0], CD.HINT_VIEW_SIZE [1]))
-    GV.hintView = GV.mainView.subsurface (GV.hintViewAbsoluteRect)
+    GV.hintView = GV.gameView.subsurface (GV.hintViewAbsoluteRect)
     pygame.draw.rect (GV.hintView, CC.DARK_GREEN, (0, 0, CD.HINT_VIEW_SIZE [0] - 1, CD.HINT_VIEW_SIZE [1] - 1), 2)
 
 def showText (text):

@@ -1,7 +1,9 @@
+import constants.display as CD
 import globals.view as GV
+import pygame
 
 def initialize ():
-    pass
+    GV.menuView = pygame.Surface (CD.RESOLUTION, pygame.HWSURFACE)
 
 def update ():
-    pass
+    GV.screen.blit (GV.menuView, (0, 0))

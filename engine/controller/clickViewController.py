@@ -68,7 +68,7 @@ def initialize ():
     global episodeCirclePos
     global seasonCirclePos
     GV.clickViewAbsoluteRect = pygame.Rect ((0, 0, CD.CLICK_VIEW_SIZE [0], CD.CLICK_VIEW_SIZE [1]))
-    GV.clickView = GV.mainView.subsurface (GV.clickViewAbsoluteRect)
+    GV.clickView = GV.gameView.subsurface (GV.clickViewAbsoluteRect)
     episodeCirclePos = (CD.CLICK_VIEW_SIZE [0] / 4, CD.CLICK_VIEW_SIZE [1] / 5)
     seasonCirclePos = ((CD.CLICK_VIEW_SIZE [0] / 4) * 3, CD.CLICK_VIEW_SIZE [1] / 5)
     circleFullRadius = CD.CLICK_VIEW_SIZE [0] / 8

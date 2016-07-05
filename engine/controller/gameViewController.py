@@ -13,7 +13,7 @@ import globals.view as view
 import pygame
 
 def initialize ():
-    view.mainView = pygame.Surface (DC.RESOLUTION, pygame.HWSURFACE)
+    view.gameView = pygame.Surface (DC.RESOLUTION, pygame.HWSURFACE)
     achievementViewController.initialize ()
     clickViewController.initialize ()
     moneyViewController.initialize ()
@@ -33,4 +33,4 @@ def update ():
     messageViewController.update ()
     upgradeViewController.update ()
     achievementViewController.update ()
-    view.screen.blit (view.mainView, (0, 0))
+    view.screen.blit (view.gameView, (0, 0))

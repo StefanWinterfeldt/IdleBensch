@@ -152,7 +152,7 @@ def handleMotion (event):
 
 def initialize ():
     GV.moneyViewAbsoluteRect = pygame.Rect ((0, CD.CLICK_VIEW_SIZE [1] - 1, CD.MONEY_VIEW_SIZE [0], CD.MONEY_VIEW_SIZE [1]))
-    GV.moneyView = GV.mainView.subsurface (GV.moneyViewAbsoluteRect)
+    GV.moneyView = GV.gameView.subsurface (GV.moneyViewAbsoluteRect)
     initializeEpisodeSection ()
     initializeSeasonSection ()
     initializeStreamSection ()

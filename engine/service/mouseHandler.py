@@ -30,8 +30,17 @@ def dispatchMotionToView (event):
             GGS.currentMouseArea = None
             hintViewController.clearText ()
 
-def handleMouseEvent (event):
+def handleGameMouseEvent (event):
     if event.type == pygame.MOUSEBUTTONDOWN:
         dispatchClickToView (event)
     elif event.type == pygame.MOUSEMOTION:
         dispatchMotionToView (event)
+
+def handleMenuMouseEvent (event):
+    pass
+
+def handleMouseEvent (event):
+    if GGS.context == 'game':
+        handleGameMouseEvent (event)
+    elif GGS.context == 'menu':
+        handleMenuMouseEvent (event)

@@ -1,16 +1,21 @@
 import constants.display as DC
 import engine.service.keyHandler as keyHandler
 import engine.service.mouseHandler as mouseHandler
+import engine.controller.menuViewController as menuViewController
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.gameViewController as gameViewController
 import engine.controller.passiveIncome as passiveIncomeController
 import engine.controller.timeSlotController as timeSlotController
+import globals.gameState as GS
 import globals.gameUtils as GGU
 import pygame
 import sys
 
 def updateDisplay ():
-    gameViewController.update ()
+    if GS.context == 'game':
+        gameViewController.update ()
+    elif GS.context == 'menu':
+        menuViewController.update ()
     pygame.display.flip ()
 
 def updateNonDisplayControllers ():
@@ -32,7 +37,8 @@ def loop ():
     while True:
         GGU.clock.tick (DC.FRAME_RATE)
         handleEvents ()
-        triggerActionsBasedOnGameStateChanges()
-        updateNonDisplayControllers ()
-        updateTimeSlots ()
+        if GS.context == 'game':
+            triggerActionsBasedOnGameStateChanges()
+            updateNonDisplayControllers ()
+            updateTimeSlots ()
         updateDisplay ()

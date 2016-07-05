@@ -1,5 +1,6 @@
 import constants.display as DC
-import engine.controller.gameViewController as mainViewController
+import engine.controller.gameViewController as gameViewController
+import engine.controller.menuViewController as menuViewController
 import globals.gameUtils as GGU
 import globals.view as GV
 import os
@@ -16,7 +17,8 @@ def initializeUtilImages ():
 
 def initializeViews ():
     GV.screen = pygame.display.set_mode (DC.RESOLUTION, pygame.FULLSCREEN | pygame.HWSURFACE)
-    mainViewController.initialize ()
+    menuViewController.initialize ()
+    gameViewController.initialize ()
 
 def initialize ():
     random.seed ()

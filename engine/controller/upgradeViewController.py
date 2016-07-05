@@ -97,7 +97,7 @@ def handleClickOnUpgrade (upgrade):
 
 def initialize ():
     GV.upgradeViewAbsoluteRect = pygame.Rect ((0 + CD.CLICK_VIEW_SIZE [0], CD.MESSAGE_VIEW_SIZE [1], CD.UPGRADE_VIEW_SIZE [0], CD.UPGRADE_VIEW_SIZE [1]))
-    GV.upgradeView = GV.mainView.subsurface (GV.upgradeViewAbsoluteRect)
+    GV.upgradeView = GV.gameView.subsurface (GV.upgradeViewAbsoluteRect)
     initializeCategories ()
     drawCategories ()
     pygame.draw.rect (GV.upgradeView, CC.DARK_GREEN, (0, 0, CD.UPGRADE_VIEW_SIZE [0] - 1, CD.UPGRADE_VIEW_SIZE [1] - 1), 2)
