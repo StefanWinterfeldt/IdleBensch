@@ -1,6 +1,7 @@
 import engine.controller.clickViewController as clickViewController
 import engine.controller.faceViewController as faceViewController
 import engine.controller.hintViewController as hintViewController
+import engine.controller.menuViewController as menuViewController
 import engine.controller.moneyViewController as moneyViewController
 import engine.controller.upgradeViewController as upgradeViewController
 import engine.util.event as eventUtil
@@ -37,7 +38,8 @@ def handleGameMouseEvent (event):
         dispatchMotionToView (event)
 
 def handleMenuMouseEvent (event):
-    pass
+    if event.type == pygame.MOUSEBUTTONDOWN:
+        menuViewController.handleClick (event)
 
 def handleMouseEvent (event):
     if GGS.context == 'game':
