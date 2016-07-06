@@ -28,7 +28,6 @@ def checkViews ():
         GGS.money += modifiedGameLogic.getMoneyPerView () * (currentFullViews - lastFullViews)
         lastFullViews = currentFullViews
 
-# ToDo: Remember to set last values when loading a save game
 def initialize ():
     pass
 

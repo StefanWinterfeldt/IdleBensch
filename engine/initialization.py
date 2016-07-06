@@ -1,6 +1,7 @@
 import constants.display as DC
 import engine.controller.gameViewController as gameViewController
 import engine.controller.menuViewController as menuViewController
+import engine.controller.saveController as saveController
 import globals.gameUtils as GGU
 import globals.view as GV
 import os
@@ -21,6 +22,9 @@ def initializeViews ():
     menuViewController.initialize ()
     gameViewController.initialize ()
 
+def initializeAndLoadSaveGameIfPossible ():
+    saveController.initialize ()
+
 def initialize ():
     random.seed ()
     pygame.init ()
@@ -28,3 +32,4 @@ def initialize ():
     initializeUtilImages ()
     initializeFont ()
     initializeViews ()
+    initializeAndLoadSaveGameIfPossible ()
