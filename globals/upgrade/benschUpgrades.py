@@ -42,7 +42,7 @@ fuenfKomma0 = Upgrade (
     hintText = ['Das Universalbier, macht gluecklich und loest die Zunge.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', '5komma0.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (1)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (2)
 )
 
 drittesAuge = Upgrade (
@@ -112,7 +112,7 @@ mrScotch = Upgrade (
     hintText = ['Das ist mein Kumpel Mr. Scotch, mit ihm haben alle mehr Spass!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'mrScotch.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (5)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (10)
 )
 
 streamMod = Upgrade (
@@ -132,7 +132,7 @@ leibwaechter = Upgrade (
     hintText = ['Wenn man dringend Schnapps braucht... trinkt man das auch nicht.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'pott.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (2)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (4)
 )
 
 schwarzerKaffee = Upgrade (

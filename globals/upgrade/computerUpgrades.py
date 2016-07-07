@@ -21,7 +21,7 @@ anrufbeantworter = Upgrade (
     hintText = ['Niemand wird dich mehr beim Aufnehmen stoeren.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'anrufbeantworter.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (2)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (4)
 )
 
 brainInAJar = Upgrade (
@@ -71,7 +71,7 @@ glasfaser = Upgrade (
     hintText = ['Internet mit Lichtgeschwindigkeit, damit koenntest du Pornos so schnell gucken wie neue produziert werden...'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'glasfaser.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (20)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (40)
 )
 
 hdKamera = Upgrade (
@@ -81,7 +81,7 @@ hdKamera = Upgrade (
     hintText = ['Jetzt kann man auch dein Gesicht erkennen, ob das so ne gute Idee war...'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'HDKamera.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (5)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (10)
 )
 
 highEndPC = Upgrade (

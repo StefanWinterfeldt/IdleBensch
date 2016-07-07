@@ -11,7 +11,7 @@ angelPact = Upgrade (
     hintText = ['Im Himmel kann es ziemlich langweilig werden, nicht mit dir.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'angelPact.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (50)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (100)
 )
 
 bloodPact = Upgrade (
@@ -41,7 +41,7 @@ deathPact = Upgrade (
     hintText = ['Der Schnitter und seine vielen Helfer schauen lieber deine Videos als Seelen zu ernten.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'deathPact.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (50)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (100)
 )
 
 demonPact = Upgrade (
@@ -91,7 +91,7 @@ ghostPact = Upgrade (
     hintText = ['Geister! Geister! Geister! Weissbrot!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'ghostPact.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (20)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (40)
 )
 
 golemPact = Upgrade (
@@ -111,7 +111,7 @@ krakenPact = Upgrade (
     hintText = ['Auch in den lichtlosen Tiefen hoert man nun deine Stimme.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'krakenPact.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (20)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (40)
 )
 
 moonPact = Upgrade (
@@ -141,7 +141,7 @@ slimePact = Upgrade (
     hintText = ['Hast du dich jemals gefragt was unter deiner Spuele lebt? Es ist ein Fan von dir.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'slimePact.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (100)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (200)
 )
 
 tentaclePact = Upgrade (

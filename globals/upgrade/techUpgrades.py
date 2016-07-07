@@ -11,7 +11,7 @@ catTV = Upgrade (
     hintText = ['Auch Katzen werden dir zusehen mit dem patentierten Katzenfernseher.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'catTV.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([24]),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (5)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (10)
 )
 
 dnaMutation = Upgrade (
@@ -21,7 +21,7 @@ dnaMutation = Upgrade (
     hintText = ['Oeffnet die Tuer fuer eine Reihe von ebenso wunderbaren wie fragwuerdigen Koerpermodifikationen, den Leuten gefaellts.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'dnaMutation.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (10)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (20)
 )
 
 dysonSphere = Upgrade (
@@ -111,7 +111,7 @@ riesenLaser = Upgrade (
     hintText = ['Du kannst ihn dazu verwenden um dein Gesicht in den Mond zu brennen - kostenlose Werbung!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'riesenLaser.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (5)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (10)
 )
 
 roboBensch = Upgrade (
@@ -131,7 +131,7 @@ seti = Upgrade (
     hintText = ['Wer Ausserirdische sucht, der findet sie auch. Und sie sind Fans von dir.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'seti.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([29]),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (10)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (20)
 )
 
 tesseract = Upgrade (
