@@ -1,5 +1,6 @@
 import constants.color as CC
 import constants.display as CD
+import engine.controller.saveController as saveController
 import engine.util.draw as drawUtil
 import engine.util.event as eventUtil
 import engine.util.text as textUtil
@@ -47,8 +48,12 @@ def update ():
     drawButtons ()
     GV.screen.blit (GV.menuView, (0, 0))
 
+def quitGame ():
+    saveController.save ()
+    sys.exit ()
+
 def handleClick (event):
     if eventUtil.eventHappenedInRect (event, gameButtonRect):
         GS.context = 'game'
     elif eventUtil.eventHappenedInRect (event, quitButtonRect):
-        sys.exit ()
+        quitGame ()

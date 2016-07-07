@@ -1,15 +1,15 @@
 from globals.upgrade.annotatedFunction import AnnotatedFunction
-import engine.util.upgrade as upgradeUtil
+import engine.util.upgrade
 
 def allTheseUpgradesAreActive (upgradeIds):
-    requiredUpgrades = [upgradeUtil.getUpgradeById (upgradeId) for upgradeId in upgradeIds]
+    requiredUpgrades = [engine.util.upgrade.getUpgradeById (upgradeId) for upgradeId in upgradeIds]
     state = True
     for upgrade in requiredUpgrades:
         state = state and upgrade.active
     return state
 
 def getTextRequiringUpgrades (upgradeIds):
-    upgradeNames = [upgradeUtil.getUpgradeById(upgradeId).name for upgradeId in upgradeIds]
+    upgradeNames = [engine.util.upgrade.getUpgradeById(upgradeId).name for upgradeId in upgradeIds]
     return 'Dieses Upgrade benoetigt noch die folgenden anderen Upgrades: ' + ', '.join (upgradeNames) + '.'
 
 def getAlwaysUnlockedFunction ():
