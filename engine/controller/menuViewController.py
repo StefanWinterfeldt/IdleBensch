@@ -49,7 +49,8 @@ def update ():
     GV.screen.blit (GV.menuView, (0, 0))
 
 def quitGame ():
-    saveController.save ()
+    if GS.stateWasAltered:
+        saveController.save ()
     sys.exit ()
 
 def handleClick (event):
