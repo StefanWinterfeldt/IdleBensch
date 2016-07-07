@@ -8,7 +8,6 @@ import engine.controller.messageViewController as messageViewController
 import engine.controller.menuViewController as menuViewController
 import engine.controller.moneyViewController as moneyViewController
 import engine.controller.upgradeViewController as upgradeViewController
-import globals.gameState as GS
 import globals.view as view
 import pygame
 

@@ -1,4 +1,6 @@
 from engine.controller.saveObjects.saveGame import SaveGame
+import constants.control as CO
+import constants.display as CD
 import engine.controller.clickViewController as clickViewController
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.passiveIncome as passiveIncomeController
@@ -135,3 +137,10 @@ def loadSaveGame ():
 
 def saveGameExists ():
     return os.path.exists ('saveGames/game.sav')
+
+def update ():
+    global ticksSinceLastSave
+    if ticksSinceLastSave >= (CO.SECONDS_BETWEEN_AUTO_SAVES * CD.FRAME_RATE):
+        save()
+        ticksSinceLastSave = 0
+    ticksSinceLastSave += 1

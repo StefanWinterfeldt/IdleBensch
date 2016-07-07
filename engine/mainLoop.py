@@ -5,6 +5,7 @@ import engine.controller.menuViewController as menuViewController
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.gameViewController as gameViewController
 import engine.controller.passiveIncome as passiveIncomeController
+import engine.controller.saveController as saveController
 import engine.controller.timeSlotController as timeSlotController
 import globals.gameState as GS
 import globals.gameUtils as GGU
@@ -19,7 +20,8 @@ def updateDisplay ():
     pygame.display.flip ()
 
 def updateNonDisplayControllers ():
-    passiveIncomeController.update()
+    passiveIncomeController.update ()
+    saveController.update ()
 
 def updateTimeSlots ():
     timeSlotController.update ()
@@ -39,7 +41,7 @@ def loop ():
         handleEvents ()
         if GS.context == 'game':
             GS.stateWasAltered = True
-            triggerActionsBasedOnGameStateChanges()
+            triggerActionsBasedOnGameStateChanges ()
             updateNonDisplayControllers ()
             updateTimeSlots ()
         updateDisplay ()
