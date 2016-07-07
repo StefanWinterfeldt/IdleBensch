@@ -24,6 +24,8 @@ def initializeViews ():
 
 def initializeAndLoadSaveGameIfPossible ():
     saveController.initialize ()
+    if saveController.saveGameExists ():
+        saveController.loadSaveGame ()
 
 def initialize ():
     random.seed ()
