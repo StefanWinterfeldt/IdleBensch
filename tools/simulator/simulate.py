@@ -42,6 +42,8 @@ def analyze ():
     print 'Mean time between upgrades:   ' + getTimeString (mean)
     print 'Median time between upgrades: ' + getTimeString (median)
     print 'Standard deviation:           ' + str (std)
+    print 'Views:                        ' + str(GS.views)
+    print 'Subscribers:                  ' + str(GS.subscriber)
 
 def addBuyLog (upgradeName):
     global buyLogs
