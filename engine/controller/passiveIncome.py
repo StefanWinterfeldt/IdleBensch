@@ -25,10 +25,10 @@ currentSubscribers = 0
 def processMerchPurchases ():
     purchaseChance = MGL.getPurchaseChancePerSubscriberPerSecond ()
     if purchaseChance != 0:
-        border = GS.subscriber * (1 / purchaseChance)
-        chosenValue = random.random () * border
-        purchases = int (chosenValue * purchaseChance)
-        GS.money += (random.randint (math.floor (MGL.getMinPurchase () * 100 * purchases), math.floor (MGL.getMaxPurchase () * 100 * purchases)) / 100)
+        purchases = GS.subscriber * purchaseChance
+        purchaseCents = random.randint (math.floor (MGL.getMinPurchase () * 100), math.floor (MGL.getMaxPurchase () * 100))
+        purchaseAmount = (purchaseCents * 0.01) * purchases
+        GS.money += purchaseAmount
 
 def processDonations ():
     donations = 0

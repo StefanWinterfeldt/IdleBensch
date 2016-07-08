@@ -136,8 +136,8 @@ def tick ():
 def simulate ():
     while moreUpgradesAvailable ():
         tick ()
-        if tickCount % 1000 == 0:
-            printCurrentMoney ()
+        # if tickCount % 1000 == 0:
+        #     printCurrentMoney ()
     analyze ()
 
 prepareSimulation ()
