@@ -5,21 +5,30 @@ import globals.gameState as GS
 import math
 import random
 
+
 ticksSinceLastProcess = 0
 currentAutoClicks = 0
 currentSubscribers = 0
 
+# def processMerchPurchases ():
+#     purchases = 0
+#     purchaseAmount = 0
+#     purchaseChance = MGL.getPurchaseChancePerSubscriberPerSecond ()
+#     for i in range (int (GS.subscriber)):
+#         if random.random () < purchaseChance:
+#             purchases += 1
+#     for i in range (purchases):
+#         purchaseCents = random.randint (math.floor (MGL.getMinPurchase () * 100), math.floor (MGL.getMaxPurchase () * 100))
+#         purchaseAmount += (purchaseCents * 0.01)
+#     GS.money += purchaseAmount
+
 def processMerchPurchases ():
-    purchases = 0
-    purchaseAmount = 0
     purchaseChance = MGL.getPurchaseChancePerSubscriberPerSecond ()
-    for i in range (int (GS.subscriber)):
-        if random.random () < purchaseChance:
-            purchases += 1
-    for i in range (purchases):
-        purchaseCents = random.randint (math.floor (MGL.getMinPurchase () * 100), math.floor (MGL.getMaxPurchase () * 100))
-        purchaseAmount += (purchaseCents * 0.01)
-    GS.money += purchaseAmount
+    if purchaseChance != 0:
+        border = GS.subscriber * (1 / purchaseChance)
+        chosenValue = random.random () * border
+        purchases = int (chosenValue * purchaseChance)
+        GS.money += (random.randint (math.floor (MGL.getMinPurchase () * 100 * purchases), math.floor (MGL.getMaxPurchase () * 100 * purchases)) / 100)
 
 def processDonations ():
     donations = 0
