@@ -6,6 +6,7 @@ import engine.controller.clickViewController as clickViewController
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.passiveIncome as passiveIncomeController
 import engine.controller.timeSlotController as timeSlotController
+import engine.controller.upgradeViewController as upgradeController
 import engine.util.upgrade as upgradeUtil
 import globals.gameLogic as GL
 import globals.gameState as GS
@@ -113,6 +114,7 @@ def readGameLogic (saveGame):
 def readUpgradeStates (saveGame):
     for id in saveGame.activeUpgradeIds:
         upgradeUtil.getUpgradeById (id).active = True
+    upgradeController.drawCategories ()
 
 def readControllerStates (saveGame):
     gameStateTriggerController.lastFullEpisodes = saveGame.lastFullEpisodes
@@ -146,6 +148,6 @@ def saveGameExists ():
 def update ():
     global ticksSinceLastSave
     if ticksSinceLastSave >= (CO.SECONDS_BETWEEN_AUTO_SAVES * CD.FRAME_RATE):
-        save()
+        save ()
         ticksSinceLastSave = 0
     ticksSinceLastSave += 1
