@@ -17,9 +17,9 @@ def convertToHumanReadableString (number, withFractions = False):
         numberString += '.' + fraction [:4]
     return numberString
 
-def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE):
+def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE, color = CC.WHITE):
     font = pygame.font.Font (GGU.fontName, fontSize)
-    renderedLines = [font.render (line, True, CC.WHITE) for line in lines]
+    renderedLines = [font.render (line, True, color) for line in lines]
     yPos = 0
     neededX = max ([l.get_width () for l in renderedLines])
     neededY = sum ([l.get_height () for l in renderedLines])
@@ -34,7 +34,7 @@ def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE):
 
 def renderTextWithWordWrap (text, maxWidth):
     if isinstance (text, types.StringType):
-        return renderLines(getWrappedLines (text, maxWidth))
+        return renderLines (getWrappedLines (text, maxWidth))
     elif isinstance (text, types.ListType):
         lines = []
         for line in text:
