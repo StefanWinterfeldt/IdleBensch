@@ -124,4 +124,3 @@ def refreshUpgradeVisibility (category):
     for i in range (len (category.upgrades)):
         if not category.upgrades[i].visible and category.upgrades[i-1].active:
             category.upgrades [i].visible = True
-            break

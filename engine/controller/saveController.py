@@ -10,6 +10,7 @@ import engine.controller.upgradeViewController as upgradeController
 import engine.util.upgrade as upgradeUtil
 import globals.gameLogic as GL
 import globals.gameState as GS
+import globals.upgrade.categories as categories
 import os
 import pickle
 
@@ -47,6 +48,7 @@ def writeGameLogic (saveGame):
 
 def writeUpgradeStates (saveGame):
     saveGame.activeUpgradeIds = [upgrade.id for upgrade in upgradeUtil.getAllUpgrades () if upgrade.active]
+    saveGame.visibleUpgradeIds = [upgrade.id for upgrade in upgradeUtil.getAllUpgrades () if upgrade.visible]
 
 def writeControllerStates (saveGame):
     saveGame.lastFullEpisodes = gameStateTriggerController.lastFullEpisodes
@@ -111,9 +113,20 @@ def readGameLogic (saveGame):
     GL.BASE_SECONDS_TO_PROCESS_SEASON = saveGame.BASE_SECONDS_TO_PROCESS_SEASON
     GL.BASE_VIEWS_PER_EPISODE = saveGame.BASE_VIEWS_PER_EPISODE
 
+def anyUpgradeIsVisible (category):
+    for upgrade in category.upgrades:
+        if upgrade.visible:
+            return True
+    return False
+
 def readUpgradeStates (saveGame):
     for id in saveGame.activeUpgradeIds:
         upgradeUtil.getUpgradeById (id).active = True
+    for id in saveGame.visibleUpgradeIds:
+        upgradeUtil.getUpgradeById (id).visible = True
+    for category in categories.categories:
+        if anyUpgradeIsVisible (category):
+            category.header.visible = True
     upgradeController.drawCategories ()
 
 def readControllerStates (saveGame):
