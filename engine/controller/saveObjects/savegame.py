@@ -41,5 +41,8 @@ class SaveGame:
     episodeCompletion = 0
     seasonCompletion = 0
 
+    currentMilestone = None
+    lastMilestone = None
+
     def __init__ (self):
         pass

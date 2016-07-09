@@ -1,6 +1,7 @@
 from engine.controller.saveObjects.saveGame import SaveGame
 import constants.control as CO
 import constants.display as CD
+import engine.controller.achievementViewController as achievementViewController
 import engine.controller.clickViewController as clickViewController
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.passiveIncome as passiveIncomeController
@@ -56,6 +57,8 @@ def writeControllerStates (saveGame):
     saveGame.currentSubscribers = passiveIncomeController.currentSubscribers
     saveGame.episodeCompletion = clickViewController.episodeCompletion
     saveGame.seasonCompletion = clickViewController.seasonCompletion
+    saveGame.currentMilestone = achievementViewController.currentMilestone
+    saveGame.lastMilestone = achievementViewController.lastMilestone
 
 def createSaveGameFolderIfNecessary ():
     if not os.path.exists ('saveGames'):
@@ -121,6 +124,8 @@ def readControllerStates (saveGame):
     passiveIncomeController.currentSubscribers = saveGame.currentSubscribers
     clickViewController.episodeCompletion = saveGame.episodeCompletion
     clickViewController.seasonCompletion = saveGame.seasonCompletion
+    achievementViewController.currentMilestone = saveGame.currentMilestone
+    achievementViewController.lastMilestone = saveGame.lastMilestone
 
 def readSaveGame (saveGame):
     readGameState (saveGame)

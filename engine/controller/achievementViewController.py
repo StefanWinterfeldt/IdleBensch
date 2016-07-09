@@ -21,7 +21,6 @@ def switchMilestonesIfPossible ():
         if GS.subscriber > currentMilestone.subscribersNeeded:
             lastMilestone = currentMilestone
             currentMilestone = milestones.getNextMilestone (currentMilestone)
-            drawText ()
 
 def getProgressPercentage ():
     start = 0 if lastMilestone is None else lastMilestone.subscribersNeeded
@@ -56,5 +55,6 @@ def initialize ():
 
 def update ():
     switchMilestonesIfPossible()
+    drawText ()
     drawProgress()
     pygame.draw.rect (GV.achievementView, CC.DARK_GREEN, (0, 0, CD.ACHIEVEMENT_VIEW_SIZE [0] - 1, CD.ACHIEVEMENT_VIEW_SIZE [1] - 1), 2)
