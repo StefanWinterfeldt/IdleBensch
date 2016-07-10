@@ -111,8 +111,22 @@ messageFunctions = [
     lambda: '@' + random.choice (nickNames) + ' was bist du eigentlich fuer ' + random.choice (insults) + '?'
 ]
 
+modActionFunctions = [
+    lambda: random.choice (nickNames) + ' was timeouted'
+]
+
+modMessageFunctions = [
+    lambda: 'gleich hagelt es Forellen!'
+]
+
 def getRandomNick ():
     return random.choice (nickNames)
 
 def getRandomMessage ():
     return random.choice (messageFunctions) ()
+
+def getRandomModAction ():
+    return random.choice (modActionFunctions) ()
+
+def getRandomModMessage ():
+    return random.choice (modMessageFunctions) ()

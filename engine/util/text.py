@@ -32,9 +32,9 @@ def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE, color = CC.WH
         yPos += line.get_height ()
     return combinedLines
 
-def renderTextWithWordWrap (text, maxWidth):
+def renderTextWithWordWrap (text, maxWidth, color=CC.WHITE):
     if isinstance (text, types.StringType):
-        return renderLines (getWrappedLines (text, maxWidth))
+        return renderLines (getWrappedLines (text, maxWidth), color=color)
     elif isinstance (text, types.ListType):
         lines = []
         for line in text:
