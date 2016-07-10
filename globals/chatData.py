@@ -15,7 +15,9 @@ food = [
     'Zauberpilze',
     'Stockbrot',
     '3 Liter zarten Saitling',
-    'ein Dutzend Eier'
+    'ein Dutzend Eier',
+    'Katzenfisch',
+    'Emu'
 ]
 
 games = [
