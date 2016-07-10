@@ -1,4 +1,5 @@
 import constants.color as CC
+import engine.util.color as colorUtil
 import engine.util.draw as drawUtil
 import globals.view as GV
 import math
@@ -8,12 +9,25 @@ import pygame
 LEVEL1_TICKS = 300
 LEVEL2_TICKS = 200
 LEVEL3_TICKS = 600
+LEVEL4_TICKS = 100
+LEVEL5_TICKS = 200
 
 level = 1
 ticks = 0
 
 circleRect = None
 pentagramPoints = []
+
+def fadeout ():
+    percentage = (ticks / float (LEVEL5_TICKS))
+    color = colorUtil.getColorFromGradient(CC.DARK_RED, CC.BLACK, percentage)
+    GV.screen.fill (color)
+
+def drawMiddleCircle ():
+    percentage = (ticks / float (LEVEL4_TICKS))
+    origin = (GV.screen.get_width () / 2, GV.screen.get_height () / 2)
+    radius = GV.screen.get_width ()
+    pygame.draw.circle (GV.screen, CC.DARK_RED, origin, int (radius * percentage))
 
 def drawSubCircles ():
     percentage = (ticks / float (LEVEL2_TICKS))
@@ -60,6 +74,10 @@ def carryOutLevelActions ():
         drawSubCircles ()
     elif level == 3:
         drawPentagramPart ()
+    elif level == 4:
+        drawMiddleCircle ()
+    elif level == 5:
+        fadeout()
 
 def increaseLevelAndResetTicks ():
     global level
@@ -76,6 +94,8 @@ def switchLevelIfPossible ():
     elif level == 2 and ticks > LEVEL2_TICKS + 1:
         increaseLevelAndResetTicks ()
     elif level == 3 and ticks > LEVEL3_TICKS + 1:
+        increaseLevelAndResetTicks ()
+    elif level == 4 and ticks > LEVEL4_TICKS + 1:
         increaseLevelAndResetTicks ()
 
 def update ():

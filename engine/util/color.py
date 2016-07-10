@@ -1,5 +1,5 @@
 def getColorValueFromGradient (value1, value2, percentage):
-    return value1 + ((value2 - value1) * percentage)
+    return max (0, min (255, (value1 + ((value2 - value1) * percentage))))
 
 def getColorFromGradient (color1, color2, percentage):
     redValue = getColorValueFromGradient (color1 [0], color2 [0], percentage)
