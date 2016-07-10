@@ -72,6 +72,8 @@ def switchEndingLevel ():
         modifyMessage ()
     elif endingLevel == 2:
         modifyChat ()
+    elif endingLevel == 4:
+        GS.context = 'endSequence'
 
 def modifyUpgradeIfPossible ():
     global lastModifiedUpgrade

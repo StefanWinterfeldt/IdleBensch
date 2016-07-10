@@ -2,6 +2,7 @@ import constants.display as DC
 import engine.service.keyHandler as keyHandler
 import engine.service.mouseHandler as mouseHandler
 import engine.controller.endingController as endingController
+import engine.controller.endSequenceController as endSequenceController
 import engine.controller.menuViewController as menuViewController
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.gameViewController as gameViewController
@@ -18,6 +19,8 @@ def updateDisplay ():
         gameViewController.update ()
     elif GS.context == 'menu':
         menuViewController.update ()
+    elif GS.context == 'endSequence':
+        endSequenceController.update ()
     pygame.display.flip ()
 
 def updateNonDisplayControllers ():
