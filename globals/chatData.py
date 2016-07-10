@@ -41,7 +41,9 @@ websites = [
     'www.XXLpuempel24.de',
     'www.kack-in-den-traktor.de',
     'www.pasteten-KTGW.de',
-    'www.billig-nach-nord-korea.at'
+    'www.billig-nach-nord-korea.at',
+    'www.fettBurger-Aktion.de',
+    'www.z0r.de'
 ]
 
 verdicts = [
@@ -61,16 +63,21 @@ stuff = [
     '17! 17!',
     'Schnell! Die Damentoilette entflieht!',
     'HYPE HYPE HYPE HYPE HYPE HYPE HYPE HYPE HYPE',
-    'deine Mudda schluckt gleich!'
+    'deine Mudda schluckt gleich!',
+    'Wusstet ihr: wenn ihr euer Passwort im Chat schreibt wird es automatisch durch Sternchen ersetzt, hier: *******',
+    'Bensch, hab dir ne Mail geschickt!',
+    'Das ist doch alles brotlose Kunst!'
 ]
 
 insults = [
-    'ein Hodenkobold',
-    'ne Kackbratze',
-    'ein Homofuerst',
-    'ein Arschpirat',
-    'ein Schaumloeffel',
-    'ein Klumpen',
+    'Hodenkobold',
+    'Kackbratze',
+    'Homofuerst',
+    'Arschpirat',
+    'Schaumloeffel',
+    'Klumpen',
+    'haesslicher Klappspaten',
+    'vollgeschissener Strumpf'
 ]
 
 nickNames = [
@@ -108,15 +115,18 @@ messageFunctions = [
     lambda: 'Geht mal alle auf ' + random.choice (websites),
     lambda: 'Ich hab mir ' + random.choice (games) + ' gekauft. ' + random.choice (verdicts),
     lambda: random.choice (stuff),
-    lambda: '@' + random.choice (nickNames) + ' was bist du eigentlich fuer ' + random.choice (insults) + '?'
+    lambda: '@' + random.choice (nickNames) + ' was geht eigentlich mit dir du ' + random.choice (insults) + '?',
+    lambda: 'Klick schneller du ' + random.choice (insults) + '!'
 ]
 
 modActionFunctions = [
-    lambda: random.choice (nickNames) + ' was timeouted'
+    lambda: random.choice (nickNames) + ' was timeouted',
+    lambda: random.choice (nickNames) + ' was hit by a rather large trout'
 ]
 
 modMessageFunctions = [
-    lambda: 'gleich hagelt es Forellen!'
+    lambda: 'gleich hagelt es Forellen!',
+    lambda: '@' + random.choice (nickNames) + ' nicht spammen!'
 ]
 
 def getRandomNick ():
