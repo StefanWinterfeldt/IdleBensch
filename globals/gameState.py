@@ -1,5 +1,6 @@
 context = 'menu'
 currentMouseArea = None
+endingInProgress = False
 episodes = 0
 money = 0.0
 seasons = 0

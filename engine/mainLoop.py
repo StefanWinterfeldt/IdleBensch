@@ -1,6 +1,7 @@
 import constants.display as DC
 import engine.service.keyHandler as keyHandler
 import engine.service.mouseHandler as mouseHandler
+import engine.controller.endingController as endingController
 import engine.controller.menuViewController as menuViewController
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.gameViewController as gameViewController
@@ -22,6 +23,7 @@ def updateDisplay ():
 def updateNonDisplayControllers ():
     passiveIncomeController.update ()
     saveController.update ()
+    endingController.update ()
 
 def updateTimeSlots ():
     timeSlotController.update ()

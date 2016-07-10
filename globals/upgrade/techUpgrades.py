@@ -51,7 +51,7 @@ idleBensch = Upgrade (
     hintText = ['Tu das nicht. Du wirst das Multiversum durch 0 teilen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'idleBensch.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getPassiveFunction ('MiRrOrS aRe MoRe FuN tHaN Tv')
+    activationFunction = AF.getActivateEndingFunction ()
 )
 
 kaffeeMaschine = Upgrade (
@@ -81,7 +81,7 @@ metaTheory = Upgrade (
     hintText = ['Die Meta-Theorie besagt dass alles ineinander enthalten ist. Wenn du lange genug auf ein Quantenteilchen zoomst siehst du das ganze Universum.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'metaTheory.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([72]),
-    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage(0)
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (0)
 )
 
 omnipresentBroadcast = Upgrade (

@@ -79,10 +79,11 @@ def createSaveGame ():
     return saveGame
 
 def save ():
-    saveGame = createSaveGame ()
-    saveFile = open ('saveGames/game.sav', 'wb')
-    pickle.dump (saveGame, saveFile, pickle.HIGHEST_PROTOCOL)
-    saveFile.close ()
+    if not GS.endingInProgress:
+        saveGame = createSaveGame ()
+        saveFile = open ('saveGames/game.sav', 'wb')
+        pickle.dump (saveGame, saveFile, pickle.HIGHEST_PROTOCOL)
+        saveFile.close ()
 
 def readGameState (saveGame):
     GS.episodes = saveGame.episodes

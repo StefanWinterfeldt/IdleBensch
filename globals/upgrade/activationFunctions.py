@@ -1,7 +1,11 @@
+import engine.controller.endingController as endingController
 import globals.gameLogic as GL
 import globals.gameState as GS
 from globals.upgrade.annotatedFunction import AnnotatedFunction
 import importlib
+
+def activateEnding (params):
+    endingController.activateEnding ()
 
 def activateAutoClicking (params):
     GL.BASE_CLICKS_PER_SECOND = 1.0
@@ -80,6 +84,13 @@ def increaseSubscribersPerStreamPerSecondByPercentage (percentage):
 def increaseSubscriberViewsPerEpisodeByPercentage (percentage):
     GL.BASE_SUBSCRIBER_VIEWS_PER_EPISODE *= ((100 + percentage) / 100.0)
 
+def getActivateEndingFunction ():
+    return AnnotatedFunction (
+        text = 'MiRrOrS aRe MoRe FuN tHaN Tv',
+        function = activateEnding,
+        parameter = None
+    )
+
 def getActivateAutoClickFunction ():
     return AnnotatedFunction (
         text = 'Du beginnst automatisch zu klicken.',
@@ -152,7 +163,7 @@ def getIncreaseEpisodesPerClickByPercentageFunction (percentage):
 
 def getIncreaseMaxDonationAmount (value):
     return AnnotatedFunction (
-        text = 'Erhoeht die maximale Spendengroesse um ' + str(value) + ' Euro.',
+        text = 'Erhoeht die maximale Spendengroesse um ' + str (value) + ' Euro.',
         function = increaseMaxDonationByValue,
         parameter = value
     )
@@ -187,14 +198,14 @@ def getIncreaseNumberOfStreamsByOne ():
 
 def getIncreaseDonationChanceByPercentage (percentage):
     return AnnotatedFunction (
-        text = 'Die Chance, dass dir beim Streamen Geld gespendet wird steigt um ' + str(percentage) + '%.',
+        text = 'Die Chance, dass dir beim Streamen Geld gespendet wird steigt um ' + str (percentage) + '%.',
         function = increaseDonationChanceByPercentage,
         parameter = percentage
     )
 
 def getIncreasePurchaseChanceByPercentage (percentage):
     return AnnotatedFunction (
-        text = 'Die Chance, dass Abonnenten etwas bei dir kaufen steigt um ' + str(percentage) + '%.',
+        text = 'Die Chance, dass Abonnenten etwas bei dir kaufen steigt um ' + str (percentage) + '%.',
         function = increasePurchaseChanceByPercentage,
         parameter = percentage
     )
