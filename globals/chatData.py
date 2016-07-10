@@ -66,7 +66,8 @@ stuff = [
     'deine Mudda schluckt gleich!',
     'Wusstet ihr: wenn ihr euer Passwort im Chat schreibt wird es automatisch durch Sternchen ersetzt, hier: *******',
     'Bensch, hab dir ne Mail geschickt!',
-    'Das ist doch alles brotlose Kunst!'
+    'Das ist doch alles brotlose Kunst!',
+    'Hinter dir! Ein Dreikoepfiger Affe!'
 ]
 
 insults = [
@@ -78,6 +79,16 @@ insults = [
     'Klumpen',
     'haesslicher Klappspaten',
     'vollgeschissener Strumpf'
+]
+
+endingMessages = [
+    '?reih theihcseg saW',
+    'Und ich sah, und siehe, ein fahles Pferd. Und der darauf sass, des Name hiess Tod, und die Hoelle folgte ihm nach.',
+    'Das hoert sich nicht gut an...',
+    'ShE hAs DyEd HeR hAiR rEd',
+    'RedRuM',
+    'Liberate tuteme ex Infernis',
+    'Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth'
 ]
 
 nickNames = [
