@@ -13,10 +13,11 @@ def initializeFont ():
     GGU.font = pygame.font.Font (GGU.fontName, DC.FONT_SIZE)
 
 def initializeUtilImages ():
-    GGU.titleImage = pygame.image.load (os.path.join ('resources', 'ingame', 'title.png'))
-    GGU.lockedSymbol = pygame.image.load (os.path.join ('resources', 'ingame', 'upgrade', 'lockedMask.png'))
-    GGU.upgradeInactiveMask = pygame.image.load (os.path.join ('resources', 'ingame', 'upgrade', 'inactiveMask.png'))
     GGU.creditsImage = pygame.image.load (os.path.join ('resources', 'ingame', 'credits.png'))
+    GGU.introImage = pygame.image.load (os.path.join ('resources', 'ingame', 'intro.png'))
+    GGU.lockedSymbol = pygame.image.load (os.path.join ('resources', 'ingame', 'upgrade', 'lockedMask.png'))
+    GGU.titleImage = pygame.image.load (os.path.join ('resources', 'ingame', 'title.png'))
+    GGU.upgradeInactiveMask = pygame.image.load (os.path.join ('resources', 'ingame', 'upgrade', 'inactiveMask.png'))
 
 def initializeViews ():
     GV.screen = pygame.display.set_mode (DC.RESOLUTION, pygame.FULLSCREEN | pygame.HWSURFACE)

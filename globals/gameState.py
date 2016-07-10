@@ -1,4 +1,4 @@
-context = 'menu'
+context = 'intro'
 currentMouseArea = None
 endingInProgress = False
 episodes = 0
