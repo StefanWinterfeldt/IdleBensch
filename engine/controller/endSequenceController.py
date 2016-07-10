@@ -3,11 +3,10 @@ import engine.util.draw as drawUtil
 import globals.view as GV
 import math
 import pygame
-import random
 
 
 LEVEL1_TICKS = 300
-LEVEL2_TICKS = 600
+LEVEL2_TICKS = 200
 LEVEL3_TICKS = 600
 
 level = 1
@@ -15,6 +14,15 @@ ticks = 0
 
 circleRect = None
 pentagramPoints = []
+
+def drawSubCircles ():
+    percentage = (ticks / float (LEVEL2_TICKS))
+    radius = 50
+    pygame.draw.circle (GV.screen, CC.RED, pentagramPoints [0], int (radius * percentage))
+    pygame.draw.circle (GV.screen, CC.RED, pentagramPoints [1], int (radius * percentage))
+    pygame.draw.circle (GV.screen, CC.RED, pentagramPoints [2], int (radius * percentage))
+    pygame.draw.circle (GV.screen, CC.RED, pentagramPoints [3], int (radius * percentage))
+    pygame.draw.circle (GV.screen, CC.RED, pentagramPoints [4], int (radius * percentage))
 
 def calculatePentagramPoints ():
     origin = (GV.screen.get_width () / 2, GV.screen.get_height () / 2)
@@ -30,7 +38,7 @@ def calculatePentagramPoints ():
     pentagramPoints.append ((int (origin [0] + s1 * radius), int (origin [1] + c1 * radius)))
 
 def drawPentagramPart ():
-    percentage = (ticks / float (LEVEL2_TICKS))
+    percentage = (ticks / float (LEVEL3_TICKS))
     drawUtil.drawPartialLine (GV.screen, CC.RED, pentagramPoints [0], pentagramPoints [2], 40, percentage)
     drawUtil.drawPartialLine (GV.screen, CC.RED, pentagramPoints [2], pentagramPoints [4], 40, percentage)
     drawUtil.drawPartialLine (GV.screen, CC.RED, pentagramPoints [4], pentagramPoints [1], 40, percentage)
@@ -49,9 +57,9 @@ def carryOutLevelActions ():
     if level == 1:
         drawCirclePart ()
     elif level == 2:
-        drawPentagramPart ()
+        drawSubCircles ()
     elif level == 3:
-        pass
+        drawPentagramPart ()
 
 def increaseLevelAndResetTicks ():
     global level
