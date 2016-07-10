@@ -27,6 +27,7 @@ def drawIdleBensch ():
     clickViewController.seasonCompletion = 0
     GV.clickView.fill (CC.BLACK)
     drawUtil.drawCentered (textUtil.renderLines (['Idle', 'Bensch'], True, 48, CC.PURPLE), GV.clickView)
+    pygame.draw.rect (GV.clickView, CC.DARK_GREEN, (0, 0, CD.CLICK_VIEW_SIZE [0] - 1, CD.CLICK_VIEW_SIZE [1] - 1), 2)
 
 def deactivateGameLogic ():
     GL.BASE_CLICKS_PER_SECOND = 0.0
