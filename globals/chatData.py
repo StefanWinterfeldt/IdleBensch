@@ -17,7 +17,10 @@ food = [
     '3 Liter zarten Saitling',
     'ein Dutzend Eier',
     'Katzenfisch',
-    'Emu'
+    'Emu',
+    'pfaelzer Saumagen',
+    'Wuestenrennmaus',
+    'WasserSchwein'
 ]
 
 games = [
@@ -36,7 +39,11 @@ topics = [
     'Dr. Hodenschrot',
     'Elektrobier',
     'Winkelschleifern',
-    'Wegwerfkanus'
+    'Wegwerfkanus',
+    'Talkshows',
+    'Berlin Tag und Nacht',
+    'einfach mal rumschreien',
+    'Weberknechten'
 ]
 
 websites = [
@@ -69,7 +76,7 @@ stuff = [
     'Wusstet ihr: wenn ihr euer Passwort im Chat schreibt wird es automatisch durch Sternchen ersetzt, hier: *******',
     'Bensch, hab dir ne Mail geschickt!',
     'Das ist doch alles brotlose Kunst!',
-    'Hinter dir! Ein Dreikoepfiger Affe!'
+    'Hinter dir! Ein dreikoepfiger Affe!'
 ]
 
 insults = [
@@ -90,7 +97,8 @@ endingMessages = [
     'ShE hAs DyEd HeR hAiR rEd',
     'RedRuM',
     'Liberate tuteme ex Infernis',
-    'Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth'
+    'Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth',
+    'Mutter! Blut!'
 ]
 
 nickNames = [
@@ -117,7 +125,13 @@ nickNames = [
     'TheRealDrHodenschrot',
     'K.T.G.W.',
     'dasErsteX',
-    'PrengelschneckLP'
+    'PrengelschneckLP',
+    'derWaschtl',
+    'HerrFoerster',
+    'Rabatz',
+    'WackelPeter',
+    'derPapst',
+    'SchneckenOhneEnde'
 ]
 
 messageFunctions = [
@@ -134,6 +148,7 @@ messageFunctions = [
 
 modActionFunctions = [
     lambda: random.choice (nickNames) + ' was timeouted',
+    lambda: random.choice (nickNames) + ' was banned',
     lambda: random.choice (nickNames) + ' was hit by a rather large trout'
 ]
 
