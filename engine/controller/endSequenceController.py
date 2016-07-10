@@ -1,6 +1,8 @@
 import constants.color as CC
 import engine.util.color as colorUtil
 import engine.util.draw as drawUtil
+import globals.gameState as GS
+import globals.gameUtils as GU
 import globals.view as GV
 import math
 import pygame
@@ -11,6 +13,7 @@ LEVEL2_TICKS = 200
 LEVEL3_TICKS = 600
 LEVEL4_TICKS = 100
 LEVEL5_TICKS = 200
+LEVEL6_TICKS = 600
 
 level = 1
 ticks = 0
@@ -18,9 +21,17 @@ ticks = 0
 circleRect = None
 pentagramPoints = []
 
+def fadeInCredits ():
+    percentage = 1 - (ticks / float (LEVEL6_TICKS))
+    overlay = pygame.Surface (GV.screen.get_size (), pygame.HWSURFACE)
+    overlay.fill (CC.BLACK)
+    overlay.set_alpha (int (255 * percentage))
+    GV.screen.blit (GU.creditsImage, (0, 0))
+    GV.screen.blit (overlay, (0, 0))
+
 def fadeout ():
     percentage = (ticks / float (LEVEL5_TICKS))
-    color = colorUtil.getColorFromGradient(CC.DARK_RED, CC.BLACK, percentage)
+    color = colorUtil.getColorFromGradient (CC.DARK_RED, CC.BLACK, percentage)
     GV.screen.fill (color)
 
 def drawMiddleCircle ():
@@ -77,7 +88,11 @@ def carryOutLevelActions ():
     elif level == 4:
         drawMiddleCircle ()
     elif level == 5:
-        fadeout()
+        fadeout ()
+    elif level == 6:
+        fadeInCredits ()
+    elif level == 7:
+        GS.context = 'credits'
 
 def increaseLevelAndResetTicks ():
     global level
@@ -96,6 +111,10 @@ def switchLevelIfPossible ():
     elif level == 3 and ticks > LEVEL3_TICKS + 1:
         increaseLevelAndResetTicks ()
     elif level == 4 and ticks > LEVEL4_TICKS + 1:
+        increaseLevelAndResetTicks ()
+    elif level == 5 and ticks > LEVEL5_TICKS + 1:
+        increaseLevelAndResetTicks ()
+    elif level == 6 and ticks > LEVEL6_TICKS + 1:
         increaseLevelAndResetTicks ()
 
 def update ():
