@@ -12,8 +12,8 @@ tempSurface = None
 ticksSinceLastMessage = 0
 
 def getRenderedChatMessage ():
-    nick = random.choice (chatData.nickNames)
-    message = random.choice (chatData.messages)
+    nick = chatData.getRandomNick()
+    message = chatData.getRandomMessage()
     textRender = textUtil.renderTextWithWordWrap (nick + ': ' + message, GV.chatView.get_width () - 10)
     color = random.choice (CC.CHAT_COLORS)
     nickRender = textUtil.renderLines ([nick + ':'], False, CD.FONT_SIZE, color)

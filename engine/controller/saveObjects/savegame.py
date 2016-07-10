@@ -27,6 +27,7 @@ class SaveGame:
     BASE_VIEWS_PER_EPISODE = None
 
     activeUpgradeIds = []
+    visibleUpgradeIds = []
 
     lastFullEpisodes = None
     lastFullSeasons = None
