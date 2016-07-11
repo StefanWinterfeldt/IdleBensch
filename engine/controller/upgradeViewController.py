@@ -91,7 +91,7 @@ def handleClick (event):
             handleClickOnUpgrade (upgrade)
 
 def handleClickOnUpgrade (upgrade):
-    if upgrade.isUnlocked () and upgrade.cost <= GGS.money:
+    if upgrade.isUnlocked () and not upgrade.active and upgrade.cost <= GGS.money:
         upgrade.activate ()
         drawCategories ()
 
