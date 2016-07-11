@@ -1,4 +1,4 @@
-from engine.controller.saveObjects.saveGame1 import SaveGame
+from engine.controller.saveObjects.saveGame import SaveGame
 import constants.control as CO
 import constants.display as CD
 import engine.controller.achievementViewController as achievementViewController
