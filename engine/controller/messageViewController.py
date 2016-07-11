@@ -1,15 +1,23 @@
 import constants.color as CC
 import constants.control as CO
 import constants.display as CD
+import engine.controller.hintViewController as hintViewController
 import engine.util.draw as drawUtil
 import engine.util.text as textUtil
+import globals.gameState as GS
 import globals.messages as messages
 import globals.view as GV
 import pygame
 import random
 
-
+areaCode = 'MEV'
+hintText = 'Hier erfaehrst du die neuesten Nachrichten.'
 ticksSinceLastMessage = 0
+
+def handleMotion (event):
+    if GS.currentMouseArea != areaCode:
+        GS.currentMouseArea = areaCode
+        hintViewController.showText (hintText)
 
 def getAvailableMessages ():
     return [message for message in messages.messages if message.isAvailable ()]

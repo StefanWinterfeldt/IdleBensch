@@ -1,5 +1,6 @@
 import constants.color as CC
 import constants.display as CD
+import engine.controller.hintViewController as hintViewController
 import engine.util.color as colorUtil
 import engine.util.draw as drawUtil
 import engine.util.text as textUtil
@@ -8,11 +9,17 @@ import globals.subscriberMilestones as milestones
 import globals.view as GV
 import pygame
 
-
+areaCode = 'AV'
+hintText = 'Hier siehst du wie du im Vergleich mit anderen YouTubern stehst.'
 currentMilestone = None
 lastMilestone = None
 progressSurface = None
 textSurface = None
+
+def handleMotion (event):
+    if GS.currentMouseArea != areaCode:
+        GS.currentMouseArea = areaCode
+        hintViewController.showText (hintText)
 
 def switchMilestonesIfPossible ():
     global currentMilestone

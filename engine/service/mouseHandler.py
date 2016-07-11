@@ -1,3 +1,6 @@
+import engine.controller.messageViewController as messageViewController
+import engine.controller.achievementViewController as achievementViewController
+import engine.controller.chatViewController as chatViewController
 import engine.controller.clickViewController as clickViewController
 import engine.controller.faceViewController as faceViewController
 import engine.controller.hintViewController as hintViewController
@@ -26,6 +29,12 @@ def dispatchMotionToView (event):
         faceViewController.handleMotion (event)
     elif eventUtil.eventHappenedInRect (event, GV.upgradeViewAbsoluteRect):
         upgradeViewController.handleMotion (event)
+    elif eventUtil.eventHappenedInRect (event, GV.chatViewAbsoluteRect):
+        chatViewController.handleMotion (event)
+    elif eventUtil.eventHappenedInRect (event, GV.achievementViewAbsoluteRect):
+        achievementViewController.handleMotion (event)
+    elif eventUtil.eventHappenedInRect (event, GV.messageViewAbsoluteRect):
+        messageViewController.handleMotion (event)
     else:
         if GGS.currentMouseArea is not None:
             GGS.currentMouseArea = None

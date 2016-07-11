@@ -1,6 +1,7 @@
 import constants.color as CC
 import constants.control as CO
 import constants.display as CD
+import engine.controller.hintViewController as hintViewController
 import engine.util.text as textUtil
 import engine.util.upgrade as upgradeUtil
 import globals.chatData as chatData
@@ -9,9 +10,15 @@ import globals.view as GV
 import pygame
 import random
 
-
+areaCode = 'CHV',
+hintText = 'Sobald du deinen ersten Stream freigeschaltet hast werden deine Zuschauer hier mit dir chatten.'
 tempSurface = None
 ticksSinceLastMessage = 0
+
+def handleMotion (event):
+    if GS.currentMouseArea != areaCode:
+        GS.currentMouseArea = areaCode
+        hintViewController.showText (hintText)
 
 def getRenderedChatMessage ():
     nick = chatData.getRandomNick ()
