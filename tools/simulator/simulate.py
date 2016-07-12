@@ -1,10 +1,10 @@
 import constants.display as CD
-import cProfile
 import engine.controller.clickViewController as clickViewController
 import engine.controller.gameStateTriggerController as gameStateTriggerController
 import engine.controller.passiveIncome as passiveIncomeController
 import engine.controller.timeSlotController as timeSlotController
 import engine.controller.upgradeViewController as upgradeViewController
+import engine.controller.endingController as endingController
 import engine.util.text as textUtil
 import globals.gameState as GS
 import globals.upgrade.categories as categories
@@ -42,8 +42,8 @@ def analyze ():
     print 'Mean time between upgrades:   ' + getTimeString (mean)
     print 'Median time between upgrades: ' + getTimeString (median)
     print 'Standard deviation:           ' + str (std)
-    print 'Views:                        ' + str(GS.views)
-    print 'Subscribers:                  ' + str(GS.subscriber)
+    print 'Views:                        ' + str (GS.views)
+    print 'Subscribers:                  ' + str (GS.subscriber)
 
 def addBuyLog (upgradeName):
     global buyLogs
@@ -68,6 +68,7 @@ def getCompletionPercentage ():
 def mockUnneededFunctionality ():
     clickViewController.randomize = lambda: None
     upgradeViewController.drawCategories = lambda: None
+    endingController.activateEnding = lambda: None
 
 def refreshCategoryVisibility ():
     for category in categories.categories:

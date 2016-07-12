@@ -11,7 +11,7 @@ angelPact = Upgrade (
     hintText = ['Im Himmel kann es ziemlich langweilig werden, nicht mit dir.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'angelPact.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (500)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (700)
 )
 
 bloodPact = Upgrade (

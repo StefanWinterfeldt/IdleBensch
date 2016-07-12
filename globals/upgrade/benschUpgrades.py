@@ -112,7 +112,7 @@ mrScotch = Upgrade (
     hintText = ['Das ist mein Kumpel Mr. Scotch, mit ihm haben alle mehr Spass!'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'mrScotch.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (100)
+    activationFunction = AF.getIncreaseMaxSubscribersPerEpisode (20)
 )
 
 streamMod = Upgrade (
