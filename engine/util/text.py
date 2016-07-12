@@ -12,10 +12,18 @@ def checkIfWordsWouldFit (words, maxWidth):
 
 def convertToHumanReadableString (number, withFractions = False):
     numberString = str (int (math.floor (number)))
+    outputString = ''
+    i = -1
+    while i >= -len (numberString):
+        outputString += numberString [i]
+        if i % 3 == 0: outputString += '.'
+        i -= 1
+    outputString = outputString [::-1]
+    outputString = outputString.lstrip ('.')
     if withFractions:
         fraction = str (number).split ('.') [1]
-        numberString += '.' + fraction [:4]
-    return numberString
+        outputString += ',' + fraction [:4]
+    return outputString
 
 def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE, color = CC.WHITE):
     font = pygame.font.Font (GGU.fontName, fontSize)
@@ -32,9 +40,9 @@ def renderLines (lines, centered = False, fontSize = CD.FONT_SIZE, color = CC.WH
         yPos += line.get_height ()
     return combinedLines
 
-def renderTextWithWordWrap (text, maxWidth, color=CC.WHITE):
+def renderTextWithWordWrap (text, maxWidth, color = CC.WHITE):
     if isinstance (text, types.StringType):
-        return renderLines (getWrappedLines (text, maxWidth), color=color)
+        return renderLines (getWrappedLines (text, maxWidth), color = color)
     elif isinstance (text, types.ListType):
         lines = []
         for line in text:
