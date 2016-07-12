@@ -20,17 +20,28 @@ food = [
     'Emu',
     'pfaelzer Saumagen',
     'Wuestenrennmaus',
-    'WasserSchwein'
+    'WasserSchwein',
+    'Eis Konfekt',
+    'Senf-Eier'
+]
+
+cookVerb = [
+    'braten',
+    'kochen',
+    'roesten',
+    'duensten'
 ]
 
 games = [
     'Minecraft',
-    'Half-Life 3',
     'Stockenten Rodeo',
     'Hello Kitty Adventure',
     'Shark Revenge 2',
     'Rochenpogo',
-    'den Waescherei-Simulator'
+    'den Waescherei-Simulator',
+    'Hamster Party',
+    'den Kiebitz Trainer 2000',
+    '5 Nights @ Froppies'
 ]
 
 topics = [
@@ -76,7 +87,10 @@ stuff = [
     'Wusstet ihr: wenn ihr euer Passwort im Chat schreibt wird es automatisch durch Sternchen ersetzt, hier: *******',
     'Bensch, hab dir ne Mail geschickt!',
     'Das ist doch alles brotlose Kunst!',
-    'Hinter dir! Ein dreikoepfiger Affe!'
+    'Hinter dir! Ein dreikoepfiger Affe!',
+    'Schluck erstmal runter du Bastard!',
+    'Deine Mudder schluckt gleich!',
+    '1 on 1 du n00b?'
 ]
 
 insults = [
@@ -87,18 +101,18 @@ insults = [
     'Schaumloeffel',
     'Klumpen',
     'haesslicher Klappspaten',
-    'vollgeschissener Strumpf'
+    'vollgeschissener Strumpf',
+    'LowBob',
+    'Klippschliefer'
 ]
 
 endingMessages = [
     '?reih theihcseg saW',
     'Und ich sah, und siehe, ein fahles Pferd. Und der darauf sass, des Name hiess Tod, und die Hoelle folgte ihm nach.',
-    'Das hoert sich nicht gut an...',
     'ShE hAs DyEd HeR hAiR rEd',
     'RedRuM',
     'Liberate tuteme ex Infernis',
-    'Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth',
-    'Mutter! Blut!'
+    'Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth'
 ]
 
 nickNames = [
@@ -136,7 +150,7 @@ nickNames = [
 
 messageFunctions = [
     lambda: 'Hey Bensch! Hast du schon mal ' + random.choice (food) + ' gegessen?',
-    lambda: 'So, ich bin raus. Muss mir noch ' + random.choice (food) + ' braten.',
+    lambda: 'So, ich bin raus. Muss mir noch ' + random.choice (food) + ' ' + random.choice (cookVerb) + '.',
     lambda: 'Spielst du heute noch ' + random.choice (games) + '?',
     lambda: 'Bensch, was haelst du eigentlich von ' + random.choice (topics) + '?',
     lambda: 'Geht mal alle auf ' + random.choice (websites),
