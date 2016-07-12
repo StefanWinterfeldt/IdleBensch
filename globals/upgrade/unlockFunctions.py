@@ -10,7 +10,7 @@ def allTheseUpgradesAreActive (upgradeIds):
 
 def getTextRequiringUpgrades (upgradeIds):
     upgradeNames = [engine.util.upgrade.getUpgradeById(upgradeId).name for upgradeId in upgradeIds]
-    return 'Dieses Upgrade benoetigt noch die folgenden anderen Upgrades: ' + ', '.join (upgradeNames) + '.'
+    return 'Dieses Upgrade benoetigt die folgenden anderen Upgrades: ' + ', '.join (upgradeNames) + '.'
 
 def getAlwaysUnlockedFunction ():
     return AnnotatedFunction (

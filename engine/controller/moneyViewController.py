@@ -90,9 +90,9 @@ def getVariableStreamHintText ():
 
 def getVariableSubscriberHintText ():
     views = textUtil.convertToHumanReadableString (MGL.getSubscriberViewsPerEpisode (), True)
-    purChancePerSec = textUtil.convertToHumanReadableString (MGL.getPurchaseChancePerSubscriberPerSecondInPercent ())
-    minPur = textUtil.convertToHumanReadableString (MGL.getMinPurchase ())
-    maxPur = textUtil.convertToHumanReadableString (MGL.getMaxPurchase ())
+    purChancePerSec = textUtil.convertToHumanReadableString (MGL.getPurchaseChancePerSubscriberPerSecondInPercent (), True)
+    minPur = textUtil.convertToHumanReadableString (MGL.getMinPurchase (), True)
+    maxPur = textUtil.convertToHumanReadableString (MGL.getMaxPurchase (), True)
     return 'Momentan liefert jeder Abonnent ' + views + ' extra Views pro Folge. Jeder Abonnent hat jede Sekunde eine ' + purChancePerSec + '% Chance fuer ' + minPur + ' bis ' + maxPur + ' Euro Merchandise zu kaufen.'
 
 def getVariableViewHintText ():

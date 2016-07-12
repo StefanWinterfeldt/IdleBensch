@@ -4,13 +4,13 @@ import os
 
 benschHeader = CategoryHeader (
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'bensch', 'benschHeader.png'),
-    hintText = 'Bensch Upgrades',
+    hintText = 'Selbstverbesserung durch Konsum! Das sind die Bensch Upgrades.',
     visible = True
 )
 
 computerHeader = CategoryHeader (
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'computer', 'computerHeader.png'),
-    hintText = 'Computer Upgrades'
+    hintText = 'Stecke Geld in deinen Computer - es wird ihn schneller machen!'
 )
 
 merchHeader = CategoryHeader (
@@ -25,5 +25,5 @@ occultHeader = CategoryHeader (
 
 techHeader = CategoryHeader (
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'techHeader.png'),
-    hintText = 'Technologie'
+    hintText = 'Der grosse Spass fuer Langweiler! Bauen Sie sich ihr eigenes Vogelhaeuschen!'
 )
