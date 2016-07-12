@@ -91,7 +91,7 @@ omnipresentBroadcast = Upgrade (
     hintText = ['Du bist im ganzen Universum zu empfangen, gleichzeitig. Selbst die Wesen in der Schwaerze zwischen den Galaxien koennen dich jetzt sehen.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'tech', 'omnipresentBroadcast.png'),
     unlockFunction = UF.getAlwaysUnlockedFunction (),
-    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (1000)
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (2000)
 )
 
 parallelRealities = Upgrade (

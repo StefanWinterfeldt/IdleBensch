@@ -227,7 +227,7 @@ def getIncreaseSubscribersPerStreamPerSecondByPercentage (percentage):
 def getIncreaseSubscriberViewsPerEpisodeByPercentage (percentage):
     return AnnotatedFunction (
         text = 'Du erhaeltst ' + str (percentage) + '% mehr Views pro Folge von deinen Abonnenten.',
-        function = increaseViewsPerEpisodeByPercentage,
+        function = increaseSubscriberViewsPerEpisodeByPercentage,
         parameter = percentage
     )
 

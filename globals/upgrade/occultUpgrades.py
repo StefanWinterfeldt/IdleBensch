@@ -71,7 +71,7 @@ elderPact = Upgrade (
     hintText = ['Sie sehen und hoeren dich sowieso schon. Jetzt. In dieser Sekunde. Aber nun werden ihre Views gezaehlt.'],
     imagePath = os.path.join ('resources', 'ingame', 'upgrade', 'occult', 'elderPact.png'),
     unlockFunction = UF.getUnlockFunctionRequiringActiveUpgrades ([57]),
-    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (1000)
+    activationFunction = AF.getIncreaseViewsPerEpisodeByPercentage (3000)
 )
 
 forbiddenKnowledge = Upgrade (
