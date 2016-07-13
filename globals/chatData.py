@@ -91,7 +91,10 @@ stuff = [
     'Hinter dir! Ein dreikoepfiger Affe!',
     'Schluck erstmal runter du Bastard!',
     'Deine Mudder schluckt gleich!',
-    '1 on 1 du n00b?'
+    '1 on 1 du n00b?',
+    'kann noch mal einer den Link zum calculator posten?',
+    'Ihr glaubt nicht was mir heute passiert ist: Als ich aus dem Fenster sah, sah ich doch tatsaechlich... AUTOMOBILE!',
+    'Das muss ich noch erzaehlen: Also ich sass in meinem Zimmer, hab ein Buch gelesen, da kam dieser Typ rein... und ich hab ihn 37 mal in die Brust gestochen.'
 ]
 
 insults = [
@@ -150,11 +153,6 @@ nickNames = [
     'SchneckenOhneEnde'
 ]
 
-stories = [
-    'Als ich aus dem Fenster sah, sah ich doch tatsaechlich... AUTOMOBILE!',
-    'Also ich sass in meinem Zimmer, hab ein Buch gelesen, da kam dieser Typ rein... und ich hab ihn 37 mal in die Brust gestochen.'
-]
-
 messageFunctions = [
     lambda: 'Hey Bensch! Hast du schon mal ' + random.choice (food) + ' gegessen?',
     lambda: 'So, ich bin raus. Muss mir noch ' + random.choice (food) + ' ' + random.choice (cookVerb) + '.',
@@ -164,8 +162,7 @@ messageFunctions = [
     lambda: 'Ich hab mir ' + random.choice (games) + ' gekauft. ' + random.choice (verdicts),
     lambda: random.choice (stuff),
     lambda: '@' + random.choice (nickNames) + ' was geht eigentlich mit dir du ' + random.choice (insults) + '?',
-    lambda: 'Klick schneller du ' + random.choice (insults) + '!',
-    lambda: random.choice (['Ihr glaubt nicht was mir heute passiert ist: ', 'Das muss ich noch erzaehlen: ']) + random.choice (stories)
+    lambda: 'Klick schneller du ' + random.choice (insults) + '!'
 ]
 
 modActionFunctions = [
