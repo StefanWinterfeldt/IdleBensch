@@ -63,7 +63,8 @@ websites = [
     'www.pasteten-KTGW.de',
     'www.billig-nach-nord-korea.at',
     'www.fettBurger-Aktion.de',
-    'www.z0r.de'
+    'www.z0r.de',
+    'https://youtu.be/59Mce_G10EY'
 ]
 
 verdicts = [
@@ -112,7 +113,8 @@ endingMessages = [
     'ShE hAs DyEd HeR hAiR rEd',
     'RedRuM',
     'Liberate tuteme ex Infernis',
-    'Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth'
+    'Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth Azatoth',
+    'Ich habs kommen sehn...'
 ]
 
 nickNames = [
@@ -148,6 +150,11 @@ nickNames = [
     'SchneckenOhneEnde'
 ]
 
+stories = [
+    'Als ich aus dem Fenster sah, sah ich doch tatsaechlich... AUTOMOBILE!',
+    'Also ich sass in meinem Zimmer, hab ein Buch gelesen, da kam dieser Typ rein... und ich hab ihn 37 mal in die Brust gestochen.'
+]
+
 messageFunctions = [
     lambda: 'Hey Bensch! Hast du schon mal ' + random.choice (food) + ' gegessen?',
     lambda: 'So, ich bin raus. Muss mir noch ' + random.choice (food) + ' ' + random.choice (cookVerb) + '.',
@@ -157,7 +164,8 @@ messageFunctions = [
     lambda: 'Ich hab mir ' + random.choice (games) + ' gekauft. ' + random.choice (verdicts),
     lambda: random.choice (stuff),
     lambda: '@' + random.choice (nickNames) + ' was geht eigentlich mit dir du ' + random.choice (insults) + '?',
-    lambda: 'Klick schneller du ' + random.choice (insults) + '!'
+    lambda: 'Klick schneller du ' + random.choice (insults) + '!',
+    lambda: random.choice (['Ihr glaubt nicht was mir heute passiert ist: ', 'Das muss ich noch erzaehlen: ']) + random.choice (stories)
 ]
 
 modActionFunctions = [
@@ -168,7 +176,8 @@ modActionFunctions = [
 
 modMessageFunctions = [
     lambda: 'gleich hagelt es Forellen!',
-    lambda: '@' + random.choice (nickNames) + ' nicht spammen!'
+    lambda: '@' + random.choice (nickNames) + ' nicht spammen!',
+    lambda: 'den Calculator gibts hier: www.sUchtS3lber.de'
 ]
 
 def getRandomNick ():
