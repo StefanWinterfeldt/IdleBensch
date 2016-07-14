@@ -41,7 +41,8 @@ games = [
     'den Waescherei-Simulator',
     'Hamster Party',
     'den Kiebitz Trainer 2000',
-    '5 Nights @ Froppies'
+    '5 Nights @ Froppies',
+    'Kampfjets in Amsterdam'
 ]
 
 topics = [
