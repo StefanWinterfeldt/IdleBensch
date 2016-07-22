@@ -17,7 +17,8 @@ Wenn ihr Idle Bensch runtergeladen und Python und Pygame installiert habt müsst
 Falls das nicht funktioniert solltet ihr versuchen über die Kommandozeile zu starten, indem ihr:
 
  * In der Windows-Suche 'cmd' eingebt - das Öffnet die Kommandozeile
- * und den Befehl 'X:\Pfad\zu\python2.7\python.exe Y:\Pfad\zu\IdleBensch\run.py' ausführt
+ * in den IdleBensch Ordner navigiert 'cd Pfad/zu/IdleBensch'
+ * und den Befehl 'X:\Pfad\zu\python2.7\python.exe run.py' ausführt
  * dabei müsst ihr Pfade mit den jeweiligen Verzeichnissen ersetzen in die ihr Python installiert bzw. Idle Bensch kopiert habt
 
 Was kann ich noch mit dem Spiel machen?
@@ -56,7 +57,8 @@ After downloading Idle Bensch and installing Python and Pygame, the game should 
 If that fails you should try the command line:
 
  * In Windows-Search type 'cmd' to open the command line
- * type in the command 'X:\Pfad\zu\python2.7\python.exe Y:\Pfad\zu\IdleBensch\run.py' and execute it
+ * navigate to the IdleBensch folder 'cd path/to/IdleBensch'
+ * type in the command 'X:\Pfad\zu\python2.7\python.exe run.py' and execute it
  * the paths in that command need to be replaced by the folders you installed Python and copied Idle Bensch into respectively
 
 What else can I do with this game?
